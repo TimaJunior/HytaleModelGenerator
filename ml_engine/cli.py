@@ -13,6 +13,16 @@ sys.path.append(os.getcwd())
 from ml_engine.services.inference import ModelInferenceService
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "--train":
+        from ml_engine.train import train
+        # Quick training run for demo
+        try:
+            train(epochs=10) # Run 10 epochs
+            print(json.dumps({"status": "success", "message": "Training completed"}))
+        except Exception as e:
+            print(json.dumps({"error": str(e)}))
+        sys.exit(0)
+
     if len(sys.argv) < 2:
         print(json.dumps({"error": "No image path provided"}))
         sys.exit(1)
@@ -31,8 +41,11 @@ def main():
         input_tensor = transform(image).unsqueeze(0) # (1, 3, 256, 256)
 
         # Run Inference
-        # In a real app, you might want to load weights=...
-        service = ModelInferenceService(device="cpu") 
+        weights_path = os.path.join("ml_engine", "weights", "latest.pth")
+        if not os.path.exists(weights_path):
+            weights_path = None
+            
+        service = ModelInferenceService(weights_path=weights_path, device="cpu") 
         output_voxels = service.generate_from_image(input_tensor)
         
         # Convert tensor to list for JSON serialization

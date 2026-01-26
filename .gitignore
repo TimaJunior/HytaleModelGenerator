@@ -19,6 +19,8 @@ env/
 *.model
 *.pt
 *.pth
+ml_engine/weights/
+data/
 
 # OS
 .DS_Store
