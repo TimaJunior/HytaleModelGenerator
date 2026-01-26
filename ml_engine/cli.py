@@ -1,0 +1,63 @@
+
+import sys
+import os
+import json
+import torch
+import numpy as np
+from PIL import Image
+from torchvision import transforms
+
+# Ensure project root is in path
+sys.path.append(os.getcwd())
+
+from ml_engine.services.inference import ModelInferenceService
+
+def main():
+    if len(sys.argv) < 2:
+        print(json.dumps({"error": "No image path provided"}))
+        sys.exit(1)
+
+    image_path = sys.argv[1]
+    
+    try:
+        # Preprocess Image
+        transform = transforms.Compose([
+            transforms.Resize((256, 256)),
+            transforms.ToTensor(),
+            # Normalization (optional, match training)
+        ])
+        
+        image = Image.open(image_path).convert('RGB')
+        input_tensor = transform(image).unsqueeze(0) # (1, 3, 256, 256)
+
+        # Run Inference
+        # In a real app, you might want to load weights=...
+        service = ModelInferenceService(device="cpu") 
+        output_voxels = service.generate_from_image(input_tensor)
+        
+        # Convert tensor to list for JSON serialization
+        # Squeeze batch dimension and traverse
+        # We output a sparse list of active voxels for efficiency
+        
+        # Simple dense array for now for simplicity in visualization prototype
+        # Thresholding at 0.5
+        active_voxels = (output_voxels > 0.5).int().squeeze().numpy()
+        
+        # Get coordinates of active voxels
+        coords = np.argwhere(active_voxels == 1).tolist()
+        
+        result = {
+            "status": "success",
+            "model_shape": list(active_voxels.shape),
+            "voxel_count": len(coords),
+            "voxels": coords # List of [z, y, x]
+        }
+        
+        print(json.dumps(result))
+
+    except Exception as e:
+        print(json.dumps({"error": str(e)}))
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
