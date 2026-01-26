@@ -31,7 +31,8 @@ class ModelInferenceService:
         checkpoint = torch.load(path, map_location=self.device)
         self.encoder.load_state_dict(checkpoint['encoder'])
         self.generator.load_state_dict(checkpoint['generator'])
-        print(f"Weights loaded from {path}")
+        import sys
+        sys.stderr.write(f"Weights loaded from {path}\n")
 
     def generate_from_image(self, image_tensor: torch.Tensor) -> torch.Tensor:
         """
@@ -55,6 +56,7 @@ class ModelInferenceService:
             
             end_time = time.time()
             duration_ms = (end_time - start_time) * 1000
-            print(f"[Inference] Generated voxel grid in {duration_ms:.2f}ms")
+            import sys
+            sys.stderr.write(f"[Inference] Generated voxel grid in {duration_ms:.2f}ms\n")
             
             return voxels
