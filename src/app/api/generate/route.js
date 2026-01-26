@@ -26,9 +26,11 @@ export async function POST(request) {
         console.log(`Saved temp file: ${tempPath}`);
 
         // Call Python Script
-        // NOTE: Requires 'python' to be in PATH and dependencies installed
+        // NOTE: Hardcoded to Python 3.14 to ensure compatibility
+        const pythonExecutable = "C:\\Users\\Tima\\AppData\\Local\\Programs\\Python\\Python314\\python.exe";
         const pythonScript = path.join(process.cwd(), "ml_engine", "cli.py");
-        const command = `python "${pythonScript}" "${tempPath}"`;
+        // Escape paths for safety
+        const command = `"${pythonExecutable}" "${pythonScript}" "${tempPath}"`;
 
         console.log(`Executing: ${command}`);
 

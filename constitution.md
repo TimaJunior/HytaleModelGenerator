@@ -20,10 +20,10 @@ This document defines the core principles, standards, and workflows for this pro
 - **YAGNI**: Implement only what is required for the current task.
 - **DRY**: Abstract repeating patterns into reusable utilities, but avoid premature abstraction.
 
-### 3. Documentation & Quality
-- **Type Safety**: Strictly use JavaScript best practices (or TypeScript when applicable).
-- **Docstrings**: All public functions and modules must have descriptive documentation.
-- **Clean Git**: Commits must be atomic and use the prefix system (`feat:`, `fix:`, `docs:`, `refactor:`).
+### 3. Документація та якість
+- **Мова**: Уся документація, коментарі в коді (за можливості) та артефакти розробки мають бути написані **українською мовою**.
+- **Типобезпека**: Суворе дотримання кращих практик JavaScript (або TypeScript, де це можливо).
+- **Docstrings**: Усі публічні функції та модулі повинні мати описову документацію.
 
 ---
 

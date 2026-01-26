@@ -1,6 +1,7 @@
 
 import torch
 import os
+import time
 from ml_engine.core.interfaces import IEncoder, IGenerator
 from ml_engine.models.gan import ResNetEncoder, VoxelGANGenerator
 
@@ -38,6 +39,8 @@ class ModelInferenceService:
         :param image_tensor: (1, 3, 256, 256) Normalized image
         :return: (1, 32, 32, 32) Voxel grid (Probability map)
         """
+        start_time = time.time()
+        
         with torch.no_grad():
             image_tensor = image_tensor.to(self.device)
             
@@ -47,7 +50,11 @@ class ModelInferenceService:
             # 2. Generate voxels from latent vector
             voxels = self.generator(latent_vector)
             
-            # 3. Thresholding (Optional: usually done by client, but can be done here)
+            # 3. Thresholding (Optional)
             # voxels = (voxels > 0.5).float()
+            
+            end_time = time.time()
+            duration_ms = (end_time - start_time) * 1000
+            print(f"[Inference] Generated voxel grid in {duration_ms:.2f}ms")
             
             return voxels
