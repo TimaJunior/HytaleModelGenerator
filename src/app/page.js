@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ImageUploader from "@/presentation/components/ImageUploader";
 import ModelPreview from "@/presentation/components/ModelPreview";
+import { generateModel } from "./actions";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -17,21 +18,12 @@ export default function Home() {
     setLoading(true);
     setResult(null);
 
-    // TODO: Connect to real API
     try {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error(`API Error: ${response.statusText}`);
-      }
-
-      const data = await response.json();
+      // Call Server Action
+      const data = await generateModel(formData);
 
       if (data.error) {
         throw new Error(data.error);
@@ -40,7 +32,7 @@ export default function Home() {
       setResult(data);
     } catch (error) {
       console.error("Generation failed:", error);
-      alert("Failed to generate model. Check console for details.");
+      alert(`Failed to generate model: ${error.message}`);
     } finally {
       setLoading(false);
     }
