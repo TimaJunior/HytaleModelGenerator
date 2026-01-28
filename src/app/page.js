@@ -26,7 +26,7 @@ export default function Home() {
       const data = await generateModel(formData);
 
       if (data.error) {
-        throw new Error(data.error);
+        throw new Error(data.details ? `${data.error}: ${data.details}` : data.error);
       }
 
       setResult(data);

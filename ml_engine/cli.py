@@ -29,8 +29,18 @@ def main():
         if len(sys.argv) > 1 and sys.argv[1] == "--train":
             from ml_engine.train import train
             try:
-                train(epochs=10)
-                real_stdout.write(json.dumps({"status": "success", "message": "Training completed"}))
+                # Default 10 epochs
+                epochs = 10
+                # Check for optional epoch argument
+                if len(sys.argv) > 2:
+                    try:
+                        epochs = int(sys.argv[2])
+                    except ValueError:
+                        real_stdout.write(json.dumps({"error": "Invalid epoch count"}))
+                        sys.exit(1)
+                        
+                train(epochs=epochs)
+                real_stdout.write(json.dumps({"status": "success", "message": f"Training completed for {epochs} epochs"}))
             except Exception as e:
                 real_stdout.write(json.dumps({"error": str(e)}))
             sys.exit(0)
@@ -39,7 +49,7 @@ def main():
             real_stdout.write(json.dumps({"error": "No image path provided"}))
             sys.exit(1)
 
-    image_path = sys.argv[1]
+        image_path = sys.argv[1]
     
         try:
             # Preprocess Image

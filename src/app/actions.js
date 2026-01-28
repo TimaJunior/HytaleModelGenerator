@@ -25,8 +25,8 @@ export async function generateModel(formData) {
         console.log(`Saved temp file: ${tempPath}`);
 
         // Call Python Script
-        // NOTE: Hardcoded to Python 3.14 to ensure compatibility
-        const pythonExecutable = "C:\\Users\\Tima\\AppData\\Local\\Programs\\Python\\Python314\\python.exe";
+        // NOTE: Using Python 3.11 for CUDA/GPU support
+        const pythonExecutable = "C:\\Users\\Tima\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
         const pythonScript = path.join(process.cwd(), "ml_engine", "cli.py");
         // Escape paths for safety
         const command = `"${pythonExecutable}" "${pythonScript}" "${tempPath}"`;
@@ -54,7 +54,19 @@ export async function generateModel(formData) {
         // Ensure cleanup happens even on error
         try { await unlink(tempPath); } catch (e) { }
 
+        // Check if the error is from the child process (it might contain stdout with the JSON error)
+        if (error.stdout) {
+            try {
+                const result = JSON.parse(error.stdout);
+                if (result.error) {
+                    return { error: result.error, details: result.details };
+                }
+            } catch (e) {
+                // Ignore parse error here, fallback to generic message
+            }
+        }
+
         console.error("Server Action Error:", error);
-        return { error: "Failed to execute generation model", details: error.message };
+        return { error: "Failed to execute generation model", details: error.message || error.toString() };
     }
 }

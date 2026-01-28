@@ -30,6 +30,14 @@ export function exportToHytaleJson(voxels) {
     // For V1, we simply map each voxel to a 1x1x1 cube.
     // Optimization (Greedy Meshing) is a future improvement.
 
+    // Helper to enforce Hytale art style rules (No pure black/white)
+    const sanitizeHexColor = (hex) => {
+        const h = hex.toUpperCase();
+        if (h === "#000000" || h === "#000") return "#1A1A1A";
+        if (h === "#FFFFFF" || h === "#FFF") return "#F0F0F0";
+        return h;
+    };
+
     voxels.forEach((voxel, index) => {
         const [z, y, x] = voxel;
 
@@ -37,7 +45,7 @@ export function exportToHytaleJson(voxels) {
             name: `voxel_${index}`,
             from: [x, y, z],
             to: [x + 1, y + 1, z + 1],
-            color: "#10b981", // Default emerald green
+            color: sanitizeHexColor("#10b981"), // Sanitize default or future dynamic color
             // In a real scenario, we'd map UVs here if we had textures
             faces: {
                 north: { uv: [0, 0, 1, 1], texture: "#0" },

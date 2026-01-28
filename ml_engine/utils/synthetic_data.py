@@ -10,9 +10,9 @@ def ensure_dirs(base_path="data"):
     os.makedirs(os.path.join(base_path, "voxels"), exist_ok=True)
 
 def generate_random_shape(grid_size=32):
-    """Generates a random 3D voxel shape (sphere, cube, or noise cloud)."""
+    """Generates a random 3D voxel shape (sphere, cube, staff, or sword)."""
     voxels = np.zeros((grid_size, grid_size, grid_size), dtype=np.uint8)
-    shape_type = random.choice(["sphere", "cube", "cloud"])
+    shape_type = random.choice(["sphere", "cube", "staff", "sword"])
     
     center = grid_size // 2
     
@@ -28,18 +28,27 @@ def generate_random_shape(grid_size=32):
         end = start + size
         voxels[start:end, start:end, start:end] = 1
         
-    elif shape_type == "cloud":
-        # Random scattered points
-        num_points = random.randint(50, 200)
-        for _ in range(num_points):
-            x, y, z = random.randint(0, grid_size-1), random.randint(0, grid_size-1), random.randint(0, grid_size-1)
-            voxels[x, y, z] = 1
-            
-            # small clusters
-            if random.random() > 0.5:
-                if x+1 < grid_size: voxels[x+1, y, z] = 1
-                if y+1 < grid_size: voxels[x, y+1, z] = 1
-                if z+1 < grid_size: voxels[x, y, z+1] = 1
+    elif shape_type == "staff":
+        # Handle (Stick)
+        handle_h = random.randint(15, 25)
+        handle_w = random.randint(1, 2)
+        voxels[5:5+handle_h, center-handle_w:center+handle_w, center-handle_w:center+handle_w] = 1
+        # Top (Crystal/Orb)
+        orb_r = random.randint(3, 5)
+        oy, ox, oz = np.ogrid[:grid_size, :grid_size, :grid_size]
+        orb_center_y = 5 + handle_h
+        dist = np.sqrt((ox - center)**2 + (oy - orb_center_y)**2 + (oz - center)**2)
+        voxels[dist <= orb_r] = 1
+
+    elif shape_type == "sword":
+        # Blade
+        blade_h = random.randint(15, 20)
+        blade_w = 2
+        voxels[10:10+blade_h, center-blade_w:center+blade_w, center-1:center+1] = 1
+        # Guard
+        voxels[10:12, center-5:center+5, center-2:center+2] = 1
+        # Handle
+        voxels[5:10, center-1:center+1, center-1:center+1] = 1
                 
     return voxels
 
@@ -71,7 +80,8 @@ def simple_render(voxels, grid_size=32, output_size=(256, 256)):
                     
                     # Add some "depth" color shading based on Z
                     shade = 100 + (z * 155 // grid_size)
-                    color = (0, shade, 0) # Greenish
+                    # Different colors for different parts of models could be added here
+                    color = (int(shade*0.5), shade, int(shade*0.8)) # Hytale-ish teal/green
                     
                     # Project
                     px = x * scale
