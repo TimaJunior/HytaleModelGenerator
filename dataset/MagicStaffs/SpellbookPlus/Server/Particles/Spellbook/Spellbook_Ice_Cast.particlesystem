@@ -1,0 +1,28 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Impact_Ice_Cloud",
+      "LifeSpan": {
+        "Min": 0.4,
+        "Max": 0.6
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "Impact_Ice_Fragments",
+      "LifeSpan": {
+        "Min": 0.3,
+        "Max": 0.5
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ]
+}

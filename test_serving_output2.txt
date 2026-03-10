@@ -1,0 +1,12 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.8, pytest-8.4.2, pluggy-1.6.0 -- C:\Program Files\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Tima\Documents\Projects\hytalemodelgenerator
+plugins: anyio-4.12.1, langsmith-0.6.6, asyncio-0.26.0, cov-7.0.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 2 items
+
+ml_engine/tests/test_serving.py::TestServingRegression::test_inference_pipeline_execution PASSED [ 50%]
+ml_engine/tests/test_serving.py::TestServingRegression::test_cli_json_contract PASSED [100%]
+
+============================== 2 passed in 9.67s ==============================

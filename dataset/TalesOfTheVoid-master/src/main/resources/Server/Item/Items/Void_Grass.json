@@ -1,0 +1,85 @@
+{
+  "TranslationProperties": {
+    "Name": "Void Rock"
+  },
+  "ItemLevel": 8,
+  "Icon": "Icons/ItemsGenerated/Void_Grass.png",
+  "Categories": [
+    "Blocks.Rocks"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Void_Stone",
+  "Recipe": {
+    "TimeSeconds": 0,
+    "Input": [
+      {
+        "ResourceTypeId": "Soils",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Farmingbench",
+        "Categories": [
+          "Decorative"
+        ]
+      }
+    ],
+    "OutputQuantity": 1
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Stone",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Soils",
+        "ItemId": "Soil_Dirt_Burnt"
+      }
+    },
+    "Textures": [
+      {
+        "Down": "BlockTextures/Rock_Void_Stone.png",
+        "Sides": "BlockTextures/Rock_Void_Stone.png",
+        "Up": "BlockTextures/Rock_Void_Stone.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#e7f0f3",
+    "BlockSoundSetId": "Grass",
+    "BiomeTintUp": 0,
+    "TransitionToGroups": [
+      "Stone",
+      "Dirt",
+      "Dirt_Dark",
+      "Sand",
+      "Sand_White",
+      "Gravel"
+    ],
+    "TransitionToTag": "Fluid=Water"
+  },
+  "Tags": {
+    "Type": [
+      "Rock"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "IconProperties": {
+    "Scale": 0.6,
+    "Rotation": [
+      20,
+      45,
+      22.5
+    ],
+    "Translation": [
+      2,
+      -13.5
+    ]
+  }
+}

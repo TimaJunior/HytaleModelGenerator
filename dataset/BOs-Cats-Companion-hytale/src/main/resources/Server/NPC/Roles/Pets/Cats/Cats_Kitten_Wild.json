@@ -1,0 +1,30 @@
+﻿{
+  "Type": "Variant",
+  "Reference": "Cats_Wild",
+  "Modify": {
+    "Appearance": {
+      "Compute": "Appearance"
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "Appearance": {
+      "Value": "Cats_Kitten",
+      "Description": "The kitten's model appearance"
+    },
+    "MaxHealth": {
+      "Value": 12,
+      "Description": "Health points for kittens"
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cats_Kitten_Wild.name",
+      "Description": "Translation key for kitten name display"
+    },
+    "Timid": {
+      "Value": true,
+      "Description": "Wild kittens are more timid and flee easier"
+    }
+  }
+}

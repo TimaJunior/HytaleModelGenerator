@@ -1,0 +1,38 @@
+{
+  "Parent": "Deco_Scroll",
+  "Quality": "Common",
+  "TranslationProperties": {
+    "Name": "spellbook-plus.items.Spell_Scroll_Blank.name",
+    "Description": "spellbook-plus.items.Spell_Scroll_Blank.description"
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Spirit_Essence",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": ["Spellbook_Scrolls"],
+        "Id": "SpellbookBench"
+      }
+    ],
+    "TimeSeconds": 2
+  }
+}

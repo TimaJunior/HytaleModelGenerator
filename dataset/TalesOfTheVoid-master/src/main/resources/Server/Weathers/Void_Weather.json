@@ -1,0 +1,234 @@
+{
+  "SkyTopColors": [
+    {
+      "Hour": 3,
+      "Color": "#0f0914ff"
+    },
+    {
+      "Hour": 16,
+      "Color": "#0b091fff"
+    }
+  ],
+  "SkyBottomColors": [
+    {
+      "Hour": 3,
+      "Color": "#210f30ff"
+    },
+    {
+      "Hour": 5,
+      "Color": "#25133fff"
+    },
+    {
+      "Hour": 7,
+      "Color": "#2f1a4dff"
+    },
+    {
+      "Hour": 17,
+      "Color": "#2c1d43"
+    },
+    {
+      "Hour": 19,
+      "Color": "#2c2546"
+    },
+    {
+      "Hour": 21,
+      "Color": "#252c46"
+    }
+  ],
+  "SkySunsetColors": [
+    {
+      "Hour": 3,
+      "Color": "#1a1331"
+    },
+    {
+      "Hour": 5,
+      "Color": "#1e1a3cff"
+    },
+    {
+      "Hour": 7,
+      "Color": "#2a2741ff"
+    }
+  ],
+  "FogColors": [
+    {
+      "Hour": 3,
+      "Color": "#210e2a"
+    },
+    {
+      "Hour": 20,
+      "Color": "#111736"
+    },
+    {
+      "Hour": 17,
+      "Color": "#2b172b"
+    },
+    {
+      "Hour": 23,
+      "Color": "#19152d"
+    }
+  ],
+  "FogDensities": [
+    {
+      "Hour": 0,
+      "Value": 0.85
+    }
+  ],
+  "FogHeightFalloffs": [
+    {
+      "Hour": 0,
+      "Value": 1.7
+    }
+  ],
+  "FogDistance": [
+    -128.0,
+    512.0
+  ],
+  "FogOptions": {
+    "FogHeightCameraFixed": 0.5,
+    "EffectiveViewDistanceMultiplier": 1.0
+  },
+  "SunColors": [
+    {
+      "Hour": 0,
+      "Color": "#030305"
+    },
+    {
+      "Hour": 3,
+      "Color": "#0d090c"
+    },
+    {
+      "Hour": 6,
+      "Color": "#130a11"
+    },
+    {
+      "Hour": 11,
+      "Color": "#1f101c"
+    },
+    {
+      "Hour": 17,
+      "Color": "#000000"
+    }
+  ],
+  "SunlightColors": [
+    {
+      "Hour": 5,
+      "Color": "#181057"
+    },
+    {
+      "Hour": 20,
+      "Color": "#1a1837"
+    }
+  ],
+  "SunScales": [
+    {
+      "Hour": 0,
+      "Value": 1
+    }
+  ],
+  "SunGlowColors": [
+    {
+      "Hour": 0,
+      "Color": "#240928ff"
+    },
+    {
+      "Hour": 6,
+      "Color": "#3a173cff"
+    },
+    {
+      "Hour": 11,
+      "Color": "#491f4dff"
+    },
+    {
+      "Hour": 17,
+      "Color": "#2e1a32ff"
+    }
+  ],
+  "MoonScales": [
+    {
+      "Hour": 0,
+      "Value": 3
+    }
+  ],
+  "MoonColors": [
+    {
+      "Hour": 3,
+      "Color": "#2c3059ff"
+    },
+    {
+      "Hour": 0,
+      "Color": "#1f284aff"
+    },
+    {
+      "Hour": 6,
+      "Color": "#1e255bff"
+    },
+    {
+      "Hour": 11,
+      "Color": "#26304eff"
+    },
+    {
+      "Hour": 17,
+      "Color": "#252d4eff"
+    }
+  ],
+  "MoonGlowColors": [
+    {
+      "Hour": 3,
+      "Color": "#1d233b"
+    },
+    {
+      "Hour": 6,
+      "Color": "#1e1c4cff"
+    },
+    {
+      "Hour": 11,
+      "Color": "#17132cff"
+    },
+    {
+      "Hour": 17,
+      "Color": "#161730ff"
+    }
+  ],
+  "Particle": {
+    "SystemId": "dust_sparkles",
+    "OvergroundOnly": false,
+    "Color": "#ff52b8"
+  },
+  "Stars": "Sky/Stars.png",
+  "ScreenEffectColors": [
+    {
+      "Hour": 21,
+      "Color": "#1d1c3bff"
+    },
+    {
+      "Hour": 4,
+      "Color": "#281c2dff"
+    },
+    {
+      "Hour": 14,
+      "Color": "#190a1fff"
+    }
+  ],
+  "Moons": [
+    {
+      "Texture": "Sky/Void.png",
+      "Day": 0
+    },
+    {
+      "Day": 1,
+      "Texture": "Sky/Void.png"
+    },
+    {
+      "Day": 2,
+      "Texture": "Sky/Void.png"
+    },
+    {
+      "Day": 3,
+      "Texture": "Sky/Void.png"
+    },
+    {
+      "Day": 4,
+      "Texture": "Sky/Void.png"
+    }
+  ]
+}

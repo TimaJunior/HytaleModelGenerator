@@ -1,0 +1,7 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.3,
+  "Effects": {
+    "ItemAnimationId": "Idle"
+  }
+}

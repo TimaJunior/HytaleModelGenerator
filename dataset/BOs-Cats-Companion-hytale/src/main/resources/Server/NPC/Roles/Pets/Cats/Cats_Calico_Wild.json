@@ -1,0 +1,15 @@
+{
+  "Type": "Variant",
+  "Reference": "Cats_Wild",
+  "Modify": {
+    "Appearance": "Cats_Calico",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cats_Calico_Wild.name"
+    }
+  }
+}

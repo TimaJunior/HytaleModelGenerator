@@ -1,0 +1,56 @@
+# Eclipse
+bin
+eclipse
+.classpath
+.metadata
+.project
+.settings
+*.launch
+
+# Idea
+out
+.idea
+*.ipr
+*.iws
+*.iml
+
+# Gradle
+build
+run
+runs
+.gradle
+*local.properties
+
+# NodeJs
+node_modules
+npm-debug.log
+.npmrc
+
+# VSCode
+.vscode/launch.json
+.vscode/settings.json
+
+# Ghost Reference Index
+.ghost-reference-index
+
+# Template placeholder files
+put_your_*_here
+
+# Other
+.DS_Store
+generated
+third_party
+*.bak
+*.clip
+*.log
+*.log.gz
+*.patch.txt
+*.stackdump
+
+# Hytale specific
+*.jar
+*.lpf
+*.bak
+!gradle/wrapper/gradle-wrapper.jar
+auth.json
+auth.enc

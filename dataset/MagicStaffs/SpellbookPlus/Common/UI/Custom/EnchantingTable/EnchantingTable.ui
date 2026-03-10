@@ -1,0 +1,291 @@
+$C = "../Common.ui";
+$Sounds = "../Sounds.ui";
+
+@TitleStyle = LabelStyle(
+  FontSize: 15,
+  VerticalAlignment: Center,
+  RenderUppercase: true,
+  TextColor: #b4c8c9,
+  FontName: "Secondary",
+  RenderBold: true,
+  LetterSpacing: 0.5
+);
+
+@XpLabelStyle = LabelStyle(
+  FontSize: 14,
+  TextColor: #96a9be,
+  VerticalAlignment: Center,
+  RenderUppercase: true
+);
+
+@XpValueStyle = LabelStyle(
+  FontSize: 20,
+  RenderBold: true,
+  VerticalAlignment: Center,
+  TextColor: #55ff55
+);
+
+@CardTierNameStyle = LabelStyle(
+  FontSize: 16,
+  RenderBold: true,
+  RenderUppercase: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center,
+  LetterSpacing: 0.5
+);
+
+@CardInfoStyle = LabelStyle(
+  FontSize: 12,
+  TextColor: #89899f,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+@CardCostStyle = LabelStyle(
+  FontSize: 15,
+  RenderBold: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center,
+  TextColor: #c9a227
+);
+
+@SectionTitleStyle = LabelStyle(
+  FontSize: 13,
+  RenderBold: true,
+  RenderUppercase: true,
+  TextColor: #cfd6e0,
+  FontName: "Secondary",
+  VerticalAlignment: Center,
+  LetterSpacing: 0
+);
+
+$C.@PageOverlay #EnchantingPanel {
+  LayoutMode: Middle;
+
+  $C.@DecoratedContainer {
+    @CloseButton = true;
+    Anchor: (Height: 560, Width: 590);
+
+    #Title {
+      Group {
+        LayoutMode: Center;
+
+        Label #TitleLabel {
+          Style: (...@TitleStyle, FontName: "Default", LetterSpacing: 0.5);
+          Text: "";
+        }
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+      Padding: (Full: 12);
+
+      Group #XpSection {
+        Anchor: (Height: 44);
+        Background: (TexturePath: "ContainerBackgroundSecondary.png", Border: 23);
+        LayoutMode: Left;
+        Padding: (Horizontal: 16);
+
+        Label #XpLabel {
+          Style: @XpLabelStyle;
+          Text: "";
+        }
+
+        Group { FlexWeight: 1; }
+
+        Label #XpValue {
+          Style: @XpValueStyle;
+          Text: "0";
+        }
+      }
+
+      Group { Anchor: (Height: 12); }
+
+      Group #RollSection {
+        LayoutMode: Left;
+        Anchor: (Height: 185);
+
+        Group #BasicCard {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a2530;
+          Padding: (Full: 10);
+
+          Label #BasicTierName {
+            Style: (...@CardTierNameStyle, TextColor: #55ff55);
+            Anchor: (Height: 28);
+            Text: "";
+          }
+
+          Group {
+            Anchor: (Height: 1);
+            Background: #252f3a;
+          }
+
+          Group { Anchor: (Height: 8); }
+
+          Label #BasicTiersInfo {
+            Style: @CardInfoStyle;
+            Anchor: (Height: 18);
+            Text: "";
+          }
+
+          Group { FlexWeight: 1; }
+
+          Label #BasicCostLabel {
+            Style: @CardCostStyle;
+            Anchor: (Height: 24);
+            Text: "";
+          }
+
+          Group { Anchor: (Height: 6); }
+
+          $C.@TextButton #BasicButton {
+            Anchor: (Height: 36);
+            Text: "";
+          }
+        }
+
+        Group { Anchor: (Width: 8); }
+
+        Group #AdvancedCard {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a2530;
+          Padding: (Full: 10);
+
+          Label #AdvancedTierName {
+            Style: (...@CardTierNameStyle, TextColor: #5599ff);
+            Anchor: (Height: 28);
+            Text: "";
+          }
+
+          Group {
+            Anchor: (Height: 1);
+            Background: #252f3a;
+          }
+
+          Group { Anchor: (Height: 8); }
+
+          Label #AdvancedTiersInfo {
+            Style: @CardInfoStyle;
+            Anchor: (Height: 18);
+            Text: "";
+          }
+
+          Group { FlexWeight: 1; }
+
+          Label #AdvancedCostLabel {
+            Style: @CardCostStyle;
+            Anchor: (Height: 24);
+            Text: "";
+          }
+
+          Group { Anchor: (Height: 6); }
+
+          $C.@TextButton #AdvancedButton {
+            Anchor: (Height: 36);
+            Text: "";
+          }
+        }
+
+        Group { Anchor: (Width: 8); }
+
+        Group #MasterCard {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Background: #1a2530;
+          Padding: (Full: 10);
+
+          Label #MasterTierName {
+            Style: (...@CardTierNameStyle, TextColor: #cc55ff);
+            Anchor: (Height: 28);
+            Text: "";
+          }
+
+          Group {
+            Anchor: (Height: 1);
+            Background: #252f3a;
+          }
+
+          Group { Anchor: (Height: 8); }
+
+          Label #MasterTiersInfo {
+            Style: @CardInfoStyle;
+            Anchor: (Height: 18);
+            Text: "";
+          }
+
+          Group { FlexWeight: 1; }
+
+          Label #MasterCostLabel {
+            Style: @CardCostStyle;
+            Anchor: (Height: 24);
+            Text: "";
+          }
+
+          Group { Anchor: (Height: 6); }
+
+          $C.@TextButton #MasterButton {
+            Anchor: (Height: 36);
+            Text: "";
+          }
+        }
+      }
+
+      Group { Anchor: (Height: 12); }
+
+      Group #LearnedSection {
+        FlexWeight: 1;
+        LayoutMode: Top;
+
+        Group #LearnedHeader {
+          LayoutMode: Left;
+          Anchor: (Height: 30);
+
+          Label #LearnedTitle {
+            Style: @SectionTitleStyle;
+            Anchor: (Height: 30, Horizontal: 4);
+            Text: "";
+          }
+
+          Group { FlexWeight: 1; }
+
+          Label #LearnedCount {
+            Style: (...@SectionTitleStyle, TextColor: #89899f);
+            Anchor: (Height: 30, Horizontal: 4);
+            Text: "";
+          }
+        }
+
+        Group {
+          Anchor: (Height: 1);
+          Background: #1b2533;
+        }
+
+        Group #LearnedListScroll {
+          FlexWeight: 1;
+          LayoutMode: TopScrolling;
+          ScrollbarStyle: $C.@DefaultScrollbarStyle;
+          Padding: (Top: 4);
+
+          Group #LearnedList {
+            LayoutMode: Top;
+          }
+        }
+
+        Group #EmptyMessage {
+          FlexWeight: 1;
+          LayoutMode: CenterMiddle;
+          Visible: false;
+
+          Label #EmptyLabel {
+            Style: (FontSize: 13, TextColor: #89899f(0.6), HorizontalAlignment: Center, VerticalAlignment: Center);
+            Text: "";
+          }
+        }
+      }
+    }
+  }
+}

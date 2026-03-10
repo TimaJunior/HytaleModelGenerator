@@ -1,0 +1,107 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.cats.cat_bed.name",
+    "Description": "server.items.cats.cat_bed.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Cat_Bed.png",
+  "Categories": [
+    "Furniture.Beds"
+  ],
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Planks",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Cloth_Block_Wool_White",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Furniture_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Furniture_Beds"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "CustomModel": "Blocks/Cats/Cat_Bed.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Weight": 1,
+        "Texture": "Blocks/Cats/Cat_Bed_Texture.png"
+      }
+    ],
+    "HitboxType": "Cat_Bed",
+    "VariantRotation": "NESW",
+    "Flags": {
+      "IsUsable": true
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods"
+      }
+    },
+    "BlockParticleSetId": "Wood",
+    "MaxSupportDistance": 8,
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "ParticleColor": "#8B4513",
+    "BlockSoundSetId": "Wood",
+    "BlockEntity": {}
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.65,
+    "Rotation": [
+      22.5,
+      45.0,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -15.0
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Furniture",
+      "Pet_Accessory"
+    ],
+    "Family": [
+      "Cats"
+    ]
+  },
+  "Scale": 0.6,
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "Quality": "Common",
+  "MaxStack": 1,
+  "ResourceTypes": [
+    {
+      "Id": "Fuel"
+    },
+    {
+      "Id": "Charcoal"
+    }
+  ]
+}

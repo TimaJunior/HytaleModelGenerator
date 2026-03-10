@@ -1,0 +1,22 @@
+{
+  "Parent": "Fireball",
+  "Damage": 0,
+  "MuzzleVelocity": 25,
+  "Gravity": 2,
+  "HitParticles": {
+    "SystemId": "Impact_Fire"
+  },
+  "MissParticles": {
+    "SystemId": "Explosion_Medium"
+  },
+  "DeathParticles": {
+    "SystemId": "Explosion_Medium"
+  },
+  "DeathEffectsOnHit": true,
+  "HitSoundEventId": "SFX_Fireball_Bounce",
+  "DeathSoundEventId": "SFX_Fireball_Death",
+  "ExplosionConfig": {
+    "DamageEntities": true,
+    "DamageBlocks": false
+  }
+}

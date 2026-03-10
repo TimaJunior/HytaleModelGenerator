@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "ZAUBERBUCH PLUS",
+    "available": "VERFÜGBARE ZAUBER",
+    "type": "TYP:",
+    "mana": "MANA:",
+    "cooldown": "ABKLINGZEIT:",
+    "effect": "EFFEKT:",
+    "range": "REICHWEITE:",
+    "select": "ZAUBER AUSWÄHLEN",
+    "write_scroll": "AUF SCHRIFTROLLE SCHREIBEN",
+    "close": "SCHLIESSEN",
+    "damage_value": "{value} SCHADEN",
+    "heal_value": "{value} Heilung",
+    "utility_value": "Hilfszauber",
+    "aoe_value": "{value}m Fläche",
+    "range_value": "{value}m Reichweite",
+    "projectile_value": "Projektil",
+    "self_value": "Selbst",
+    "scroll_prefix": "Schriftrolle: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Feuerball",
+      "description": "Schleudert einen lodernden Feuerball, der beim Aufprall explodiert."
+    },
+    "frost_bolt": {
+      "name": "Frostblitz",
+      "description": "Feuert einen eisigen Blitz ab, der getroffene Gegner verlangsamt."
+    },
+    "arcane_bolt": {
+      "name": "Arkaner Blitz",
+      "description": "Verschießt ein schnelles arkanes Projektil."
+    },
+    "healing_light": {
+      "name": "Heilendes Licht",
+      "description": "Stellt die Gesundheit des Zaubernden wieder her."
+    },
+    "lightning": {
+      "name": "Blitzschlag",
+      "description": "Trifft das Ziel mit einem Blitzschlag."
+    },
+    "force_push": {
+      "name": "Kraftstoß",
+      "description": "Stößt nahegelegene Gegner mit magischer Kraft zurück."
+    },
+    "mana_shield": {
+      "name": "Manaschild",
+      "description": "Erzeugt eine schützende Barriere, die Schaden absorbiert."
+    },
+    "blink": {
+      "name": "Blinzeln",
+      "description": "Teleportiert eine kurze Strecke in die Blickrichtung."
+    }
+  },
+  "notification": {
+    "spell_learned": "Zauber erlernt!",
+    "spell_transferred": "Zauber übertragen!",
+    "spell_transferred_desc": "{spell} auf Schriftrolle geschrieben",
+    "not_enough_mana": "Nicht genug Mana!",
+    "not_enough_mana_desc": "Benötigt {required} (aktuell {current})",
+    "no_spell": "Kein Zauber!",
+    "no_spell_desc": "Platz {slot} ist leer",
+    "no_blank_scroll": "Keine leere Schriftrolle!",
+    "no_blank_scroll_desc": "Eine leere Schriftrolle wird benötigt",
+    "hotbar_full": "Schnellleiste voll!",
+    "hotbar_full_desc": "Keine freien Zauberplätze verfügbar",
+    "already_known": "Bereits bekannt!",
+    "already_known_desc": "Du kennst bereits {spell}",
+    "spell_not_learned": "Zauber nicht erlernt!",
+    "spell_not_learned_desc": "Du hast {spell} nicht erlernt",
+    "invalid_scroll": "Ungültige Schriftrolle!",
+    "invalid_scroll_desc": "Diese Schriftrolle enthält einen unbekannten Zauber",
+    "enchantment_learned": "Verzauberung erlernt!",
+    "not_enough_xp": "Nicht genug EP!",
+    "not_enough_xp_desc": "Benötigt {required} (aktuell {current})",
+    "passive_learned": "Passivfähigkeit erlernt!",
+    "passive_activated": "Passivfähigkeit aktiviert!",
+    "passive_deactivated": "Passivfähigkeit deaktiviert",
+    "max_passives": "Maximum an Passivfähigkeiten erreicht!",
+    "max_passives_desc": "Du kannst nur {max} aktive Passivfähigkeiten haben",
+    "xp_gained": "+{gained} EP",
+    "xp_total": "Gesamt: {total} EP"
+  },
+  "enchanting": {
+    "title": "VERZAUBERUNGSTISCH",
+    "xp": "VERZAUBERUNGS-EP",
+    "basic_name": "EINFACHE ROLLE",
+    "advanced_name": "FORTGESCHRITTENE ROLLE",
+    "master_name": "MEISTERROLLE",
+    "basic_tiers": "Gewöhnlich",
+    "advanced_tiers": "Gewöhnlich + Selten",
+    "master_tiers": "Alle Stufen",
+    "cost_format": "{cost} EP",
+    "roll": "WÜRFELN",
+    "learned": "ERLERNTE VERZAUBERUNGEN",
+    "none_learned": "Noch keine Verzauberungen erlernt",
+    "no_available": "Keine Verzauberungen!",
+    "no_available_desc": "Alle Verzauberungen bereits erlernt",
+    "applied": "Verzauberung angewandt!",
+    "removed": "Verzauberung entfernt!",
+    "lost_forever": "(für immer verloren)",
+    "apply_failed": "Kann nicht angewandt werden!",
+    "apply_failed_desc": "Der Stab hat bereits eine Verzauberung oder du besitzt diese Verzauberung nicht"
+  },
+  "passive": {
+    "title": "PASSIVFÄHIGKEITEN",
+    "xp": "PASSIV-EP",
+    "basic_name": "EINFACHE ROLLE",
+    "advanced_name": "FORTGESCHRITTENE ROLLE",
+    "master_name": "MEISTERROLLE",
+    "basic_tiers": "Gewöhnlich",
+    "advanced_tiers": "Gewöhnlich + Selten",
+    "master_tiers": "Alle Stufen",
+    "cost_format": "{cost} EP",
+    "roll": "WÜRFELN",
+    "learned": "ERLERNTE PASSIVFÄHIGKEITEN",
+    "active": "AKTIVE PASSIVFÄHIGKEITEN",
+    "none_learned": "Noch keine Passivfähigkeiten erlernt",
+    "none_active": "Keine aktiven Passivfähigkeiten",
+    "activate": "AKTIVIEREN",
+    "deactivate": "DEAKTIVIEREN",
+    "no_available": "Keine Passivfähigkeiten!",
+    "no_available_desc": "Alle Passivfähigkeiten bereits erlernt"
+  },
+  "panel_tabs": {
+    "spells": "ZAUBER",
+    "enchantments": "VERZAUBERUNGEN",
+    "current_enchantment": "AKTUELL:",
+    "apply": "ANWENDEN",
+    "remove": "ENTFERNEN",
+    "none": "Keine"
+  },
+  "lore": {
+    "types": {
+      "attack": "Angriff",
+      "support": "Unterstützung",
+      "projectile": "Projektil",
+      "utility": "Hilfszauber",
+      "defense": "Verteidigung",
+      "buff": "Stärkung",
+      "damage": "Schaden",
+      "heal": "Heilung",
+      "debuff": "Schwächung"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Gewöhnlicher Zauberstab",
+      "description": "Ein einfacher magischer Stab zum Zaubern."
+    },
+    "Staff_Uncommon": {
+      "name": "Ungewöhnlicher Zauberstab",
+      "description": "Ein verbesserter magischer Stab.\n\n<color is=\"#55ff55\">+10% Schaden/Heilung</color>\n<color is=\"#55ff55\">-5% Manakosten</color>"
+    },
+    "Staff_Rare": {
+      "name": "Seltener Zauberstab",
+      "description": "Ein fein gefertigter magischer Stab.\n\n<color is=\"#5555ff\">+20% Schaden/Heilung</color>\n<color is=\"#5555ff\">-10% Manakosten</color>\n<color is=\"#5555ff\">-10% Abklingzeit</color>"
+    },
+    "Staff_Epic": {
+      "name": "Epischer Zauberstab",
+      "description": "Ein mächtiger magischer Stab.\n\n<color is=\"#aa00aa\">+35% Schaden/Heilung</color>\n<color is=\"#aa00aa\">-15% Manakosten</color>\n<color is=\"#aa00aa\">-20% Abklingzeit</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Legendärer Zauberstab",
+      "description": "Ein legendärer magischer Stab von unermesslicher Kraft.\n\n<color is=\"#ffaa00\">+50% Schaden/Heilung</color>\n<color is=\"#ffaa00\">-25% Manakosten</color>\n<color is=\"#ffaa00\">-30% Abklingzeit</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Arkane Werkbank",
+      "description": "Eine mystische Fertigungsstation zum Herstellen und Verbessern magischer Ausrüstung."
+    },
+    "Arcane_Dust": {
+      "name": "Arkaner Staub",
+      "description": "Feiner magischer Staub von Leerenwesen. Wird für einfache Herstellung verwendet."
+    },
+    "Arcane_Shard": {
+      "name": "Arkane Scherbe",
+      "description": "Ein kristallisiertes Fragment arkaner Energie. Wird für mittlere Herstellung verwendet."
+    },
+    "Arcane_Crystal": {
+      "name": "Arkaner Kristall",
+      "description": "Ein vollständig geformter Kristall reiner arkaner Kraft. Wird für fortgeschrittene Herstellung verwendet."
+    },
+    "Spirit_Essence": {
+      "name": "Geisteressenz",
+      "description": "Konzentrierte elementare Energie von Geistern. Wird für Verzauberungen und Schriftrollen verwendet."
+    },
+    "Ember_Heart": {
+      "name": "Glutherz",
+      "description": "Ein glühender Kern eines Flammengolem. Wird für epische Verbesserungen benötigt."
+    },
+    "Golem_Core": {
+      "name": "Golemkern",
+      "description": "Die Energiequelle eines Kristallgolem. Wird für legendäre Verbesserungen benötigt."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Leere Schriftrolle",
+      "description": "Eine leere magische Schriftrolle. Kann mit einem Zauber beschrieben werden."
+    }
+  },
+  "bench_categories": {
+    "staves": "Zauberstäbe",
+    "scrolls": "Schriftrollen"
+  },
+  "command": {
+    "staff": {
+      "given": "{quality} Stab erhalten"
+    },
+    "scroll": {
+      "given": "Schriftrolle erhalten: {spell}",
+      "notfound": "Zauber nicht gefunden: {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} erhalten",
+      "not_found": "Material nicht gefunden: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus neu geladen"
+    },
+    "enchantment": {
+      "notfound": "Verzauberung nicht gefunden: {id}",
+      "applied": "Verzauberung angewandt: {name}",
+      "apply_failed": "Verzauberung konnte nicht angewandt werden (keine Plätze frei oder bereits angewandt)",
+      "no_enchantments": "Keine Verzauberungen zum Entfernen",
+      "removed": "Verzauberung entfernt: {id}",
+      "not_on_player": "Verzauberung beim Spieler nicht gefunden",
+      "no_active": "Keine aktiven Verzauberungen",
+      "active_header": "Aktive Verzauberungen ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "Keine Verzauberungen verfügbar",
+      "available_header": "Verfügbare Verzauberungen:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Verwendung: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Passivfähigkeit nicht gefunden: {id}",
+      "activated": "Passivfähigkeit aktiviert: {name}",
+      "activate_failed": "Passivfähigkeit konnte nicht aktiviert werden (bereits aktiv)",
+      "no_passives": "Keine Passivfähigkeiten zum Deaktivieren",
+      "deactivated": "Passivfähigkeit deaktiviert: {id}",
+      "not_on_player": "Passivfähigkeit beim Spieler nicht gefunden",
+      "no_active": "Keine aktiven Passivfähigkeiten",
+      "active_header": "Aktive Passivfähigkeiten:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "Keine Passivfähigkeiten verfügbar",
+      "available_header": "Verfügbare Passivfähigkeiten:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Alle Passivfähigkeiten aktiviert",
+      "usage": "Verwendung: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Zauberbefehle",
+      "notfound": "Zauber nicht gefunden: {id}",
+      "list": {
+        "desc": "Alle registrierten Zauber auflisten",
+        "header": "=== Registrierte Zauber ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Zauberdetails anzeigen",
+        "id": {
+          "desc": "Zauber-ID zum Inspizieren"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Kategorie: {category}",
+        "cooldown": "Abklingzeit: {cooldown}s",
+        "manaCost": "Manakosten: {manaCost}",
+        "instability": "Instabilität: {instability}",
+        "nodes": "Knoten: {nodes}",
+        "graphHeader": "--- Graph ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Alle Übersetzungen für einen Zauber auflisten",
+          "spellId": {
+            "desc": "Ziel-Zauber-ID"
+          },
+          "header": "=== Übersetzungen für {spell} ===",
+          "empty": "Keine Übersetzungen gefunden",
+          "locale": "  [{locale}]",
+          "name": "    Name: {name}",
+          "description": "    Beschr.: {description}"
+        }
+      }
+    }
+  }
+}

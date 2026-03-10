@@ -1,0 +1,22 @@
+{
+  "Group": "Hexora",
+  "Name": "Spellbook Plus",
+  "Version": "2.0.1",
+  "Description": "Node-based spell programming system for Hytale",
+  "Authors": [
+    {
+      "Name": "Hexora"
+    }
+  ],
+  "ServerVersion": "2026.02.17-255364b8e",
+  "Dependencies": {
+    "Hytale:I18nModule": "*"
+  },
+  "OptionalDependencies": {
+    "Buuz135:MultipleHUD": "*",
+    "com.hypersonicsharkz:Hytalor": "*"
+  },
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "Main": "io.hexora.spellbook.SpellbookPlugin"
+}

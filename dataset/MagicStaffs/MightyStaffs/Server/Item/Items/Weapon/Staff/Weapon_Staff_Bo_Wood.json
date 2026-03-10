@@ -1,0 +1,115 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Magytale_Weapon_Staff_Bo_Wood.name"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Common",
+  "ItemLevel": 10,
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Stick",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Survival"
+        ]
+      }
+    ]
+  },
+  "Model": "Items/Weapons/Staff/Bo_Wood.blockymodel",
+  "Texture": "Items/Weapons/Staff/Bo_Wood_Texture.png",
+  "PlayerAnimationsId": "Staff",
+  "Interactions": {
+    "Primary": "Wooden_Staff_Primary",
+    "Secondary": "Root_Weapon_Battleaxe_Secondary_Guard"
+  },
+  "InteractionVars": {
+    "Wooden_Staff_Cast_Summon_Charged": {
+      "Interactions": [
+        {
+          "Parent": "Wooden_Staff_Cast_Summon_Charged",
+          "Costs": {
+            "Mana": 2
+          }
+        }
+      ]
+    },
+    "Wooden_Staff_Cast_Summon_Cost": {
+      "Interactions": [
+        {
+          "Parent": "Wooden_Staff_Cast_Cost",
+          "StatModifiers": {
+            "Mana": -2
+          }
+        }
+      ]
+    },
+    "Wooden_Staff_Cast_Summon_Launch": "Wooden_Staff_Cast_Launch",
+    "Staff_Cast_Summon_Effect": "Staff_Cast_Effect",
+    "Staff_Cast_Summon_Fail": "Staff_Cast_Fail",
+    "Spear_Swing_Left_Damage": "Spear_Swing_Left_Damage",
+    "Spear_Swing_Right_Damage": "Spear_Swing_Right_Damage",
+    "Spear_Swing_Left_Effect": "Spear_Swing_Left_Effect",
+    "Spear_Swing_Right_Effect": "Spear_Swing_Right_Effect"
+  },
+  "IconProperties": {
+    "Scale": 0.28,
+    "Translation": [
+      -54,
+      -54
+    ],
+    "Rotation": [
+      45,
+      90,
+      0
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Weapon_Staff_Bo_Wood.png",
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Staff"
+    ]
+  },
+  "Weapon": {
+    "StatModifiers": {
+      "Mana": [
+        {
+          "CalculationType": "Additive",
+          "Amount": 10
+        }
+      ]
+    },
+    "RenderDualWielded": false
+  },
+  "ItemSoundSetId": "ISS_Weapons_Wood",
+  "ItemAppearanceConditions": {
+    "EnchantmentGlow_Primary": [
+      {
+        "Condition": [
+          1,
+          1
+        ],
+        "ConditionValueType": "Absolute",
+        "ModelVFXId": "Enchantment_Glow"
+      }
+    ]
+  },
+  "MaxDurability": 80
+}

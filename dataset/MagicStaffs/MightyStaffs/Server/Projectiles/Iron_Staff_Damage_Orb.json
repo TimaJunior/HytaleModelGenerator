@@ -1,0 +1,39 @@
+{
+  "Appearance": "Ice_Bolt",
+  "PitchAdjustShot": true,
+  "SticksVertically": true,
+  "MuzzleVelocity": 50,
+  "TerminalVelocity": 50,
+  "Gravity": 5,
+  "Damage": 12,
+  "DeathEffectsOnHit": true,
+  "TimeToLive": 5,
+  "DeadTimeMiss": 0,
+  "ImpactSlowdown": 0,
+  "DepthShot": -0.5,
+  "DeathParticles": {
+    "SystemId": "Rings_Rings_Ice"
+  },
+  "HitParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "HitSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
+  "MissSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
+  "Height": 0,
+  "VerticalCenterShot": 0.5,
+  "HorizontalCenterShot": 0.5,
+  "ExplosionConfig": {
+    "Knockback": {
+      "Type": "Force",
+      "Force": 1,
+      "Duration": 2
+    },
+    "EntityDamage": 0,
+    "EntityDamageFalloff": 0,
+    "DamageBlocks": false,
+    "DamageEntities": true
+  },
+  "MissParticles": {
+    "SystemId": "Impact_Ice"
+  }
+}

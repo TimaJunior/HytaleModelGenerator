@@ -1,0 +1,28 @@
+{
+  "Type": "SpellCooldownCheckInteraction",
+  "Next": {
+    "Type": "Charging",
+    "Effects": {
+      "ItemAnimationId": "CastSummonCharging"
+    },
+    "DisplayProgress": true,
+    "HorizontalSpeedMultiplier": 0.5,
+    "Next": {
+      "0": {
+        "Type": "Simple",
+        "RunTime": 0.1,
+        "Effects": {
+          "ItemAnimationId": "Idle"
+        }
+      },
+      "0.5": "Spellbook_Staff_Cast_Charged"
+    }
+  },
+  "Failed": {
+    "Type": "Simple",
+    "RunTime": 0.1,
+    "Effects": {
+      "ItemAnimationId": "Idle"
+    }
+  }
+}

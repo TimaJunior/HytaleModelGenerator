@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "GRIMOIRE PLUS",
+    "available": "SORTS DISPONIBLES",
+    "type": "TYPE :",
+    "mana": "MANA :",
+    "cooldown": "RECHARGE :",
+    "effect": "EFFET :",
+    "range": "PORTÉE :",
+    "select": "CHOISIR UN SORT",
+    "write_scroll": "INSCRIRE SUR PARCHEMIN",
+    "close": "FERMER",
+    "damage_value": "{value} DGT",
+    "heal_value": "{value} Soin",
+    "utility_value": "Utilitaire",
+    "aoe_value": "{value}m ZONE",
+    "range_value": "{value}m Portée",
+    "projectile_value": "Projectile",
+    "self_value": "Soi-même",
+    "scroll_prefix": "Parchemin : "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Boule de feu",
+      "description": "Lance une boule de feu ardente qui explose à l'impact."
+    },
+    "frost_bolt": {
+      "name": "Trait de givre",
+      "description": "Tire un trait glacé qui ralentit les ennemis touchés."
+    },
+    "arcane_bolt": {
+      "name": "Trait arcanique",
+      "description": "Tire un projectile arcanique rapide."
+    },
+    "healing_light": {
+      "name": "Lumière curative",
+      "description": "Restaure les points de vie du lanceur."
+    },
+    "lightning": {
+      "name": "Foudre",
+      "description": "Frappe la cible avec un éclair."
+    },
+    "force_push": {
+      "name": "Poussée de force",
+      "description": "Repousse les ennemis proches avec une force magique."
+    },
+    "mana_shield": {
+      "name": "Bouclier de mana",
+      "description": "Crée une barrière protectrice qui absorbe les dégâts."
+    },
+    "blink": {
+      "name": "Clignotement",
+      "description": "Se téléporte sur une courte distance dans la direction regardée."
+    }
+  },
+  "notification": {
+    "spell_learned": "Sort appris !",
+    "spell_transferred": "Sort transféré !",
+    "spell_transferred_desc": "{spell} inscrit sur le parchemin",
+    "not_enough_mana": "Mana insuffisant !",
+    "not_enough_mana_desc": "Requis : {required} (actuel : {current})",
+    "no_spell": "Aucun sort !",
+    "no_spell_desc": "L'emplacement {slot} est vide",
+    "no_blank_scroll": "Aucun parchemin vierge !",
+    "no_blank_scroll_desc": "Un parchemin vierge est nécessaire pour écrire",
+    "hotbar_full": "Barre de sorts pleine !",
+    "hotbar_full_desc": "Aucun emplacement de sort disponible",
+    "already_known": "Déjà connu !",
+    "already_known_desc": "Vous connaissez déjà {spell}",
+    "spell_not_learned": "Sort non appris !",
+    "spell_not_learned_desc": "Vous n'avez pas appris {spell}",
+    "invalid_scroll": "Parchemin invalide !",
+    "invalid_scroll_desc": "Ce parchemin contient un sort inconnu",
+    "enchantment_learned": "Enchantement appris !",
+    "not_enough_xp": "XP insuffisant !",
+    "not_enough_xp_desc": "Requis : {required} (actuel : {current})",
+    "passive_learned": "Passif appris !",
+    "passive_activated": "Passif activé !",
+    "passive_deactivated": "Passif désactivé",
+    "max_passives": "Passifs maximum atteints !",
+    "max_passives_desc": "Vous ne pouvez avoir que {max} passifs actifs",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "Total : {total} XP"
+  },
+  "enchanting": {
+    "title": "TABLE D'ENCHANTEMENT",
+    "xp": "XP D'ENCHANTEMENT",
+    "basic_name": "LANCER BASIQUE",
+    "advanced_name": "LANCER AVANCÉ",
+    "master_name": "LANCER MAÎTRE",
+    "basic_tiers": "Commun",
+    "advanced_tiers": "Commun + Rare",
+    "master_tiers": "Tous les niveaux",
+    "cost_format": "{cost} XP",
+    "roll": "LANCER",
+    "learned": "ENCHANTEMENTS APPRIS",
+    "none_learned": "Aucun enchantement appris pour le moment",
+    "no_available": "Aucun enchantement !",
+    "no_available_desc": "Tous les enchantements sont déjà appris",
+    "applied": "Enchantement appliqué !",
+    "removed": "Enchantement retiré !",
+    "lost_forever": "(perdu à jamais)",
+    "apply_failed": "Application impossible !",
+    "apply_failed_desc": "Le bâton possède déjà un enchantement ou vous ne possédez pas cet enchantement"
+  },
+  "passive": {
+    "title": "PASSIFS",
+    "xp": "XP DE PASSIFS",
+    "basic_name": "LANCER BASIQUE",
+    "advanced_name": "LANCER AVANCÉ",
+    "master_name": "LANCER MAÎTRE",
+    "basic_tiers": "Commun",
+    "advanced_tiers": "Commun + Rare",
+    "master_tiers": "Tous les niveaux",
+    "cost_format": "{cost} XP",
+    "roll": "LANCER",
+    "learned": "PASSIFS APPRIS",
+    "active": "PASSIFS ACTIFS",
+    "none_learned": "Aucun passif appris pour le moment",
+    "none_active": "Aucun passif actif",
+    "activate": "ACTIVER",
+    "deactivate": "DÉSACTIVER",
+    "no_available": "Aucun passif !",
+    "no_available_desc": "Tous les passifs sont déjà appris"
+  },
+  "panel_tabs": {
+    "spells": "SORTS",
+    "enchantments": "ENCHANTEMENTS",
+    "current_enchantment": "ACTUEL :",
+    "apply": "APPLIQUER",
+    "remove": "RETIRER",
+    "none": "Aucun"
+  },
+  "lore": {
+    "types": {
+      "attack": "Attaque",
+      "support": "Soutien",
+      "projectile": "Projectile",
+      "utility": "Utilitaire",
+      "defense": "Défense",
+      "buff": "Amélioration",
+      "damage": "Dégâts",
+      "heal": "Soin",
+      "debuff": "Affaiblissement"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Bâton de sort commun",
+      "description": "Un bâton magique basique pour lancer des sorts."
+    },
+    "Staff_Uncommon": {
+      "name": "Bâton de sort peu commun",
+      "description": "Un bâton magique amélioré.\n\n<color is=\"#55ff55\">+10% Dégâts/Soins</color>\n<color is=\"#55ff55\">-5% Coût en mana</color>"
+    },
+    "Staff_Rare": {
+      "name": "Bâton de sort rare",
+      "description": "Un bâton magique finement ouvragé.\n\n<color is=\"#5555ff\">+20% Dégâts/Soins</color>\n<color is=\"#5555ff\">-10% Coût en mana</color>\n<color is=\"#5555ff\">-10% Recharge</color>"
+    },
+    "Staff_Epic": {
+      "name": "Bâton de sort épique",
+      "description": "Un bâton magique puissant.\n\n<color is=\"#aa00aa\">+35% Dégâts/Soins</color>\n<color is=\"#aa00aa\">-15% Coût en mana</color>\n<color is=\"#aa00aa\">-20% Recharge</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Bâton de sort légendaire",
+      "description": "Un bâton magique légendaire d'une puissance immense.\n\n<color is=\"#ffaa00\">+50% Dégâts/Soins</color>\n<color is=\"#ffaa00\">-25% Coût en mana</color>\n<color is=\"#ffaa00\">-30% Recharge</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Établi arcanique",
+      "description": "Un atelier de fabrication mystique pour créer et améliorer l'équipement magique."
+    },
+    "Arcane_Dust": {
+      "name": "Poussière arcanique",
+      "description": "Fine poussière magique issue de créatures du vide. Utilisée pour l'artisanat basique."
+    },
+    "Arcane_Shard": {
+      "name": "Éclat arcanique",
+      "description": "Un fragment cristallisé d'énergie arcanique. Utilisé pour l'artisanat intermédiaire."
+    },
+    "Arcane_Crystal": {
+      "name": "Cristal arcanique",
+      "description": "Un cristal achevé de pure puissance arcanique. Utilisé pour l'artisanat avancé."
+    },
+    "Spirit_Essence": {
+      "name": "Essence spirituelle",
+      "description": "Énergie élémentaire concentrée issue d'esprits. Utilisée pour les enchantements et les parchemins."
+    },
+    "Ember_Heart": {
+      "name": "Cœur de braise",
+      "description": "Un noyau incandescent provenant d'un golem de flammes. Requis pour les améliorations épiques."
+    },
+    "Golem_Core": {
+      "name": "Noyau de golem",
+      "description": "La source d'énergie d'un golem de cristal. Requis pour les améliorations légendaires."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Parchemin vierge",
+      "description": "Un parchemin magique vide. Peut être inscrit avec un sort."
+    }
+  },
+  "bench_categories": {
+    "staves": "Bâtons",
+    "scrolls": "Parchemins"
+  },
+  "command": {
+    "staff": {
+      "given": "Bâton {quality} accordé"
+    },
+    "scroll": {
+      "given": "Parchemin accordé : {spell}",
+      "notfound": "Sort introuvable : {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} accordé(s)",
+      "not_found": "Matériau introuvable : {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus rechargé"
+    },
+    "enchantment": {
+      "notfound": "Enchantement introuvable : {id}",
+      "applied": "Enchantement appliqué : {name}",
+      "apply_failed": "Échec de l'application de l'enchantement (aucun emplacement ou déjà appliqué)",
+      "no_enchantments": "Aucun enchantement à retirer",
+      "removed": "Enchantement retiré : {id}",
+      "not_on_player": "Enchantement introuvable sur le joueur",
+      "no_active": "Aucun enchantement actif",
+      "active_header": "Enchantements actifs ({count}/{max}) :",
+      "active_entry": "  - {name}",
+      "no_available": "Aucun enchantement disponible",
+      "available_header": "Enchantements disponibles :",
+      "available_entry": "  - {id} ({name}) : {desc}",
+      "usage": "Utilisation : /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Passif introuvable : {id}",
+      "activated": "Passif activé : {name}",
+      "activate_failed": "Échec de l'activation du passif (déjà actif)",
+      "no_passives": "Aucun passif à désactiver",
+      "deactivated": "Passif désactivé : {id}",
+      "not_on_player": "Passif introuvable sur le joueur",
+      "no_active": "Aucun passif actif",
+      "active_header": "Passifs actifs :",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "Aucun passif disponible",
+      "available_header": "Passifs disponibles :",
+      "available_entry": "  - {id} ({name}) : {desc}",
+      "activated_all": "Tous les passifs activés",
+      "usage": "Utilisation : /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Commandes de sorts",
+      "notfound": "Sort introuvable : {id}",
+      "list": {
+        "desc": "Lister tous les sorts enregistrés",
+        "header": "=== Sorts enregistrés ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Afficher les détails d'un sort",
+        "id": {
+          "desc": "Identifiant du sort à inspecter"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID : {id}",
+        "category": "Catégorie : {category}",
+        "cooldown": "Recharge : {cooldown}s",
+        "manaCost": "Coût en mana : {manaCost}",
+        "instability": "Instabilité : {instability}",
+        "nodes": "Nœuds : {nodes}",
+        "graphHeader": "--- Graphe ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Lister toutes les traductions d'un sort",
+          "spellId": {
+            "desc": "Identifiant du sort cible"
+          },
+          "header": "=== Traductions de {spell} ===",
+          "empty": "Aucune traduction trouvée",
+          "locale": "  [{locale}]",
+          "name": "    Nom : {name}",
+          "description": "    Desc : {description}"
+        }
+      }
+    }
+  }
+}

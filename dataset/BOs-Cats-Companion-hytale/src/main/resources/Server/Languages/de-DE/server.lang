@@ -1,0 +1,54 @@
+npcRoles.Cats_Black_Tamed.name=Schwarze Katze
+npcRoles.Cats_Black_Wild.name=Wilde Schwarze Katze
+npcRoles.Cats_Calico_Tamed.name=Calico Katze
+npcRoles.Cats_Calico_Wild.name=Wilde Calico Katze
+npcRoles.Cats_GrayTabby_Tamed.name=Graue Tabby Katze
+npcRoles.Cats_GrayTabby_Wild.name=Wilde Graue Tabby Katze
+npcRoles.Cats_Kitten_Calico_Tamed.name=Calico Kätzchen
+npcRoles.Cats_Kitten_Calico_Wild.name=Wildes Calico Kätzchen
+npcRoles.Cats_Kitten_Tamed.name=Kätzchen
+npcRoles.Cats_Kitten_Wild.name=Wildes Kätzchen
+npcRoles.Cats_LonghairedRussianBlue_Tamed.name=Langhaar Russisch Blau Katze
+npcRoles.Cats_LonghairedRussianBlue_Wild.name=Wilde Langhaar Russisch Blau Katze
+npcRoles.Cats_OrangeTabby_Tamed.name=Orange Tabby Katze
+npcRoles.Cats_OrangeTabby_Wild.name=Wilde Orange Tabby Katze
+npcRoles.Cats_Siamese_Tamed.name=Siamkatze
+npcRoles.Cats_Siamese_Wild.name=Wilde Siamkatze
+npcRoles.Cats_Tamed.name=Katze
+npcRoles.Cats_Tuxedo_Tamed.name=Smoking Katze
+npcRoles.Cats_Tuxedo_Wild.name=Wilde Smoking Katze
+npcRoles.Cats_Wild.name=Wilde Katze
+
+items.cats.egg_spawner_black.name=Schwarze Katze Spawner Ei
+items.cats.egg_spawner_browntabby.name=Braune Tabby Katze Spawner Ei
+items.cats.egg_spawner_calico.name=Calico Katze Spawner Ei
+items.cats.egg_spawner_kitten_calico.name=Calico Kätzchen Spawner Ei
+items.cats.egg_spawner_longhairedrussianblue.name=Langhaar Russisch Blau Katze Spawner Ei
+items.cats.egg_spawner_gray.name=Graue Katze Spawner Ei
+items.cats.egg_spawner_graytabby.name=Graue Tabby Katze Spawner Ei
+items.cats.egg_spawner_ocelot.name=Ozelot Katze Spawner Ei
+items.cats.egg_spawner_orangetabby.name=Orange Tabby Katze Spawner Ei
+items.cats.egg_spawner_siamese.name=Siamkatze Spawner Ei
+items.cats.egg_spawner_tortie.name=Schildpatt Katze Spawner Ei
+items.cats.egg_spawner_tuxedo.name=Smoking Katze Spawner Ei
+items.cats.egg_spawner_white.name=Weiße Katze Spawner Ei
+items.cats.egg_spawner_black.description=Spawnt eine Schwarze Katze beim Platzieren.
+items.cats.egg_spawner_calico.description=Spawnt eine Calico Katze beim Platzieren.
+items.cats.egg_spawner_kitten_calico.description=Spawnt ein Calico Kätzchen beim Platzieren.
+items.cats.egg_spawner_longhairedrussianblue.description=Spawnt eine Langhaar Russisch Blau Katze beim Platzieren.
+items.cats.egg_spawner_graytabby.description=Spawnt eine Graue Tabby Katze beim Platzieren.
+items.cats.egg_spawner_orangetabby.description=Spawnt eine Orange Tabby Katze beim Platzieren.
+items.cats.egg_spawner_siamese.description=Spawnt eine Siamkatze beim Platzieren.
+items.cats.egg_spawner_tuxedo.description=Spawnt eine Smoking Katze beim Platzieren.
+
+items.cats.cat_bed.name=Katzenbett
+items.cats.cat_bed.description=Ein gemütliches Bett für deine Katzen. Weise einer Katze dieses Bett mit dem /cat bed Befehl zu. Deine Katze wird hier ruhen, wenn sie dir nicht folgt.
+
+items.cats.cat_yarn_ball.name=Katzen-Garnknäuel
+items.cats.cat_yarn_ball.description=Ein verspieltes Garnknäuel-Spielzeug für deine Katzen. Verwende es, um deine gezähmten Katzen anzulocken oder mit ihnen zu spielen. Katzen lieben es, mit Garnknäueln zu spielen!
+
+items.cats.cat_treats.name=Katzen-Leckerlis
+items.cats.cat_treats.description=Leckere Leckerlis aus Fisch und Fasern. Füttere sie deiner Katze, um sie glücklich zu machen!
+
+memories.categories.Cats.title = Katzen
+memories.categories.Kitten.title = Kätzchen

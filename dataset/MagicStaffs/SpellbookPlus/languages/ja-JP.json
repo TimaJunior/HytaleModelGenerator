@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "スペルブック・プラス",
+    "available": "使用可能な魔法",
+    "type": "種類：",
+    "mana": "マナ：",
+    "cooldown": "クールダウン：",
+    "effect": "効果：",
+    "range": "射程：",
+    "select": "魔法を選択",
+    "write_scroll": "巻物に書写",
+    "close": "閉じる",
+    "damage_value": "{value} ダメージ",
+    "heal_value": "{value} 回復",
+    "utility_value": "補助",
+    "aoe_value": "{value}m 範囲",
+    "range_value": "{value}m 射程",
+    "projectile_value": "飛翔体",
+    "self_value": "自身",
+    "scroll_prefix": "巻物： "
+  },
+  "spells": {
+    "fireball": {
+      "name": "ファイアボール",
+      "description": "着弾時に爆発する灼熱の火球を放つ。"
+    },
+    "frost_bolt": {
+      "name": "フロストボルト",
+      "description": "命中した敵を減速させる氷の矢を放つ。"
+    },
+    "arcane_bolt": {
+      "name": "アルケインボルト",
+      "description": "素早い秘術の弾を撃ち出す。"
+    },
+    "healing_light": {
+      "name": "ヒーリングライト",
+      "description": "術者の体力を回復する。"
+    },
+    "lightning": {
+      "name": "ライトニング",
+      "description": "対象に雷撃を落とす。"
+    },
+    "force_push": {
+      "name": "フォースプッシュ",
+      "description": "魔力の衝撃波で周囲の敵を吹き飛ばす。"
+    },
+    "mana_shield": {
+      "name": "マナシールド",
+      "description": "ダメージを吸収する防護障壁を展開する。"
+    },
+    "blink": {
+      "name": "ブリンク",
+      "description": "向いている方向に短距離テレポートする。"
+    }
+  },
+  "notification": {
+    "spell_learned": "魔法を習得！",
+    "spell_transferred": "魔法を転写！",
+    "spell_transferred_desc": "{spell}を巻物に書写しました",
+    "not_enough_mana": "マナ不足！",
+    "not_enough_mana_desc": "{required}必要（現在{current}）",
+    "no_spell": "魔法なし！",
+    "no_spell_desc": "スロット{slot}は空です",
+    "no_blank_scroll": "白紙の巻物がありません！",
+    "no_blank_scroll_desc": "書写するには白紙の巻物が必要です",
+    "hotbar_full": "ホットバーが満杯！",
+    "hotbar_full_desc": "空きスペルスロットがありません",
+    "already_known": "習得済み！",
+    "already_known_desc": "{spell}は既に習得しています",
+    "spell_not_learned": "未習得の魔法！",
+    "spell_not_learned_desc": "{spell}はまだ習得していません",
+    "invalid_scroll": "無効な巻物！",
+    "invalid_scroll_desc": "この巻物には不明な魔法が記されています",
+    "enchantment_learned": "エンチャントを習得！",
+    "not_enough_xp": "経験値不足！",
+    "not_enough_xp_desc": "{required}必要（現在{current}）",
+    "passive_learned": "パッシブを習得！",
+    "passive_activated": "パッシブを発動！",
+    "passive_deactivated": "パッシブを解除",
+    "max_passives": "パッシブ上限！",
+    "max_passives_desc": "有効にできるパッシブは最大{max}個です",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "合計： {total} XP"
+  },
+  "enchanting": {
+    "title": "エンチャントテーブル",
+    "xp": "エンチャント経験値",
+    "basic_name": "初級ロール",
+    "advanced_name": "上級ロール",
+    "master_name": "極級ロール",
+    "basic_tiers": "コモン",
+    "advanced_tiers": "コモン＋レア",
+    "master_tiers": "全ティア",
+    "cost_format": "{cost} XP",
+    "roll": "ロール",
+    "learned": "習得済みエンチャント",
+    "none_learned": "まだエンチャントを習得していません",
+    "no_available": "エンチャントなし！",
+    "no_available_desc": "全てのエンチャントを習得済みです",
+    "applied": "エンチャントを適用！",
+    "removed": "エンチャントを解除！",
+    "lost_forever": "（永久に失われます）",
+    "apply_failed": "適用できません！",
+    "apply_failed_desc": "杖に既にエンチャントが付与されているか、このエンチャントを所持していません"
+  },
+  "passive": {
+    "title": "パッシブ",
+    "xp": "パッシブ経験値",
+    "basic_name": "初級ロール",
+    "advanced_name": "上級ロール",
+    "master_name": "極級ロール",
+    "basic_tiers": "コモン",
+    "advanced_tiers": "コモン＋レア",
+    "master_tiers": "全ティア",
+    "cost_format": "{cost} XP",
+    "roll": "ロール",
+    "learned": "習得済みパッシブ",
+    "active": "有効なパッシブ",
+    "none_learned": "まだパッシブを習得していません",
+    "none_active": "有効なパッシブはありません",
+    "activate": "発動",
+    "deactivate": "解除",
+    "no_available": "パッシブなし！",
+    "no_available_desc": "全てのパッシブを習得済みです"
+  },
+  "panel_tabs": {
+    "spells": "魔法",
+    "enchantments": "エンチャント",
+    "current_enchantment": "装備中：",
+    "apply": "適用",
+    "remove": "解除",
+    "none": "なし"
+  },
+  "lore": {
+    "types": {
+      "attack": "攻撃",
+      "support": "補助",
+      "projectile": "飛翔体",
+      "utility": "汎用",
+      "defense": "防御",
+      "buff": "強化",
+      "damage": "ダメージ",
+      "heal": "回復",
+      "debuff": "弱体化"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "コモンの魔杖",
+      "description": "魔法詠唱用の基本的な魔杖。"
+    },
+    "Staff_Uncommon": {
+      "name": "アンコモンの魔杖",
+      "description": "改良された魔杖。\n\n<color is=\"#55ff55\">+10% ダメージ/回復量</color>\n<color is=\"#55ff55\">-5% マナ消費</color>"
+    },
+    "Staff_Rare": {
+      "name": "レアの魔杖",
+      "description": "精巧に作られた魔杖。\n\n<color is=\"#5555ff\">+20% ダメージ/回復量</color>\n<color is=\"#5555ff\">-10% マナ消費</color>\n<color is=\"#5555ff\">-10% クールダウン</color>"
+    },
+    "Staff_Epic": {
+      "name": "エピックの魔杖",
+      "description": "強力な魔杖。\n\n<color is=\"#aa00aa\">+35% ダメージ/回復量</color>\n<color is=\"#aa00aa\">-15% マナ消費</color>\n<color is=\"#aa00aa\">-20% クールダウン</color>"
+    },
+    "Staff_Legendary": {
+      "name": "レジェンダリーの魔杖",
+      "description": "絶大な力を秘めた伝説の魔杖。\n\n<color is=\"#ffaa00\">+50% ダメージ/回復量</color>\n<color is=\"#ffaa00\">-25% マナ消費</color>\n<color is=\"#ffaa00\">-30% クールダウン</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "秘術の作業台",
+      "description": "魔法装備の作成と強化のための神秘的な作業台。"
+    },
+    "Arcane_Dust": {
+      "name": "秘術の粉",
+      "description": "虚空の生物から採れる微細な魔法の粉。基本的な製作に使用。"
+    },
+    "Arcane_Shard": {
+      "name": "秘術の欠片",
+      "description": "秘術エネルギーが結晶化した欠片。中級の製作に使用。"
+    },
+    "Arcane_Crystal": {
+      "name": "秘術の結晶",
+      "description": "純粋な秘術の力が凝縮された完全な結晶。上級の製作に使用。"
+    },
+    "Spirit_Essence": {
+      "name": "精霊のエッセンス",
+      "description": "精霊から抽出した凝縮元素エネルギー。エンチャントと巻物に使用。"
+    },
+    "Ember_Heart": {
+      "name": "燃えさしの心核",
+      "description": "炎のゴーレムからくすぶる核。エピック級の強化に必要。"
+    },
+    "Golem_Core": {
+      "name": "ゴーレムコア",
+      "description": "水晶ゴーレムの動力源。レジェンダリー級の強化に必要。"
+    },
+    "Spell_Scroll_Blank": {
+      "name": "白紙の巻物",
+      "description": "何も書かれていない魔法の巻物。魔法を書写できる。"
+    }
+  },
+  "bench_categories": {
+    "staves": "杖",
+    "scrolls": "巻物"
+  },
+  "command": {
+    "staff": {
+      "given": "{quality}の杖を付与しました"
+    },
+    "scroll": {
+      "given": "巻物を付与： {spell}",
+      "notfound": "魔法が見つかりません： {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material}を付与しました",
+      "not_found": "素材が見つかりません: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plusをリロードしました"
+    },
+    "enchantment": {
+      "notfound": "エンチャントが見つかりません： {id}",
+      "applied": "エンチャントを適用： {name}",
+      "apply_failed": "エンチャントの適用に失敗しました（スロットなし、または適用済み）",
+      "no_enchantments": "解除するエンチャントがありません",
+      "removed": "エンチャントを解除： {id}",
+      "not_on_player": "プレイヤーにそのエンチャントはありません",
+      "no_active": "有効なエンチャントはありません",
+      "active_header": "有効なエンチャント（{count}/{max}）：",
+      "active_entry": "  - {name}",
+      "no_available": "利用可能なエンチャントはありません",
+      "available_header": "利用可能なエンチャント：",
+      "available_entry": "  - {id}（{name}）： {desc}",
+      "usage": "使い方： /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "パッシブが見つかりません： {id}",
+      "activated": "パッシブを発動： {name}",
+      "activate_failed": "パッシブの発動に失敗しました（既に有効です）",
+      "no_passives": "解除するパッシブがありません",
+      "deactivated": "パッシブを解除： {id}",
+      "not_on_player": "プレイヤーにそのパッシブはありません",
+      "no_active": "有効なパッシブはありません",
+      "active_header": "有効なパッシブ：",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "利用可能なパッシブはありません",
+      "available_header": "利用可能なパッシブ：",
+      "available_entry": "  - {id}（{name}）： {desc}",
+      "activated_all": "全てのパッシブを発動しました",
+      "usage": "使い方： /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "魔法コマンド",
+      "notfound": "魔法が見つかりません： {id}",
+      "list": {
+        "desc": "登録済みの全魔法を一覧表示",
+        "header": "=== 登録済み魔法一覧 ===",
+        "entry": "- {id}（{name}）[{category}]"
+      },
+      "info": {
+        "desc": "魔法の詳細を表示",
+        "id": {
+          "desc": "調べる魔法のID"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID： {id}",
+        "category": "カテゴリ： {category}",
+        "cooldown": "クールダウン： {cooldown}秒",
+        "manaCost": "マナ消費： {manaCost}",
+        "instability": "不安定度： {instability}",
+        "nodes": "ノード数： {nodes}",
+        "graphHeader": "--- グラフ ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "魔法の全翻訳を一覧表示",
+          "spellId": {
+            "desc": "対象の魔法ID"
+          },
+          "header": "=== {spell}の翻訳一覧 ===",
+          "empty": "翻訳が見つかりません",
+          "locale": "  [{locale}]",
+          "name": "    名前： {name}",
+          "description": "    説明： {description}"
+        }
+      }
+    }
+  }
+}

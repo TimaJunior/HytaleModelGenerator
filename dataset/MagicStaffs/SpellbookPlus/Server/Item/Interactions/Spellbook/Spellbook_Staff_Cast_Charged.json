@@ -1,0 +1,19 @@
+{
+  "Type": "SpellCastInteraction",
+  "RunTime": 0.167,
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.25,
+    "Effects": {
+      "ItemAnimationId": "CastSummonCharged"
+    },
+    "Next": {
+      "Type": "Simple",
+      "RunTime": 0.1,
+      "Effects": {
+        "ItemAnimationId": "Idle"
+      }
+    }
+  },
+  "Failed": "Spellbook_Staff_Cast_Fail"
+}

@@ -32,10 +32,11 @@ class IDiscriminator(ABC):
     Interface for 3D Discriminator (SRP: Real/Fake Classification).
     """
     @abstractmethod
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, condition: torch.Tensor = None) -> torch.Tensor:
         """
-        Classifies a 3D model as real or fake.
+        Classifies a 3D model as real or fake, optionally conditioned on an input vector.
         :param x: Voxel grid (B, 1, D, H, W)
+        :param condition: Image condition vector (B, Latent_Dim) or None
         :return: Probability score (B, 1) or Logits
         """
         pass

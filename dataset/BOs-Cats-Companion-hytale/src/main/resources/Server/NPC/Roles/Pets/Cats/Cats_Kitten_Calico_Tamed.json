@@ -1,0 +1,19 @@
+{
+  "Type": "Variant",
+  "Reference": "Cats_Kitten_Tamed",
+  "Modify": {
+    "Appearance": "Cats_Kitten_Calico",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "Appearance": {
+      "Value": "Cats_Kitten_Calico",
+      "Description": "The calico kitten's model appearance"
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cats_Kitten_Calico_Tamed.name"
+    }
+  }
+}

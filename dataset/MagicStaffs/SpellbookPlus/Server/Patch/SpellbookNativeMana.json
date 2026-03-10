@@ -1,0 +1,5 @@
+{
+  "_BaseAssetPath": "Server/Entity/Stats/Mana.json",
+  "InitialValue": 0,
+  "Max": 100
+}

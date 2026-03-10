@@ -1,0 +1,44 @@
+# Cat Commands
+pounce.success={name} stürzt sich verspielt auf {target}!
+pounce.no_target=Kein Ziel gefunden. Schaue das Ziel an oder gib eine Entity-ID an
+pounce.invalid_target=Ungültiges Ziel
+pounce.no_cats_nearby=Du hast keine Katzen in der Nähe des Ziels (max. 15 Blöcke)
+pounce.no_available_cats=Keine verfügbaren Katzen zum Anspringen gefunden
+bed.going_to_bed={name} läuft zu einem gemütlichen Bett {distance} Blöcke entfernt bei ({x}, {y}, {z})
+bed.no_beds_found=Keine Katzenbetten innerhalb von {radius} Blöcken für {name} bei Position ({x}, {y}, {z}) gefunden
+bed.all_beds_occupied=Alle {count} Katzenbett(en) in der Nähe sind belegt! {name} muss auf einen freien Platz warten
+follow.re_triggered.hint={name} war bereits im Folge-Modus, Aktualisierung erzwungen!
+follow.re_triggered={name} wurde neu zum Folgen aufgefordert
+follow.success={name} folgt dir jetzt treu und brav
+name.success={name} wurde umbenannt zu {newName}
+play.success={name} spielt jetzt vergnügt umher!
+search.success={name} ist auf der Jagd!
+sit.success={name} setzt sich gehorsam hin
+sleep.success={name} rollt sich für ein Nickerchen zusammen
+wait.success={name} wartet geduldig
+wander.success={name} erkundet frei die Umgebung
+
+# Spawn/Despawn Commands
+spawn.success=✓ {count} Katze(n) gespawnt!
+spawn.failed=Katzen konnten nicht gespawnt werden
+spawn.no_despawned=Du hast keine despawnten Katzen zum Spawnen
+spawn.no_match=Keine despawnten Katzen gefunden die '{filter}' entsprechen
+despawn.success=✓ {name} wurde despawnt!
+despawn.info=Nutze /cat spawn um deine Katze zurückzuholen
+
+# Release Command
+release.success=✓ {name} wurde wieder in die Wildnis entlassen!
+release.info=Die Katze wird nun frei umherwandern und kann von jedem Spieler gezähmt werden
+release.already_wild=Diese Katze ist bereits wild!
+
+# Error Messages
+error.no_cat=Keine Katze in Sicht, schau eine Katze an um diesen Befehl zu nutzen
+error.no_position=Katzenposition kann nicht ermittelt werden
+error.not_owned=Diese Katze ist noch wild und hat keinen Besitzer
+error.not_owner={name} gehört {owner}
+error.player_only=Nur Spieler können diesen Befehl verwenden
+error.no_uuid=Kann Entity-UUID nicht abrufen
+error.data_not_available=Katzendaten nicht verfügbar
+error.cat_not_found=Katzendaten nicht gefunden
+error.player_ref_not_found=Kann Spielerreferenz nicht abrufen
+error.player_pos_not_found=Kann Spielerposition nicht abrufen

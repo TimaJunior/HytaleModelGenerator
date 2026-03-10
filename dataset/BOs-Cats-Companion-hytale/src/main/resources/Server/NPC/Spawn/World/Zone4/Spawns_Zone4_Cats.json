@@ -1,0 +1,18 @@
+{
+  "$Comment": "Siamese cats spawn in Zone 4 forests - exotic warm-climate cats",
+  "Environments": [
+    "Env_Zone4_Forests"
+  ],
+  "NPCs": [
+    {
+      "Weight": 2,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Siamese_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

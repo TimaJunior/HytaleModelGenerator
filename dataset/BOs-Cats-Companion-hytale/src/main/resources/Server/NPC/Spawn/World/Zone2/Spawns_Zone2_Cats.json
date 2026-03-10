@@ -1,0 +1,31 @@
+{
+  "$Comment": "Cats spawn in Zone 2 savanna and oasis - heat-adapted domestic cats",
+  "Environments": [
+    "Env_Zone2_Savanna",
+    "Env_Zone2_Oasis"
+  ],
+  "NPCs": [
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_OrangeTabby_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Calico_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 2,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Kitten_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

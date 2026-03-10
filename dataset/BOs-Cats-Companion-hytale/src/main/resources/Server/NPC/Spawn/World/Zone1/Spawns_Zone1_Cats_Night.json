@@ -1,0 +1,19 @@
+{
+  "$Comment": "Black cats spawn at night in forests - mysterious nocturnal cats",
+  "Environments": [
+    "Env_Zone1_Forests",
+    "Env_Zone1_Swamps"
+  ],
+  "NPCs": [
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Black_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    18,
+    6
+  ]
+}

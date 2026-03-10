@@ -1,0 +1,20 @@
+{
+  "Group": "me.Zistroxy",
+  "Name": "Mighty Staffs",
+  "Version": "1.3.0",
+  "Description": "A touch of magic for your game.",
+  "Authors": [
+    {
+      "Name": "Zistroxy",
+      "Email": "",
+      "Url": "https://www.curseforge.com/members/zistroxyy/projects"
+    }
+  ],
+  "Website": "https://www.curseforge.com/hytale/mods/mighty-staffs",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}

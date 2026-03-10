@@ -1,0 +1,1197 @@
+{
+  "Type": "Generic",
+  "StartState": "Pet",
+  "DefaultSubState": "Default",
+  "DefaultNPCAttitude": "Friendly",
+  "DefaultPlayerAttitude": "Friendly",
+  "Appearance": {
+    "Compute": "Appearance"
+  },
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 6,
+      "RunThreshold": 0.7,
+      "RunThresholdRange": 0.1,
+      "Gravity": 10,
+      "MaxFallSpeed": 20,
+      "Acceleration": 12
+    }
+  ],
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "InteractionVars": {
+    "Melee_Start": {
+      "Interactions": [
+        {
+          "$Comment": "Cat melee attack animation and timing configuration",
+          "Parent": "NPC_Attack_Melee_Simple",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Fox_Default",
+            "ItemAnimationId": "Attack"
+          },
+          "RunTime": 0.25
+        }
+      ]
+    },
+    "Melee_Damage": {
+      "Interactions": [
+        {
+          "$Comment": "Pounce deals no damage - playful animation only",
+          "Parent": "NPC_Attack_Melee_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 0
+            },
+            "RandomPercentageModifier": 0
+          }
+        }
+      ]
+    }
+  },
+  "Instructions": [
+    {
+      "Instructions": [
+        {
+          "$Comment": "Cat is tamed - use substates for different behaviors",
+          "Sensor": {
+            "Type": "State",
+            "State": "Pet"
+          },
+          "Instructions": [
+            {
+              "$Comment": "Day/night cycle - cats sleep at night automatically",
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Time",
+                    "Period": [17.99, 6.01]
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Sleeping"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".GoingToBed"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Attacking"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Dying"
+                    }
+                  }
+                ]
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": ".Sleeping"
+                }
+              ]
+            },
+            {
+              "$Comment": "Greet owner when nearby (cooldown via alarm to prevent spam)",
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "CatOwner"
+                  },
+                  {
+                    "Type": "Alarm",
+                    "Name": "Greet_Ready",
+                    "State": "Unset"
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Sleeping"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Attacking"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Fleeing"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Dying"
+                    }
+                  }
+                ]
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": ".Greeting"
+                }
+              ]
+            },
+            {
+              "$Comment": "Clear greeting alarm when it has passed",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Alarm",
+                "Name": "Greet_Ready",
+                "State": "Passed",
+                "Clear": true
+              },
+              "Actions": [
+                {
+                  "Type": "Nothing"
+                }
+              ]
+            },
+            {
+              "$Comment": "Flee from hostile mobs - cats run away from danger",
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Mob",
+                    "Range": 8,
+                    "Filters": [
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": ["Hostile"]
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Fleeing"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Attacking"
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "State",
+                      "State": ".Dying"
+                    }
+                  }
+                ]
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": ".Fleeing"
+                }
+              ]
+            },
+            {
+              "$Comment": "Sitting behavior - auto switches to waiting after timeout",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Sitting"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Sit",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [10, 20],
+                  "Action": {
+                    "Type": "State",
+                    "State": ".Waiting"
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Sleeping behavior - auto switches to waiting after timeout",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Sleeping"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Sleep",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "PlaySound",
+                  "SoundEventId": "SFX_Fox_Sleep"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [15, 30],
+                  "Action": {
+                    "Type": "State",
+                    "State": ".Waiting"
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "GoingToBed behavior - walks to bed using TransientPath, teleports after timeout",
+              "Sensor": {
+                "Type": "State",
+                "State": ".GoingToBed"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Follow path to bed while path exists, teleport after 4-5 sec timeout",
+                  "Sensor": {
+                    "Type": "Path",
+                    "PathType": "TransientPath"
+                  },
+                  "ActionsBlocking": true,
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Idle",
+                      "Slot": "Action"
+                    },
+                    {
+                      "Type": "Timeout",
+                      "Delay": [4, 5],
+                      "Action": {
+                        "Type": "CatTeleportToBed"
+                      }
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "Path"
+                  }
+                },
+                {
+                  "$Comment": "No path - teleport immediately to bed",
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "ActionsBlocking": true,
+                  "Actions": [
+                    {
+                      "Type": "CatTeleportToBed"
+                    },
+                    {
+                      "Type": "State",
+                      "State": ".Sleeping"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$Comment": "Stretching behavior - auto switches to waiting after timeout",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Stretching"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Stretch",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [10, 20],
+                  "Action": {
+                    "Type": "State",
+                    "State": ".Waiting"
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Licking behavior - auto switches to waiting after timeout",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Licking"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Lick",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [15, 30],
+                  "Action": {
+                    "Type": "State",
+                    "State": ".Waiting"
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Playing behavior - auto-returns to default after 3-6 seconds",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Playing"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Swing_Left",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [3, 6],
+                  "Action": {
+                    "Type": "State",
+                    "State": ".Default"
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Searching behavior with movement",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Searching"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Reset animation first",
+                  "Sensor": {
+                    "Type": "Any",
+                    "Once": true
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Idle",
+                      "Slot": "Action"
+                    }
+                  ]
+                },
+                {
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Search",
+                      "Slot": "Action"
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "WanderInCircle",
+                    "RelativeSpeed": 0.3
+                  }
+                }
+              ]
+            },
+            {
+              "$Comment": "Attacking behavior - attacks commanded target",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Attacking"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Chase and attack target",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": 20
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Alerted",
+                      "Slot": "Action"
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "Seek",
+                    "SlowDownDistance": 4,
+                    "StopDistance": 2,
+                    "RelativeSpeed": 1.0
+                  }
+                },
+                {
+                  "$Comment": "Execute attack when in range",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": 2.5
+                  },
+                  "ActionsBlocking": true,
+                  "Actions": [
+                    {
+                      "Type": "Attack",
+                      "Attack": "Root_NPC_Attack_Melee",
+                      "AttackPauseRange": [1.5, 2]
+                    },
+                    {
+                      "Type": "Timeout",
+                      "Delay": [1, 1.5]
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "No target found - go back to default behavior",
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "State",
+                      "State": ".Default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$Comment": "Fleeing behavior - runs away from hostile entities",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Fleeing"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Flee from nearby hostile entity",
+                  "Sensor": {
+                    "Type": "Mob",
+                    "Range": 12,
+                    "Filters": [
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": ["Hostile"]
+                      }
+                    ]
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Run",
+                      "Slot": "Action"
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "Flee",
+                    "RelativeSpeed": 1.2
+                  }
+                },
+                {
+                  "$Comment": "No more threats nearby - return to waiting",
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "Timeout",
+                      "Delay": [2, 4],
+                      "Action": {
+                        "Type": "State",
+                        "State": ".Waiting"
+                      }
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "Nothing"
+                  }
+                }
+              ]
+            },
+            {
+              "$Comment": "Greeting behavior - cat greets owner with animation, then cooldown",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Greeting"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Play greeting animation and set cooldown alarm",
+                  "Sensor": {
+                    "Type": "Any",
+                    "Once": true
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Alerted",
+                      "Slot": "Status"
+                    },
+                    {
+                      "Type": "PlaySound",
+                      "SoundEventId": "SFX_Fox_Run"
+                    },
+                    {
+                      "Type": "SpawnParticles",
+                      "Offset": [0, 0.8, 0],
+                      "ParticleSystem": "Hearts_Subtle"
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "Watch owner during greeting, then return to default",
+                  "Sensor": {
+                    "Type": "CatOwner"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "Timeout",
+                      "Delay": [3, 6],
+                      "Action": {
+                        "Type": "Sequence",
+                        "Actions": [
+                          {
+                            "Type": "SetAlarm",
+                            "Name": "Greet_Ready",
+                            "DurationRange": ["PT2H", "PT12H"]
+                          },
+                          {
+                            "Type": "State",
+                            "State": ".Default"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "Nothing"
+                  }
+                },
+                {
+                  "$Comment": "Owner not nearby anymore - end greeting early",
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "SetAlarm",
+                      "Name": "Greet_Ready",
+                      "DurationRange": ["PT2H", "PT12H"]
+                    },
+                    {
+                      "Type": "State",
+                      "State": ".Default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$Comment": "Waiting behavior",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Waiting"
+              },
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Idle",
+                  "Slot": "Action"
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Wandering behavior",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Wandering"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Reset animation first",
+                  "Sensor": {
+                    "Type": "Any",
+                    "Once": true
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Idle",
+                      "Slot": "Action"
+                    },
+                    {
+                      "Type": "PlaySound",
+                      "SoundEventId": "SFX_Chicken_Walk"
+                    }
+                  ]
+                },
+                {
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Idle",
+                      "Slot": "Action"
+                    }
+                  ],
+                  "BodyMotion": {
+                    "Type": "WanderInCircle",
+                    "RelativeSpeed": 0.5
+                  }
+                }
+              ]
+            },
+            {
+              "$Comment": "Default following behavior with pauses",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Default"
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Reset animation first when entering this state",
+                  "Sensor": {
+                    "Type": "Any",
+                    "Once": true
+                  },
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Animation": "Idle",
+                      "Slot": "Action"
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "Random following behavior - sometimes with pauses, sometimes continuous",
+                  "Sensor": {
+                    "Type": "Any"
+                  },
+                  "Type": "Random",
+                  "ExecuteFor": [60, 120],
+                  "Instructions": [
+                    {
+                      "$Comment": "Active following with short pauses",
+                      "Weight": 40,
+                      "Sensor": {
+                        "Type": "Player",
+                        "Range": 18,
+                        "LockOnTarget": true
+                      },
+                      "Actions": [
+                        {
+                          "Type": "PlayAnimation",
+                          "Animation": "Idle",
+                          "Slot": "Action"
+                        }
+                      ],
+                      "BodyMotion": {
+                        "Type": "Sequence",
+                        "Looped": true,
+                        "Motions": [
+                          {
+                            "Type": "Timer",
+                            "Time": [4, 6],
+                            "Motion": {
+                              "Type": "Seek",
+                              "SlowDownDistance": 5,
+                              "StopDistance": 3,
+                              "RelativeSpeed": 0.8
+                            }
+                          },
+                          {
+                            "Type": "Timer",
+                            "Time": [0.5, 1.5],
+                            "Motion": {
+                              "Type": "Nothing"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "$Comment": "Continuous following without pauses",
+                      "Weight": 60,
+                      "Sensor": {
+                        "Type": "Player",
+                        "Range": 18,
+                        "LockOnTarget": true
+                      },
+                      "Actions": [
+                        {
+                          "Type": "PlayAnimation",
+                          "Animation": "Idle",
+                          "Slot": "Action"
+                        }
+                      ],
+                      "BodyMotion": {
+                        "Type": "Seek",
+                        "SlowDownDistance": 5,
+                        "StopDistance": 3,
+                        "RelativeSpeed": 0.8
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "Teleport to player if too far away (outside seek range)",
+                  "Sensor": {
+                    "Type": "Target"
+                  },
+                  "BodyMotion": {
+                    "Type": "Teleport"
+                  }
+                }
+              ]
+            },
+            {
+              "$Comment": "Dying behavior - plays death animation",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Dying"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Death",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [2, 2]
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "Happy behavior - cat received a gift, plays excited animation",
+              "Sensor": {
+                "Type": "State",
+                "State": ".Happy"
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Animation": "Alerted",
+                  "Slot": "Action"
+                },
+                {
+                  "Type": "PlaySound",
+                  "SoundEventId": "SFX_Fox_Run"
+                },
+                {
+                  "Type": "SpawnParticles",
+                  "Offset": [0, 0.8, 0],
+                  "ParticleSystem": "Hearts_Subtle"
+                },
+                {
+                  "Type": "SpawnParticles",
+                  "Offset": [0, 0.6, 0],
+                  "ParticleSystem": "Hearts_Subtle"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": [3, 3],
+                  "Action": {
+                    "Type": "Sequence",
+                    "Actions": [
+                      {
+                        "Type": "PlayAnimation",
+                        "Animation": "Idle",
+                        "Slot": "Action"
+                      },
+                      {
+                        "Type": "State",
+                        "State": ".Default"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "BodyMotion": {
+                "Type": "Nothing"
+              }
+            },
+            {
+              "$Comment": "State setter declarations for validation - never executed",
+              "Sensor": {
+                "Type": "Flag",
+                "Name": "_VALIDATION_ONLY_NEVER_SET"
+              },
+              "Actions": [
+                {"Type": "State", "State": ".Default"},
+                {"Type": "State", "State": ".Sitting"},
+                {"Type": "State", "State": ".Sleeping"},
+                {"Type": "State", "State": ".GoingToBed"},
+                {"Type": "State", "State": ".Stretching"},
+                {"Type": "State", "State": ".Licking"},
+                {"Type": "State", "State": ".Playing"},
+                {"Type": "State", "State": ".Searching"},
+                {"Type": "State", "State": ".Attacking"},
+                {"Type": "State", "State": ".Fleeing"},
+                {"Type": "State", "State": ".Greeting"},
+                {"Type": "State", "State": ".Waiting"},
+                {"Type": "State", "State": ".Wandering"},
+                {"Type": "State", "State": ".Dying"},
+                {"Type": "State", "State": ".Happy"},
+                {"Type": "State", "State": "Feeding"},
+                {"Type": "State", "State": "Petting"},
+                {"Type": "State", "State": "PlayingWithYarnBall"},
+                {"Type": "State", "State": "Despawn"}
+              ]
+            }
+          ]
+        },
+        {
+          "$Comment": "Feeding animation state - triggered manually, returns to previous state",
+          "Sensor": {
+            "Type": "State",
+            "State": "Feeding"
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "PlayAnimation",
+              "Animation": "Sit",
+              "Slot": "Action"
+            },
+            {
+              "Type": "PlaySound",
+              "SoundEventId": "SFX_Meerkat_Idle"
+            },
+            {
+              "Type": "SpawnParticles",
+              "Offset": [0, 0.5, 0],
+              "ParticleSystem": "Food_Eat"
+            },
+            {
+              "Type": "SpawnParticles",
+              "Offset": [0, 0.5, 0],
+              "ParticleSystem": "Hearts_Subtle"
+            },
+            {
+              "Type": "Timeout",
+              "Delay": [2, 2],
+              "Action": {
+                "Type": "Sequence",
+                "Actions": [
+                  {
+                    "Type": "PlayAnimation",
+                    "Animation": "Idle",
+                    "Slot": "Action"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "Pet"
+                  }
+                ]
+              }
+            }
+          ],
+          "BodyMotion": {
+            "Type": "Nothing"
+          }
+        },
+        {
+          "$Comment": "Petting animation state - owner interaction with empty hand",
+          "Sensor": {
+            "Type": "State",
+            "State": "Petting"
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "PlayAnimation",
+              "Animation": "Sit",
+              "Slot": "Action"
+            },
+            {
+              "Type": "PlaySound",
+              "SoundEventId": "SFX_Fox_Sleep"
+            },
+            {
+              "Type": "SpawnParticles",
+              "Offset": [0, 0.8, 0],
+              "ParticleSystem": "Hearts_Subtle"
+            },
+            {
+              "Type": "Timeout",
+              "Delay": [2, 2],
+              "Action": {
+                "Type": "Sequence",
+                "Actions": [
+                  {
+                    "Type": "PlayAnimation",
+                    "Animation": "Idle",
+                    "Slot": "Action"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "Pet"
+                  }
+                ]
+              }
+            }
+          ],
+          "BodyMotion": {
+            "Type": "Nothing"
+          }
+        },
+        {
+          "$Comment": "Playing with Yarn Ball state - owner interaction with Cat_Yarn_Ball",
+          "Sensor": {
+            "Type": "State",
+            "State": "PlayingWithYarnBall"
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "PlayAnimation",
+              "Animation": "Swing_Left",
+              "Slot": "Action"
+            },
+            {
+              "Type": "PlaySound",
+              "SoundEventId": "SFX_Fox_Run"
+            },
+            {
+              "Type": "SpawnParticles",
+              "Offset": [0, 0.6, 0],
+              "ParticleSystem": "Hearts_Subtle"
+            },
+            {
+              "Type": "Timeout",
+              "Delay": [3, 3],
+              "Action": {
+                "Type": "Sequence",
+                "Actions": [
+                  {
+                    "Type": "PlayAnimation",
+                    "Animation": "Idle",
+                    "Slot": "Action"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "Pet"
+                  }
+                ]
+              }
+            }
+          ],
+          "BodyMotion": {
+            "Type": "Nothing"
+          }
+        },
+        {
+          "$Comment": "Cat despawns",
+          "Sensor": {
+            "Type": "State",
+            "State": "Despawn"
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Despawn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "InteractionInstruction": {
+    "Instructions": [
+      {
+        "$Comment": "Tamed cat + Owner holding carrier - show capture/release hint",
+        "Continue": true,
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {"Type": "CatOwner"},
+            {"Type": "IsHoldingCarrier"}
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": true,
+            "Hint": "cats.interactions.hint.carrier",
+            "ShowPrompt": true
+          }
+        ]
+      },
+      {
+        "$Comment": "Tamed cat + Owner (no carrier) - show owner interaction hint",
+        "Continue": true,
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {"Type": "CatOwner"},
+            {"Type": "Not", "Sensor": {"Type": "IsHoldingCarrier"}}
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": true,
+            "Hint": "cats.interactions.hint.owner",
+            "ShowPrompt": true
+          }
+        ]
+      },
+      {
+        "$Comment": "Tamed cat + Stranger - no interaction allowed",
+        "Continue": true,
+        "Sensor": {
+          "Type": "Not",
+          "Sensor": {
+            "Type": "CatOwner"
+          }
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": false,
+            "ShowPrompt": false
+          }
+        ]
+      },
+      {
+        "$Comment": "Interaction handlers - check owner first, then stranger",
+        "Sensor": {
+          "Type": "HasInteracted"
+        },
+        "Actions": [
+          {
+            "Type": "LockOnInteractionTarget"
+          },
+          {
+            "Type": "CatInteractionOwner"
+          },
+          {
+            "Type": "CatInteractionStranger"
+          }
+        ]
+      }
+    ]
+  },
+  "IsMemory": true,
+  "MemoriesCategory": {
+    "Compute": "MemoriesCategory"
+  },
+  "DropList": "Drop_Cats",
+  "NameTranslationKey": {
+    "Compute": "NameTranslationKey"
+  },
+  "Parameters": {
+    "MemoriesCategory": {
+      "Value": "Cats",
+      "Description": "The memories category for grouping NPCs"
+    },
+    "MaxHealth": {
+      "Value": 60,
+      "Description": "Maximum health points for tamed cats (higher than wild cats for durability)"
+    },
+    "AttractiveItems": {
+      "Value": [
+        "Food_Fish_Raw",
+        "Food_Fish_Raw_Uncommon",
+        "Food_Fish_Raw_Rare",
+        "Food_Fish_Raw_Epic",
+        "Food_Fish_Raw_Legendary",
+        "Food_Fish_Grilled",
+        "Fish_Salmon_Item",
+        "Fish_Catfish_Item",
+        "Fish_Trout_Rainbow_Item",
+        "Fish_Pike_Item",
+        "Fish_Bluegill_Item",
+        "Fish_Minnow_Item",
+        "Cat_Treats"
+      ],
+      "Description": "Items that attract cats and make them follow players"
+    },
+    "LovedItems": {
+      "Value": [
+        "Food_Fish_Raw",
+        "Food_Fish_Grilled",
+        "Fish_Salmon_Item",
+        "Fish_Catfish_Item"
+      ],
+      "Description": "Items that cats love and will befriend for"
+    },
+    "Timid": {
+      "Value": false,
+      "Description": "Whether cats are timid or not"
+    },
+    "Appearance": {
+      "Value": "Cat",
+      "Description": "The cat's model appearance"
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cats_Tamed.name",
+      "Description": "Translation key for cat name display"
+    },
+    "Attack": {
+      "Value": "Root_NPC_Attack_Melee",
+      "Description": "The attack type to use"
+    },
+    "AttackDistance": {
+      "Value": 2.5,
+      "Description": "The distance from which to attack"
+    }
+  }
+}

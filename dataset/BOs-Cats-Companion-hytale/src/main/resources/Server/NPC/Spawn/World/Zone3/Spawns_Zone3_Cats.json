@@ -1,0 +1,19 @@
+{
+  "$Comment": "Longhaired Russian Blue cats spawn in Zone 3 Tundra and Forests - cold-climate cats",
+  "Environments": [
+    "Env_Zone3_Tundra",
+    "Env_Zone3_Forests"
+  ],
+  "NPCs": [
+    {
+      "Weight": 2,
+      "SpawnBlockSet": "Soil_NoSnow",
+      "Id": "Cats_LonghairedRussianBlue_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

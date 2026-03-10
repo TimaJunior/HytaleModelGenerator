@@ -1,0 +1,48 @@
+# Item Interactions
+item.unknown=The cat sniffs curiously but doesn't know what to do with that.
+item.unknown.named={catName} sniffs curiously but doesn't know what to do with that.
+wild.reject=*hiss* The wild cat doesn't trust you with that!
+
+# Taming
+taming.success=You tamed the cat with {item}! Meet {catName}!
+taming.companion=Purr! Your new companion will follow you loyally
+taming.help=Use /cat name <name> to give {catName} a new name or /cat to see a list of available commands
+taming.limit_reached=You have reached your cat limit ({current}/{limit})
+taming.error_no_uuid=Error: Could not tame cat (no UUID)
+taming.error_system=Error: Cats system not available
+taming.count=You now own {current} of {limit} cats
+taming.progress=Cat enjoyed the food! Trust progress: {current}/{required}
+taming.gaining_trust=The cat seems interested but is still cautious...
+taming.likes_food=The cat is starting to like you!
+taming.almost_there=The cat is almost ready to trust you!
+taming.too_soon=The cat is still full! Wait {seconds} more seconds before feeding again.
+
+# Cat Carrier
+carrier.captured=✓ {catName} (UUID: {catUuid}) has been safely placed into the carrier!
+carrier.released=✓ {catName} has been released from the carrier!
+carrier.already_occupied=The carrier contains {catName} (UUID: {catUuid}). Right-click on the ground to release.
+carrier.not_tamed=You can only carry tamed cats.
+carrier.not_owner=You can only carry your own cats.
+carrier.release_failed=Failed to release the cat from the carrier.
+carrier.error=An error occurred with the cat carrier.
+carrier.empty=The carrier is empty. Use it on your tamed cat to pick it up.
+
+# Play Interactions
+play.cooldown=Your cat is tired from playing and needs a break.
+
+# Owner Interactions
+owner.petting.cooldown=Your cat doesn't want to be petted right now.
+owner.gift={name} brought you a little gift: {gift}!
+
+# Feeding
+feeding.healed=Your cat has been healed! (+{amount} HP, now {health}/{maxHealth})
+feeding.full_health=Your cat is already at full health!
+feeding.treat.healed=Your cat happily munches the treat! (+{amount} HP, now {health}/{maxHealth})
+feeding.treat.full_health=Your cat is already full but the treat smells irresistible, purr!
+feeding.treat.cooldown=Your cat is still full from the last treat, try again in a moment.
+
+# Hints
+hint.tame=Press [{key}] to tame
+hint.owner=Press [{key}] to interact with your cat
+hint.carrier=Press [{key}] to capture into carrier
+hint.stranger=This cat belongs to someone else

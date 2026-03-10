@@ -1,0 +1,55 @@
+$C = "../Common.ui";
+$Sounds = "../Sounds.ui";
+
+Group {
+  Padding: (Right: 8, Bottom: 8);
+
+  Group #SlotContent {
+    Anchor: (Width: 144, Height: 176);
+
+    Group #EmptyBackground {
+      Visible: false;
+      Background: (TexturePath: "Tiles/TileEmpty.png", Border: 8);
+      Anchor: (Width: 144, Height: 176);
+    }
+
+    TextButton #SlotButton {
+      Visible: false;
+      Anchor: (Width: 144, Height: 176);
+      TextTooltipStyle: $C.@DefaultTextTooltipStyle;
+      Style: (
+        Sounds: $Sounds.@ButtonsLight,
+        Default: (
+          LabelStyle: (Wrap: true, HorizontalAlignment: Center, VerticalAlignment: Center),
+          Background: (TexturePath: "Tiles/TileDefault.png", Border: 8)
+        ),
+        Hovered: (
+          LabelStyle: (Wrap: true, HorizontalAlignment: Center, VerticalAlignment: Center),
+          Background: (TexturePath: "Tiles/TileHovered.png", Border: 8)
+        )
+      );
+    }
+
+    TextButton #SlotButtonSelected {
+      Visible: false;
+      Anchor: (Width: 144, Height: 176);
+      TextTooltipStyle: $C.@DefaultTextTooltipStyle;
+      Style: (
+        Sounds: $Sounds.@ButtonsLight,
+        Default: (
+          LabelStyle: (Wrap: true, HorizontalAlignment: Center, VerticalAlignment: Center),
+          Background: (TexturePath: "Tiles/TileSelected.png", Border: 8)
+        )
+      );
+    }
+
+    Group {
+      LayoutMode: Middle;
+      Anchor: (Full: 0);
+
+      Group #SlotIcon {
+        Anchor: (Width: 100, Height: 100);
+      }
+    }
+  }
+}

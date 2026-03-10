@@ -1,0 +1,27 @@
+Group {
+  LayoutMode: Left;
+  Anchor: (Height: 30);
+  Padding: (Horizontal: 8, Vertical: 2);
+
+  Group {
+    LayoutMode: CenterMiddle;
+    Anchor: (Width: 20);
+
+    Group #TierDot {
+      Anchor: (Width: 8, Height: 8);
+      Background: #55ff55;
+    }
+  }
+
+  Label #RowName {
+    FlexWeight: 1;
+    Style: (FontSize: 13, TextColor: #b7cedd, VerticalAlignment: Center);
+    Text: "";
+  }
+
+  Label #RowTier {
+    Style: (FontSize: 11, TextColor: #89899f, RenderUppercase: true, VerticalAlignment: Center);
+    Padding: (Right: 4);
+    Text: "";
+  }
+}

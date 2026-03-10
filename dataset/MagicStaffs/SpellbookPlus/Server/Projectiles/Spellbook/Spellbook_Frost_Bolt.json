@@ -1,0 +1,19 @@
+{
+  "Parent": "Ice_Bolt",
+  "Damage": 0,
+  "MuzzleVelocity": 18,
+  "Gravity": 1,
+  "HitParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "DeathParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "DeathEffectsOnHit": true,
+  "HitSoundEventId": "SFX_Ice_Break",
+  "DeathSoundEventId": "SFX_Ice_Break",
+  "ExplosionConfig": {
+    "DamageEntities": true,
+    "DamageBlocks": false
+  }
+}

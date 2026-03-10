@@ -1,0 +1,100 @@
+# Cat Names Configuration
+# Add one name per line. Empty lines and lines starting with # are ignored.
+# These names will be randomly assigned when taming cats.
+# You can edit this file to add your own custom cat names!
+#
+# SECURITY RULES:
+# - Only letters (a-z, A-Z), numbers (0-9), spaces, hyphens (-), apostrophes ('), and dots (.) are allowed
+# - Names must be between 1 and 32 characters long
+# - Invalid names will be skipped and logged as warnings
+
+# Classic Cat Names
+Whiskers
+Shadow
+Luna
+Tiger
+Mittens
+Felix
+Smokey
+Oliver
+Bella
+Max
+Chloe
+Charlie
+Milo
+Lucy
+Leo
+Molly
+Jack
+
+# Color-Based Names
+Snowball
+Midnight
+Ginger
+Rusty
+Patches
+Pepper
+Boots
+Socks
+Cotton
+Ash
+
+# Personality Names
+Fluffy
+Pounce
+Cuddles
+Mischief
+Princess
+Duke
+Scout
+Hunter
+Ninja
+Snuggles
+
+# Food Names
+Oreo
+Cookie
+Pumpkin
+Butterscotch
+Muffin
+Cinnamon
+Biscuit
+Caramel
+Peaches
+Tuna
+
+# Nature Names
+Willow
+Storm
+River
+Clover
+Autumn
+Frost
+Thunder
+Blaze
+Sky
+Marble
+
+# Cute Names
+Buttons
+Bubbles
+Peanut
+Nugget
+Pickles
+Sprinkles
+Cupcake
+Jellybean
+Marshmallow
+Dumpling
+
+# Elegant Names
+Duchess
+King
+Prince
+Queen
+Baron
+Lady
+Sir
+Count
+Earl
+Majesty

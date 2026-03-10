@@ -1,0 +1,18 @@
+﻿📁 Сканування data...
+   Images: 500, Voxels: 668, Matched: 500
+   Orphan images: 0, Orphan voxels: 168
+   Orphan voxel IDs (перші 20): ['sample_500', 'sample_501', 'sample_502', 'sample_503', 'sample_504', 'sample_505', 'sample_506', 'sample_507', 'sample_508', 'sample_509', 'sample_510', 'sample_511', 'sample_512', 'sample_513', 'sample_514', 'sample_515', 'sample_516', 'sample_517', 'sample_518', 'sample_519']
+
+🔍 Валідація та хешування...
+   Valid: 500, Discarded empty: 0, Discarded broken: 0
+
+🏷️  Призначення asset IDs...
+   Unique voxel assets: 83
+   Assets з кількома views: 66, Max views per asset: 27
+
+✂️  Розподіл train/val (ratio=0.15)...
+   Train: 433 samples (71 assets)
+   Val:   67 samples (12 assets)
+   ✅ No leakage between train/val splits
+
+🔒 DRY RUN — manifest не збережено.

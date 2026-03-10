@@ -1,0 +1,19 @@
+{
+  "Type": "Charging",
+  "Effects": {
+    "ItemAnimationId": "CastSummonCharging"
+  },
+  "AllowIndefiniteHold": false,
+  "HorizontalSpeedMultiplier": 0.5,
+  "Next": {
+    "0": {
+      "Type": "Chaining",
+      "ChainingAllowance": 1,
+      "Next": [
+        "Staff_Swing_Left",
+        "Staff_Swing_Right"
+      ]
+    },
+    "0.5": "Wooden_Staff_Cast_Summon_Charged"
+  }
+}

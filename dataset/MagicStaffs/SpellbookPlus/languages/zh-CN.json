@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "魔法书增强版",
+    "available": "可用法术",
+    "type": "类型：",
+    "mana": "法力：",
+    "cooldown": "冷却：",
+    "effect": "效果：",
+    "range": "范围：",
+    "select": "选择法术",
+    "write_scroll": "铭刻至卷轴",
+    "close": "关闭",
+    "damage_value": "{value} 伤害",
+    "heal_value": "{value} 治疗",
+    "utility_value": "功能型",
+    "aoe_value": "{value}米 范围伤害",
+    "range_value": "{value}米 射程",
+    "projectile_value": "投射物",
+    "self_value": "自身",
+    "scroll_prefix": "卷轴："
+  },
+  "spells": {
+    "fireball": {
+      "name": "火球术",
+      "description": "发射一颗炽热的火球，命中时产生爆炸。"
+    },
+    "frost_bolt": {
+      "name": "寒冰箭",
+      "description": "射出一支冰霜箭矢，命中敌人时使其减速。"
+    },
+    "arcane_bolt": {
+      "name": "奥术飞弹",
+      "description": "发射一枚快速的奥术弹。"
+    },
+    "healing_light": {
+      "name": "治愈之光",
+      "description": "为施法者恢复生命值。"
+    },
+    "lightning": {
+      "name": "闪电术",
+      "description": "以闪电击中目标。"
+    },
+    "force_push": {
+      "name": "力场冲击",
+      "description": "用魔法之力将附近的敌人推开。"
+    },
+    "mana_shield": {
+      "name": "法力护盾",
+      "description": "生成一面吸收伤害的防护屏障。"
+    },
+    "blink": {
+      "name": "闪现",
+      "description": "向面朝方向短距离传送。"
+    }
+  },
+  "notification": {
+    "spell_learned": "习得法术！",
+    "spell_transferred": "法术已转录！",
+    "spell_transferred_desc": "已将 {spell} 铭刻至卷轴",
+    "not_enough_mana": "法力不足！",
+    "not_enough_mana_desc": "需要 {required}（当前 {current}）",
+    "no_spell": "没有法术！",
+    "no_spell_desc": "槽位 {slot} 为空",
+    "no_blank_scroll": "没有空白卷轴！",
+    "no_blank_scroll_desc": "需要一张空白卷轴来铭刻",
+    "hotbar_full": "快捷栏已满！",
+    "hotbar_full_desc": "没有可用的法术槽位",
+    "already_known": "已经学会！",
+    "already_known_desc": "你已经拥有 {spell}",
+    "spell_not_learned": "尚未习得法术！",
+    "spell_not_learned_desc": "你还没有学会 {spell}",
+    "invalid_scroll": "无效的卷轴！",
+    "invalid_scroll_desc": "此卷轴包含一个未知法术",
+    "enchantment_learned": "习得附魔！",
+    "not_enough_xp": "经验不足！",
+    "not_enough_xp_desc": "需要 {required}（当前 {current}）",
+    "passive_learned": "习得被动技能！",
+    "passive_activated": "被动技能已激活！",
+    "passive_deactivated": "被动技能已停用",
+    "max_passives": "被动技能已达上限！",
+    "max_passives_desc": "最多只能激活 {max} 个被动技能",
+    "xp_gained": "+{gained} 经验",
+    "xp_total": "总计：{total} 经验"
+  },
+  "enchanting": {
+    "title": "附魔台",
+    "xp": "附魔经验",
+    "basic_name": "基础抽取",
+    "advanced_name": "进阶抽取",
+    "master_name": "大师抽取",
+    "basic_tiers": "普通",
+    "advanced_tiers": "普通 + 稀有",
+    "master_tiers": "全部品阶",
+    "cost_format": "{cost} 经验",
+    "roll": "抽取",
+    "learned": "已学附魔",
+    "none_learned": "尚未学习任何附魔",
+    "no_available": "没有附魔！",
+    "no_available_desc": "所有附魔均已学会",
+    "applied": "附魔已应用！",
+    "removed": "附魔已移除！",
+    "lost_forever": "（永久失去）",
+    "apply_failed": "无法应用！",
+    "apply_failed_desc": "法杖已有附魔，或你尚未拥有该附魔"
+  },
+  "passive": {
+    "title": "被动技能",
+    "xp": "被动经验",
+    "basic_name": "基础抽取",
+    "advanced_name": "进阶抽取",
+    "master_name": "大师抽取",
+    "basic_tiers": "普通",
+    "advanced_tiers": "普通 + 稀有",
+    "master_tiers": "全部品阶",
+    "cost_format": "{cost} 经验",
+    "roll": "抽取",
+    "learned": "已学被动技能",
+    "active": "激活中的被动技能",
+    "none_learned": "尚未学习任何被动技能",
+    "none_active": "没有激活中的被动技能",
+    "activate": "激活",
+    "deactivate": "停用",
+    "no_available": "没有被动技能！",
+    "no_available_desc": "所有被动技能均已学会"
+  },
+  "panel_tabs": {
+    "spells": "法术",
+    "enchantments": "附魔",
+    "current_enchantment": "当前：",
+    "apply": "应用",
+    "remove": "移除",
+    "none": "无"
+  },
+  "lore": {
+    "types": {
+      "attack": "攻击",
+      "support": "辅助",
+      "projectile": "投射",
+      "utility": "功能",
+      "defense": "防御",
+      "buff": "增益",
+      "damage": "伤害",
+      "heal": "治疗",
+      "debuff": "减益"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "普通法杖",
+      "description": "一根用于施法的基础魔法杖。"
+    },
+    "Staff_Uncommon": {
+      "name": "优秀法杖",
+      "description": "一根经过改良的魔法杖。\n\n<color is=\"#55ff55\">+10% 伤害/治疗</color>\n<color is=\"#55ff55\">-5% 法力消耗</color>"
+    },
+    "Staff_Rare": {
+      "name": "稀有法杖",
+      "description": "一根精心打造的魔法杖。\n\n<color is=\"#5555ff\">+20% 伤害/治疗</color>\n<color is=\"#5555ff\">-10% 法力消耗</color>\n<color is=\"#5555ff\">-10% 冷却时间</color>"
+    },
+    "Staff_Epic": {
+      "name": "史诗法杖",
+      "description": "一根蕴含强大力量的魔法杖。\n\n<color is=\"#aa00aa\">+35% 伤害/治疗</color>\n<color is=\"#aa00aa\">-15% 法力消耗</color>\n<color is=\"#aa00aa\">-20% 冷却时间</color>"
+    },
+    "Staff_Legendary": {
+      "name": "传说法杖",
+      "description": "一根拥有无穷力量的传说魔法杖。\n\n<color is=\"#ffaa00\">+50% 伤害/治疗</color>\n<color is=\"#ffaa00\">-25% 法力消耗</color>\n<color is=\"#ffaa00\">-30% 冷却时间</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "奥术工作台",
+      "description": "一座神秘的制作台，用于制造和升级魔法装备。"
+    },
+    "Arcane_Dust": {
+      "name": "奥术尘",
+      "description": "来自虚空生物的精细魔法粉尘。用于基础制作。"
+    },
+    "Arcane_Shard": {
+      "name": "奥术碎片",
+      "description": "奥术能量的结晶碎片。用于中级制作。"
+    },
+    "Arcane_Crystal": {
+      "name": "奥术水晶",
+      "description": "纯粹奥术能量的完整结晶。用于高级制作。"
+    },
+    "Spirit_Essence": {
+      "name": "灵魂精华",
+      "description": "来自精灵的浓缩元素能量。用于附魔和卷轴制作。"
+    },
+    "Ember_Heart": {
+      "name": "余烬之心",
+      "description": "来自火焰魔像的灼热核心。史诗级升级所需材料。"
+    },
+    "Golem_Core": {
+      "name": "魔像核心",
+      "description": "水晶魔像的能量源。传说级升级所需材料。"
+    },
+    "Spell_Scroll_Blank": {
+      "name": "空白卷轴",
+      "description": "一张空白的魔法卷轴。可以在上面铭刻法术。"
+    }
+  },
+  "bench_categories": {
+    "staves": "法杖",
+    "scrolls": "卷轴"
+  },
+  "command": {
+    "staff": {
+      "given": "已给予 {quality} 法杖"
+    },
+    "scroll": {
+      "given": "已给予卷轴：{spell}",
+      "notfound": "未找到法术：{spell}"
+    },
+    "material": {
+      "given": "已给予 {amount}x {material}",
+      "not_found": "未找到材料: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus 已重载"
+    },
+    "enchantment": {
+      "notfound": "未找到附魔：{id}",
+      "applied": "已应用附魔：{name}",
+      "apply_failed": "应用附魔失败（没有可用槽位或已应用该附魔）",
+      "no_enchantments": "没有可移除的附魔",
+      "removed": "已移除附魔：{id}",
+      "not_on_player": "玩家身上未找到该附魔",
+      "no_active": "没有激活中的附魔",
+      "active_header": "激活中的附魔（{count}/{max}）：",
+      "active_entry": "  - {name}",
+      "no_available": "没有可用的附魔",
+      "available_header": "可用附魔：",
+      "available_entry": "  - {id}（{name}）：{desc}",
+      "usage": "用法：/sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "未找到被动技能：{id}",
+      "activated": "已激活被动技能：{name}",
+      "activate_failed": "激活被动技能失败（已处于激活状态）",
+      "no_passives": "没有可停用的被动技能",
+      "deactivated": "已停用被动技能：{id}",
+      "not_on_player": "玩家身上未找到该被动技能",
+      "no_active": "没有激活中的被动技能",
+      "active_header": "激活中的被动技能：",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "没有可用的被动技能",
+      "available_header": "可用被动技能：",
+      "available_entry": "  - {id}（{name}）：{desc}",
+      "activated_all": "已激活所有被动技能",
+      "usage": "用法：/sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "法术命令",
+      "notfound": "未找到法术：{id}",
+      "list": {
+        "desc": "列出所有已注册的法术",
+        "header": "=== 已注册法术 ===",
+        "entry": "- {id}（{name}）[{category}]"
+      },
+      "info": {
+        "desc": "显示法术详情",
+        "id": {
+          "desc": "要查看的法术ID"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID：{id}",
+        "category": "类别：{category}",
+        "cooldown": "冷却时间：{cooldown}秒",
+        "manaCost": "法力消耗：{manaCost}",
+        "instability": "不稳定性：{instability}",
+        "nodes": "节点数：{nodes}",
+        "graphHeader": "--- 图结构 ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "列出某法术的所有翻译",
+          "spellId": {
+            "desc": "目标法术ID"
+          },
+          "header": "=== {spell} 的翻译 ===",
+          "empty": "未找到翻译",
+          "locale": "  [{locale}]",
+          "name": "    名称：{name}",
+          "description": "    描述：{description}"
+        }
+      }
+    }
+  }
+}

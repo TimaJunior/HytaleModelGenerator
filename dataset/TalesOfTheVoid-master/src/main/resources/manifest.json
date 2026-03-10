@@ -1,0 +1,10 @@
+{
+  "Group": "BehindTheScenery",
+  "Name": "TalesOfTheVoid",
+  "Version": "1.0.0",
+  "Description": "Tales of the Void is a mod made for HytaleModding ModJam about the world full of abysmal secrets and unknown creatures. Find forgotten technologies. Explore the void. Fear them all.",
+  "Authors": [{"Name": "DenisMasterHerobrine"}, {"Name": "chmonyasik"}, {"Name": "Desenger"}, {"Name": "ponimash"}],
+  "Main": "dev.denismasterherobrine.talesofthevoid.TalesOfTheVoidPlugin",
+  "LoadOrder": "POSTWORLD",
+  "IncludesAssetPack": true
+}

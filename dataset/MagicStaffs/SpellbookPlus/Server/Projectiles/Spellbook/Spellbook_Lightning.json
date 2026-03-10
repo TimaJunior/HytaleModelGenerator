@@ -1,0 +1,28 @@
+{
+  "Appearance": "Skeleton_Mage_Corruption_Orb",
+  "Damage": 0,
+  "MuzzleVelocity": 50,
+  "TerminalVelocity": 60,
+  "Gravity": 0,
+  "PitchAdjustShot": true,
+  "SticksVertically": true,
+  "TimeToLive": 2,
+  "DeadTimeMiss": 0,
+  "ImpactSlowdown": 0,
+  "HitParticles": {
+    "SystemId": "Spellbook_Lightning_Strike"
+  },
+  "MissParticles": {
+    "SystemId": "Spellbook_Lightning_Strike"
+  },
+  "DeathParticles": {
+    "SystemId": "Spellbook_Lightning_Strike"
+  },
+  "DeathEffectsOnHit": true,
+  "HitSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
+  "DeathSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
+  "ExplosionConfig": {
+    "DamageEntities": true,
+    "DamageBlocks": false
+  }
+}

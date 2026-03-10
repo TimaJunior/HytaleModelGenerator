@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "SPELLBOOK PLUS",
+    "available": "FEITIÇOS DISPONÍVEIS",
+    "type": "TIPO:",
+    "mana": "MANA:",
+    "cooldown": "RECARGA:",
+    "effect": "EFEITO:",
+    "range": "ALCANCE:",
+    "select": "SELECIONAR FEITIÇO",
+    "write_scroll": "ESCREVER NO PERGAMINHO",
+    "close": "FECHAR",
+    "damage_value": "{value} DANO",
+    "heal_value": "{value} Cura",
+    "utility_value": "Utilidade",
+    "aoe_value": "{value}m ADE",
+    "range_value": "{value}m Alcance",
+    "projectile_value": "Projétil",
+    "self_value": "Próprio",
+    "scroll_prefix": "Pergaminho: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Bola de Fogo",
+      "description": "Lança uma bola de fogo ardente que explode ao impacto."
+    },
+    "frost_bolt": {
+      "name": "Seta de Gelo",
+      "description": "Dispara um projétil de gelo que desacelera inimigos ao atingir."
+    },
+    "arcane_bolt": {
+      "name": "Seta Arcana",
+      "description": "Dispara um projétil arcano veloz."
+    },
+    "healing_light": {
+      "name": "Luz Curativa",
+      "description": "Restaura a vida do conjurador."
+    },
+    "lightning": {
+      "name": "Relâmpago",
+      "description": "Atinge o alvo com um raio elétrico."
+    },
+    "force_push": {
+      "name": "Empurrão de Força",
+      "description": "Empurra inimigos próximos com força mágica."
+    },
+    "mana_shield": {
+      "name": "Escudo de Mana",
+      "description": "Cria uma barreira protetora que absorve dano."
+    },
+    "blink": {
+      "name": "Piscar",
+      "description": "Teleporta uma curta distância na direção em que você está olhando."
+    }
+  },
+  "notification": {
+    "spell_learned": "Feitiço Aprendido!",
+    "spell_transferred": "Feitiço Transferido!",
+    "spell_transferred_desc": "{spell} escrito no pergaminho",
+    "not_enough_mana": "Mana Insuficiente!",
+    "not_enough_mana_desc": "Necessário {required} (possui {current})",
+    "no_spell": "Sem Feitiço!",
+    "no_spell_desc": "Espaço {slot} está vazio",
+    "no_blank_scroll": "Sem Pergaminho em Branco!",
+    "no_blank_scroll_desc": "É necessário um pergaminho em branco para escrever",
+    "hotbar_full": "Barra Cheia!",
+    "hotbar_full_desc": "Nenhum espaço de feitiço disponível",
+    "already_known": "Já Conhecido!",
+    "already_known_desc": "Você já possui {spell}",
+    "spell_not_learned": "Feitiço Não Aprendido!",
+    "spell_not_learned_desc": "Você não aprendeu {spell}",
+    "invalid_scroll": "Pergaminho Inválido!",
+    "invalid_scroll_desc": "Este pergaminho contém um feitiço desconhecido",
+    "enchantment_learned": "Encantamento Aprendido!",
+    "not_enough_xp": "XP Insuficiente!",
+    "not_enough_xp_desc": "Necessário {required} (possui {current})",
+    "passive_learned": "Passiva Aprendida!",
+    "passive_activated": "Passiva Ativada!",
+    "passive_deactivated": "Passiva Desativada",
+    "max_passives": "Máximo de Passivas Atingido!",
+    "max_passives_desc": "Você só pode ter {max} passivas ativas",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "Total: {total} XP"
+  },
+  "enchanting": {
+    "title": "MESA DE ENCANTAMENTOS",
+    "xp": "XP DE ENCANTAMENTO",
+    "basic_name": "ROLAGEM BÁSICA",
+    "advanced_name": "ROLAGEM AVANÇADA",
+    "master_name": "ROLAGEM MESTRE",
+    "basic_tiers": "Comum",
+    "advanced_tiers": "Comum + Raro",
+    "master_tiers": "Todos os Níveis",
+    "cost_format": "{cost} XP",
+    "roll": "ROLAR",
+    "learned": "ENCANTAMENTOS APRENDIDOS",
+    "none_learned": "Nenhum encantamento aprendido ainda",
+    "no_available": "Sem Encantamentos!",
+    "no_available_desc": "Todos os encantamentos já foram aprendidos",
+    "applied": "Encantamento Aplicado!",
+    "removed": "Encantamento Removido!",
+    "lost_forever": "(perdido para sempre)",
+    "apply_failed": "Não é Possível Aplicar!",
+    "apply_failed_desc": "O cajado já possui um encantamento ou você não possui este encantamento"
+  },
+  "passive": {
+    "title": "PASSIVAS",
+    "xp": "XP DE PASSIVA",
+    "basic_name": "ROLAGEM BÁSICA",
+    "advanced_name": "ROLAGEM AVANÇADA",
+    "master_name": "ROLAGEM MESTRE",
+    "basic_tiers": "Comum",
+    "advanced_tiers": "Comum + Raro",
+    "master_tiers": "Todos os Níveis",
+    "cost_format": "{cost} XP",
+    "roll": "ROLAR",
+    "learned": "PASSIVAS APRENDIDAS",
+    "active": "PASSIVAS ATIVAS",
+    "none_learned": "Nenhuma passiva aprendida ainda",
+    "none_active": "Nenhuma passiva ativa",
+    "activate": "ATIVAR",
+    "deactivate": "DESATIVAR",
+    "no_available": "Sem Passivas!",
+    "no_available_desc": "Todas as passivas já foram aprendidas"
+  },
+  "panel_tabs": {
+    "spells": "FEITIÇOS",
+    "enchantments": "ENCANTAMENTOS",
+    "current_enchantment": "ATUAL:",
+    "apply": "APLICAR",
+    "remove": "REMOVER",
+    "none": "Nenhum"
+  },
+  "lore": {
+    "types": {
+      "attack": "Ataque",
+      "support": "Suporte",
+      "projectile": "Projétil",
+      "utility": "Utilidade",
+      "defense": "Defesa",
+      "buff": "Fortalecimento",
+      "damage": "Dano",
+      "heal": "Cura",
+      "debuff": "Enfraquecimento"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Cajado Mágico Comum",
+      "description": "Um cajado mágico básico para conjurar feitiços."
+    },
+    "Staff_Uncommon": {
+      "name": "Cajado Mágico Incomum",
+      "description": "Um cajado mágico aprimorado.\n\n<color is=\"#55ff55\">+10% Dano/Cura</color>\n<color is=\"#55ff55\">-5% Custo de Mana</color>"
+    },
+    "Staff_Rare": {
+      "name": "Cajado Mágico Raro",
+      "description": "Um cajado mágico finamente forjado.\n\n<color is=\"#5555ff\">+20% Dano/Cura</color>\n<color is=\"#5555ff\">-10% Custo de Mana</color>\n<color is=\"#5555ff\">-10% Recarga</color>"
+    },
+    "Staff_Epic": {
+      "name": "Cajado Mágico Épico",
+      "description": "Um cajado mágico poderoso.\n\n<color is=\"#aa00aa\">+35% Dano/Cura</color>\n<color is=\"#aa00aa\">-15% Custo de Mana</color>\n<color is=\"#aa00aa\">-20% Recarga</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Cajado Mágico Lendário",
+      "description": "Um cajado mágico lendário de poder imenso.\n\n<color is=\"#ffaa00\">+50% Dano/Cura</color>\n<color is=\"#ffaa00\">-25% Custo de Mana</color>\n<color is=\"#ffaa00\">-30% Recarga</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Bancada Arcana",
+      "description": "Uma estação de criação mística para criar e aprimorar equipamentos mágicos."
+    },
+    "Arcane_Dust": {
+      "name": "Pó Arcano",
+      "description": "Pó mágico fino de criaturas do vazio. Usado em criações básicas."
+    },
+    "Arcane_Shard": {
+      "name": "Fragmento Arcano",
+      "description": "Um fragmento cristalizado de energia arcana. Usado em criações intermediárias."
+    },
+    "Arcane_Crystal": {
+      "name": "Cristal Arcano",
+      "description": "Um cristal totalmente formado de puro poder arcano. Usado em criações avançadas."
+    },
+    "Spirit_Essence": {
+      "name": "Essência Espiritual",
+      "description": "Energia elemental concentrada de espíritos. Usada para encantamentos e pergaminhos."
+    },
+    "Ember_Heart": {
+      "name": "Coração de Brasa",
+      "description": "Um núcleo incandescente de um golem de chamas. Necessário para melhorias épicas."
+    },
+    "Golem_Core": {
+      "name": "Núcleo de Golem",
+      "description": "A fonte de energia de um golem de cristal. Necessário para melhorias lendárias."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Pergaminho em Branco",
+      "description": "Um pergaminho mágico vazio. Pode ser inscrito com um feitiço."
+    }
+  },
+  "bench_categories": {
+    "staves": "Cajados",
+    "scrolls": "Pergaminhos"
+  },
+  "command": {
+    "staff": {
+      "given": "Cajado {quality} concedido"
+    },
+    "scroll": {
+      "given": "Pergaminho concedido: {spell}",
+      "notfound": "Feitiço não encontrado: {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} concedido",
+      "not_found": "Material não encontrado: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus recarregado"
+    },
+    "enchantment": {
+      "notfound": "Encantamento não encontrado: {id}",
+      "applied": "Encantamento aplicado: {name}",
+      "apply_failed": "Falha ao aplicar encantamento (sem espaços ou já aplicado)",
+      "no_enchantments": "Nenhum encantamento para remover",
+      "removed": "Encantamento removido: {id}",
+      "not_on_player": "Encantamento não encontrado no jogador",
+      "no_active": "Nenhum encantamento ativo",
+      "active_header": "Encantamentos Ativos ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "Nenhum encantamento disponível",
+      "available_header": "Encantamentos Disponíveis:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Uso: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Passiva não encontrada: {id}",
+      "activated": "Passiva ativada: {name}",
+      "activate_failed": "Falha ao ativar passiva (já ativa)",
+      "no_passives": "Nenhuma passiva para desativar",
+      "deactivated": "Passiva desativada: {id}",
+      "not_on_player": "Passiva não encontrada no jogador",
+      "no_active": "Nenhuma passiva ativa",
+      "active_header": "Passivas Ativas:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "Nenhuma passiva disponível",
+      "available_header": "Passivas Disponíveis:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Todas as passivas ativadas",
+      "usage": "Uso: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Comandos de feitiço",
+      "notfound": "Feitiço não encontrado: {id}",
+      "list": {
+        "desc": "Listar todos os feitiços registrados",
+        "header": "=== Feitiços Registrados ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Mostrar detalhes do feitiço",
+        "id": {
+          "desc": "ID do feitiço para inspecionar"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Categoria: {category}",
+        "cooldown": "Recarga: {cooldown}s",
+        "manaCost": "Custo de Mana: {manaCost}",
+        "instability": "Instabilidade: {instability}",
+        "nodes": "Nós: {nodes}",
+        "graphHeader": "--- Grafo ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Listar todas as traduções de um feitiço",
+          "spellId": {
+            "desc": "ID do feitiço alvo"
+          },
+          "header": "=== Traduções de {spell} ===",
+          "empty": "Nenhuma tradução encontrada",
+          "locale": "  [{locale}]",
+          "name": "    Nome: {name}",
+          "description": "    Desc: {description}"
+        }
+      }
+    }
+  }
+}

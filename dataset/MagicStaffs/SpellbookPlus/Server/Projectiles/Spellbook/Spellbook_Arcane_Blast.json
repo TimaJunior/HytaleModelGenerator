@@ -1,0 +1,25 @@
+{
+  "Parent": "Staff_Wood_Rotten_Corruption_Orb",
+  "Damage": 0,
+  "MuzzleVelocity": 25,
+  "Gravity": 0,
+  "TimeToLive": 3,
+  "HitParticles": {
+    "SystemId": "GreenOrbImpact",
+    "Scale": 1.5
+  },
+  "MissParticles": {
+    "SystemId": "Explosion_Medium"
+  },
+  "DeathParticles": {
+    "SystemId": "Explosion_Medium"
+  },
+  "DeathEffectsOnHit": true,
+  "ExplosionConfig": {
+    "DamageEntities": true,
+    "DamageBlocks": false,
+    "BlockDamageRadius": 0,
+    "EntityDamageRadius": 3,
+    "EntityDamageFalloff": 0.5
+  }
+}

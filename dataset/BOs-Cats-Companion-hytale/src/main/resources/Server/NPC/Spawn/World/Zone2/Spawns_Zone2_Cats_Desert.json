@@ -1,0 +1,18 @@
+{
+  "$Comment": "Siamese cats spawn in Zone 2 deserts - exotic desert cats",
+  "Environments": [
+    "Env_Zone2_Deserts"
+  ],
+  "NPCs": [
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Sand",
+      "Id": "Cats_Siamese_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

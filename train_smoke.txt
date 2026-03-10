@@ -1,0 +1,24 @@
+﻿Starting Training on cuda with LR=5e-05...
+Resuming from ml_engine/weights\latest.pth...
+Failed to resume (likely architecture mismatch): Error(s) in loading state_dict for VoxelGANGenerator:
+	Missing key(s) in state_dict: "decoder.3.block.0.weight", "decoder.3.block.0.bias", "decoder.3.block.1.weight", "decoder.3.block.1.bias", "decoder.3.block.1.running_mean", "decoder.3.block.1.running_var", "decoder.3.block.3.weight", "decoder.3.block.3.bias", "decoder.3.block.4.weight", "decoder.3.block.4.bias", "decoder.3.block.4.running_mean", "decoder.3.block.4.running_var", "decoder.5.weight", "decoder.5.bias", "decoder.5.running_mean", "decoder.5.running_var", "decoder.7.block.0.weight", "decoder.7.block.0.bias", "decoder.7.block.1.weight", "decoder.7.block.1.bias", "decoder.7.block.1.running_mean", "decoder.7.block.1.running_var", "decoder.7.block.3.weight", "decoder.7.block.3.bias", "decoder.7.block.4.weight", "decoder.7.block.4.bias", "decoder.7.block.4.running_mean", "decoder.7.block.4.running_var", "decoder.8.weight", "decoder.8.bias", "decoder.9.running_mean", "decoder.9.running_var", "decoder.11.weight", "decoder.11.bias". 
+	Unexpected key(s) in state_dict: "decoder.3.weight", "decoder.3.bias", "decoder.4.running_mean", "decoder.4.running_var", "decoder.4.num_batches_tracked", "decoder.6.weight", "decoder.6.bias", "decoder.7.weight", "decoder.7.bias", "decoder.7.running_mean", "decoder.7.running_var", "decoder.7.num_batches_tracked". 
+	size mismatch for decoder.4.weight: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([128, 64, 4, 4, 4]).
+	size mismatch for decoder.9.weight: copying a param with shape torch.Size([32, 1, 4, 4, 4]) from checkpoint, the shape in current model is torch.Size([32]).
+	size mismatch for decoder.9.bias: copying a param with shape torch.Size([1]) from checkpoint, the shape in current model is torch.Size([32]).
+Initializing from scratch.
+Loaded 433 train samples, 67 val samples.
+[1/1][0/109] Loss_D: 1.3741 Loss_G: 18.1191 (Adv: 3.3545, Dice: 8.4171, WBCE: 6.3475)
+[1/1][10/109] Loss_D: 0.6316 Loss_G: 15.2267 (Adv: 1.2699, Dice: 8.0893, WBCE: 5.8675)
+[1/1][20/109] Loss_D: 0.5002 Loss_G: 15.0599 (Adv: 0.5205, Dice: 8.6958, WBCE: 5.8435)
+[1/1][30/109] Loss_D: 0.3396 Loss_G: 15.0400 (Adv: 1.3730, Dice: 8.2466, WBCE: 5.4204)
+[1/1][40/109] Loss_D: 0.2633 Loss_G: 15.4022 (Adv: 1.9947, Dice: 8.4238, WBCE: 4.9837)
+[1/1][50/109] Loss_D: 0.2164 Loss_G: 14.6765 (Adv: 1.6203, Dice: 8.0398, WBCE: 5.0164)
+[1/1][60/109] Loss_D: 0.1829 Loss_G: 15.9809 (Adv: 2.5290, Dice: 9.4975, WBCE: 3.9544)
+[1/1][70/109] Loss_D: 0.1020 Loss_G: 16.0597 (Adv: 2.6149, Dice: 9.7054, WBCE: 3.7394)
+[1/1][80/109] Loss_D: 0.0764 Loss_G: 16.1018 (Adv: 2.8285, Dice: 9.6710, WBCE: 3.6023)
+[1/1][90/109] Loss_D: 0.0587 Loss_G: 16.3264 (Adv: 3.1859, Dice: 9.6612, WBCE: 3.4792)
+[1/1][100/109] Loss_D: 0.8324 Loss_G: 22.1336 (Adv: 8.9935, Dice: 9.6962, WBCE: 3.4439)
+Epoch [1/1] Validation IoU: 0.1104
+👉 New best model saved with IoU: 0.1104
+Training finished in 7.63s

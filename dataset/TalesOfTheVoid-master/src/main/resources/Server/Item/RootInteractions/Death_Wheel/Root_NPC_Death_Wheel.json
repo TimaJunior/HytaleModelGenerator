@@ -1,0 +1,40 @@
+{
+  "Interactions": [
+    {
+      "Type": "Chaining",
+      "ChainId": "Slashes",
+      "ChainingAllowance": 15,
+      "Next": [
+        "Death_Wheel_Attack",
+        {
+          "Type": "Explode",
+          "Config": {
+            "DamageEntities": true,
+            "EntityDamage": 1,
+            "EntityDamageRadius": 5
+          },
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Explosion_Big",
+                "TargetEntityPart": "Entity",
+                "Color": "#7a3169"
+              }
+            ],
+            "ItemPlayerAnimationsId": "Void_Guardian_Default",
+            "ItemAnimationId": "Attack",
+            "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Death",
+            "ClearSoundEventOnFinish": false
+          },
+          "HorizontalSpeedMultiplier": 2
+        }
+      ],
+      "HorizontalSpeedMultiplier": 5
+    }
+  ],
+  "Tags": {
+    "Attack": [
+      "Melee"
+    ]
+  }
+}

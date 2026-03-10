@@ -1,0 +1,4 @@
+rootProject.name = 'Cats (Hytale)'
+
+// Enable configuration cache for better build performance
+enableFeaturePreview('STABLE_CONFIGURATION_CACHE')

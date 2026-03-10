@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "스펠북 플러스",
+    "available": "사용 가능한 주문",
+    "type": "유형:",
+    "mana": "마나:",
+    "cooldown": "재사용 대기:",
+    "effect": "효과:",
+    "range": "사거리:",
+    "select": "주문 선택",
+    "write_scroll": "주문서에 기록",
+    "close": "닫기",
+    "damage_value": "{value} 피해",
+    "heal_value": "{value} 회복",
+    "utility_value": "유틸리티",
+    "aoe_value": "{value}m 범위 공격",
+    "range_value": "{value}m 사거리",
+    "projectile_value": "투사체",
+    "self_value": "자신",
+    "scroll_prefix": "주문서: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "파이어볼",
+      "description": "충돌 시 폭발하는 맹렬한 화염구를 발사합니다."
+    },
+    "frost_bolt": {
+      "name": "서리 화살",
+      "description": "적중 시 적을 둔화시키는 얼음 화살을 발사합니다."
+    },
+    "arcane_bolt": {
+      "name": "비전 화살",
+      "description": "빠른 비전 투사체를 발사합니다."
+    },
+    "healing_light": {
+      "name": "치유의 빛",
+      "description": "시전자의 생명력을 회복합니다."
+    },
+    "lightning": {
+      "name": "번개",
+      "description": "대상에게 번개를 내리칩니다."
+    },
+    "force_push": {
+      "name": "밀어내기",
+      "description": "마법의 힘으로 주변 적들을 밀어냅니다."
+    },
+    "mana_shield": {
+      "name": "마나 보호막",
+      "description": "피해를 흡수하는 보호 장벽을 생성합니다."
+    },
+    "blink": {
+      "name": "점멸",
+      "description": "바라보는 방향으로 짧은 거리를 순간이동합니다."
+    }
+  },
+  "notification": {
+    "spell_learned": "주문 습득!",
+    "spell_transferred": "주문 전사 완료!",
+    "spell_transferred_desc": "{spell}이(가) 주문서에 기록됨",
+    "not_enough_mana": "마나 부족!",
+    "not_enough_mana_desc": "{required} 필요 (현재 {current})",
+    "no_spell": "주문 없음!",
+    "no_spell_desc": "슬롯 {slot}이(가) 비어 있습니다",
+    "no_blank_scroll": "빈 주문서 없음!",
+    "no_blank_scroll_desc": "기록하려면 빈 주문서가 필요합니다",
+    "hotbar_full": "단축바 가득 참!",
+    "hotbar_full_desc": "사용 가능한 빈 주문 슬롯이 없습니다",
+    "already_known": "이미 습득함!",
+    "already_known_desc": "이미 {spell}을(를) 보유하고 있습니다",
+    "spell_not_learned": "미습득 주문!",
+    "spell_not_learned_desc": "{spell}을(를) 아직 배우지 않았습니다",
+    "invalid_scroll": "잘못된 주문서!",
+    "invalid_scroll_desc": "이 주문서에는 알 수 없는 주문이 담겨 있습니다",
+    "enchantment_learned": "마법부여 습득!",
+    "not_enough_xp": "경험치 부족!",
+    "not_enough_xp_desc": "{required} 필요 (현재 {current})",
+    "passive_learned": "패시브 습득!",
+    "passive_activated": "패시브 활성화!",
+    "passive_deactivated": "패시브 비활성화",
+    "max_passives": "최대 패시브 도달!",
+    "max_passives_desc": "활성 패시브는 최대 {max}개까지 가능합니다",
+    "xp_gained": "+{gained} 경험치",
+    "xp_total": "합계: {total} 경험치"
+  },
+  "enchanting": {
+    "title": "마법부여 테이블",
+    "xp": "마법부여 경험치",
+    "basic_name": "기본 굴림",
+    "advanced_name": "고급 굴림",
+    "master_name": "마스터 굴림",
+    "basic_tiers": "일반",
+    "advanced_tiers": "일반 + 희귀",
+    "master_tiers": "전 등급",
+    "cost_format": "{cost} 경험치",
+    "roll": "굴리기",
+    "learned": "습득한 마법부여",
+    "none_learned": "아직 습득한 마법부여가 없습니다",
+    "no_available": "마법부여 없음!",
+    "no_available_desc": "모든 마법부여를 이미 습득했습니다",
+    "applied": "마법부여 적용 완료!",
+    "removed": "마법부여 제거 완료!",
+    "lost_forever": "(영구 소실)",
+    "apply_failed": "적용 불가!",
+    "apply_failed_desc": "지팡이에 이미 마법부여가 있거나 해당 마법부여를 보유하고 있지 않습니다"
+  },
+  "passive": {
+    "title": "패시브",
+    "xp": "패시브 경험치",
+    "basic_name": "기본 굴림",
+    "advanced_name": "고급 굴림",
+    "master_name": "마스터 굴림",
+    "basic_tiers": "일반",
+    "advanced_tiers": "일반 + 희귀",
+    "master_tiers": "전 등급",
+    "cost_format": "{cost} 경험치",
+    "roll": "굴리기",
+    "learned": "습득한 패시브",
+    "active": "활성 패시브",
+    "none_learned": "아직 습득한 패시브가 없습니다",
+    "none_active": "활성화된 패시브가 없습니다",
+    "activate": "활성화",
+    "deactivate": "비활성화",
+    "no_available": "패시브 없음!",
+    "no_available_desc": "모든 패시브를 이미 습득했습니다"
+  },
+  "panel_tabs": {
+    "spells": "주문",
+    "enchantments": "마법부여",
+    "current_enchantment": "현재:",
+    "apply": "적용",
+    "remove": "제거",
+    "none": "없음"
+  },
+  "lore": {
+    "types": {
+      "attack": "공격",
+      "support": "지원",
+      "projectile": "투사체",
+      "utility": "유틸리티",
+      "defense": "방어",
+      "buff": "버프",
+      "damage": "피해",
+      "heal": "회복",
+      "debuff": "디버프"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "일반 마법 지팡이",
+      "description": "주문 시전을 위한 기본 마법 지팡이."
+    },
+    "Staff_Uncommon": {
+      "name": "고급 마법 지팡이",
+      "description": "개선된 마법 지팡이.\n\n<color is=\"#55ff55\">+10% 피해/회복</color>\n<color is=\"#55ff55\">-5% 마나 소모</color>"
+    },
+    "Staff_Rare": {
+      "name": "희귀 마법 지팡이",
+      "description": "정교하게 제작된 마법 지팡이.\n\n<color is=\"#5555ff\">+20% 피해/회복</color>\n<color is=\"#5555ff\">-10% 마나 소모</color>\n<color is=\"#5555ff\">-10% 재사용 대기시간</color>"
+    },
+    "Staff_Epic": {
+      "name": "영웅 마법 지팡이",
+      "description": "강력한 마법 지팡이.\n\n<color is=\"#aa00aa\">+35% 피해/회복</color>\n<color is=\"#aa00aa\">-15% 마나 소모</color>\n<color is=\"#aa00aa\">-20% 재사용 대기시간</color>"
+    },
+    "Staff_Legendary": {
+      "name": "전설 마법 지팡이",
+      "description": "막대한 힘을 지닌 전설의 마법 지팡이.\n\n<color is=\"#ffaa00\">+50% 피해/회복</color>\n<color is=\"#ffaa00\">-25% 마나 소모</color>\n<color is=\"#ffaa00\">-30% 재사용 대기시간</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "비전 작업대",
+      "description": "마법 장비를 제작하고 강화하기 위한 신비로운 제작대."
+    },
+    "Arcane_Dust": {
+      "name": "비전 가루",
+      "description": "공허 생물에게서 얻은 미세한 마법 가루. 기본 제작에 사용됩니다."
+    },
+    "Arcane_Shard": {
+      "name": "비전 파편",
+      "description": "비전 에너지가 결정화된 파편. 중급 제작에 사용됩니다."
+    },
+    "Arcane_Crystal": {
+      "name": "비전 수정",
+      "description": "순수한 비전 힘으로 완성된 수정. 고급 제작에 사용됩니다."
+    },
+    "Spirit_Essence": {
+      "name": "정령의 정수",
+      "description": "정령에게서 얻은 농축된 원소 에너지. 마법부여와 주문서에 사용됩니다."
+    },
+    "Ember_Heart": {
+      "name": "잔불의 심장",
+      "description": "화염 골렘에게서 얻은 이글거리는 핵. 영웅 등급 강화에 필요합니다."
+    },
+    "Golem_Core": {
+      "name": "골렘 핵",
+      "description": "수정 골렘의 동력원. 전설 등급 강화에 필요합니다."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "빈 주문서",
+      "description": "비어 있는 마법 주문서. 주문을 기록할 수 있습니다."
+    }
+  },
+  "bench_categories": {
+    "staves": "지팡이",
+    "scrolls": "주문서"
+  },
+  "command": {
+    "staff": {
+      "given": "{quality} 지팡이 지급됨"
+    },
+    "scroll": {
+      "given": "주문서 지급됨: {spell}",
+      "notfound": "주문을 찾을 수 없음: {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} 지급됨",
+      "not_found": "재료를 찾을 수 없습니다: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus가 리로드되었습니다"
+    },
+    "enchantment": {
+      "notfound": "마법부여를 찾을 수 없음: {id}",
+      "applied": "마법부여 적용됨: {name}",
+      "apply_failed": "마법부여 적용 실패 (슬롯 없음 또는 이미 적용됨)",
+      "no_enchantments": "제거할 마법부여가 없습니다",
+      "removed": "마법부여 제거됨: {id}",
+      "not_on_player": "플레이어에게 해당 마법부여가 없습니다",
+      "no_active": "활성 마법부여 없음",
+      "active_header": "활성 마법부여 ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "사용 가능한 마법부여 없음",
+      "available_header": "사용 가능한 마법부여:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "사용법: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "패시브를 찾을 수 없음: {id}",
+      "activated": "패시브 활성화됨: {name}",
+      "activate_failed": "패시브 활성화 실패 (이미 활성 상태)",
+      "no_passives": "비활성화할 패시브가 없습니다",
+      "deactivated": "패시브 비활성화됨: {id}",
+      "not_on_player": "플레이어에게 해당 패시브가 없습니다",
+      "no_active": "활성 패시브 없음",
+      "active_header": "활성 패시브:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "사용 가능한 패시브 없음",
+      "available_header": "사용 가능한 패시브:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "모든 패시브가 활성화되었습니다",
+      "usage": "사용법: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "주문 명령어",
+      "notfound": "주문을 찾을 수 없음: {id}",
+      "list": {
+        "desc": "등록된 모든 주문 목록 표시",
+        "header": "=== 등록된 주문 ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "주문 상세 정보 표시",
+        "id": {
+          "desc": "조회할 주문 ID"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "분류: {category}",
+        "cooldown": "재사용 대기: {cooldown}초",
+        "manaCost": "마나 소모: {manaCost}",
+        "instability": "불안정도: {instability}",
+        "nodes": "노드: {nodes}",
+        "graphHeader": "--- 그래프 ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "주문의 모든 번역 목록 표시",
+          "spellId": {
+            "desc": "대상 주문 ID"
+          },
+          "header": "=== {spell}의 번역 ===",
+          "empty": "번역을 찾을 수 없습니다",
+          "locale": "  [{locale}]",
+          "name": "    이름: {name}",
+          "description": "    설명: {description}"
+        }
+      }
+    }
+  }
+}

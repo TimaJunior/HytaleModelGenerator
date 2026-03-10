@@ -1,0 +1,36 @@
+# Item Interactions
+item.unknown=Die Katze schnuppert neugierig, weiß aber nicht was sie damit anfangen soll.
+item.unknown.named={catName} schnuppert neugierig, weiß aber nicht was sie damit anfangen soll.
+wild.reject=*fauchen* Die wilde Katze traut dir damit nicht!
+
+# Taming
+taming.success=Du hast die Katze mit {item} gezähmt! Triff {catName}!
+taming.companion=Schnurr! Dein neuer Begleiter wird dir treu folgen
+taming.help=Nutze /cat name <name> um {catName} einen neuen Namen zu geben oder /cat für eine Liste verfügbarer Befehle
+taming.limit_reached=Du hast dein Katzenlimit erreicht ({current}/{limit})
+taming.error_no_uuid=Fehler: Konnte Katze nicht zähmen (keine UUID)
+taming.error_system=Fehler: Katzensystem nicht verfügbar
+taming.count=Du besitzt jetzt {current} von {limit} Katzen
+taming.progress=Die Katze hat das Futter genossen! Vertrauen: {current}/{required}
+taming.gaining_trust=Die Katze scheint interessiert, ist aber noch vorsichtig...
+taming.likes_food=Die Katze fängt an dich zu mögen!
+taming.almost_there=Die Katze ist fast bereit dir zu vertrauen!
+taming.too_soon=Die Katze ist noch satt! Warte noch {seconds} Sekunden bevor du wieder fütterst.
+
+# Play Interactions
+play.cooldown=Deine Katze ist müde vom Spielen und braucht eine Pause.
+
+# Owner Interactions
+owner.petting.cooldown=Deine Katze möchte gerade nicht gestreichelt werden.
+owner.gift={name} hat dir ein kleines Geschenk gebracht: {gift}!
+
+# Feeding
+feeding.healed=Deine Katze wurde geheilt! (+{amount} HP, jetzt {health}/{maxHealth})
+feeding.full_health=Deine Katze hat bereits volle Gesundheit!
+feeding.treat.healed=Deine Katze knabbert genüsslich den Leckerli! (+{amount} HP, jetzt {health}/{maxHealth})
+feeding.treat.full_health=Deine Katze ist eigentlich satt, aber der Leckerli riecht einfach zu verlockend, schnurr!
+feeding.treat.cooldown=Deine Katze ist noch satt vom letzten Leckerli, warte noch einen Moment.
+# Hints
+hint.tame=Drücke [{key}] um zu zähmen
+hint.owner=Drücke [{key}] um mit deiner Katze zu interagieren
+hint.stranger=Diese Katze gehört jemand anderem

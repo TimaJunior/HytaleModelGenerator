@@ -1,0 +1,24 @@
+{
+  "$Comment": "Cats spawn in Zone 4 jungles - adaptable jungle cats",
+  "Environments": [
+    "Env_Zone4_Jungles"
+  ],
+  "NPCs": [
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Calico_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Black_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

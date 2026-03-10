@@ -1,0 +1,40 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Lightning_Start",
+      "LifeSpan": {
+        "Min": 0.5,
+        "Max": 0.8
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "Lightning_Trail",
+      "LifeSpan": {
+        "Min": 0.3,
+        "Max": 0.5
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 2.5,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "Lightning_Sparks",
+      "LifeSpan": {
+        "Min": 0.4,
+        "Max": 0.6
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ]
+}

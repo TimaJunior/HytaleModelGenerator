@@ -1,0 +1,36 @@
+{
+  "Type": "DamageEntity",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Physical": 5
+    }
+  },
+  "DamageEffects": {
+    "Knockback": {
+      "Force": 1,
+      "RelativeX": -2,
+      "RelativeZ": -8,
+      "VelocityY": 5
+    },
+    "WorldSoundEventId": "SFX_Sword_T2_Impact",
+    "LocalSoundEventId": "SFX_Sword_T2_Impact",
+    "WorldParticles": [
+      {
+        "SystemId": "Impact_Blade_01"
+      }
+    ]
+  },
+  "Next": {
+    "Type": "ChangeStat",
+    "Entity": "Owner",
+    "StatModifiers": {
+      "Mana": 5
+    },
+    "Next": {
+      "Type": "ClearEntityEffect",
+      "Entity": "Target",
+      "EntityEffectId": "Marked"
+    },
+    "ValueType": "Percent"
+  }
+}

@@ -27,12 +27,28 @@ class ModelInferenceService:
         """
         Load pretrained weights for both encoder and generator.
         Expects a dict: {'encoder': state_dict, 'generator': state_dict}
+        If path points to latest.pth but best.pth exists in the same dict, load best.pth instead.
         """
-        checkpoint = torch.load(path, map_location=self.device)
-        self.encoder.load_state_dict(checkpoint['encoder'])
-        self.generator.load_state_dict(checkpoint['generator'])
         import sys
-        sys.stderr.write(f"Weights loaded from {path}\n")
+        
+        # Priority: best.pth over latest.pth unless specifically requested
+        actual_path = path
+        dir_name = os.path.dirname(path)
+        best_path = os.path.join(dir_name, "best.pth")
+        
+        if os.path.basename(path) == "latest.pth" and os.path.exists(best_path):
+            actual_path = best_path
+            sys.stderr.write(f"Found best.pth, prioritizing over latest.pth\n")
+
+        try:
+            checkpoint = torch.load(actual_path, map_location=self.device, weights_only=True)
+            self.encoder.load_state_dict(checkpoint['encoder'])
+            self.generator.load_state_dict(checkpoint['generator'])
+            sys.stderr.write(f"Weights loaded from {actual_path}\n")
+        except Exception as e:
+            sys.stderr.write(f"WARNING: Failed to load weights from {actual_path}: {e}\n")
+            sys.stderr.write("Falling back to random-initialized weights.\n")
+            raise RuntimeError(f"Corrupt weights file: {actual_path} ({e})")
 
     def generate_from_image(self, image_tensor: torch.Tensor) -> torch.Tensor:
         """

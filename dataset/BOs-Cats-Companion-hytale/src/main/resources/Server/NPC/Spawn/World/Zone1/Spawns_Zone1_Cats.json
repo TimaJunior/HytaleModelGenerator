@@ -1,0 +1,36 @@
+{
+  "$Comment": "Common domestic cats spawn in plains - friendly cats that spawn during the day",
+  "Environments": [
+    "Env_Zone1_Plains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_OrangeTabby_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_GrayTabby_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Tuxedo_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 2,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Kitten_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

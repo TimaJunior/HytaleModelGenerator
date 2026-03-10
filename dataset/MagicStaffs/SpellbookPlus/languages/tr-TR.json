@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "BUYU KITABI PLUS",
+    "available": "MEVCUT BUYULER",
+    "type": "TUR:",
+    "mana": "MANA:",
+    "cooldown": "BEKLEME:",
+    "effect": "ETKI:",
+    "range": "MENZIL:",
+    "select": "BUYU SEC",
+    "write_scroll": "TOMARA YAZ",
+    "close": "KAPAT",
+    "damage_value": "{value} HASAR",
+    "heal_value": "{value} Iyilestirme",
+    "utility_value": "Fayda",
+    "aoe_value": "{value}m Alan",
+    "range_value": "{value}m Menzil",
+    "projectile_value": "Mermi",
+    "self_value": "Kendine",
+    "scroll_prefix": "Tomar: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Ates Topu",
+      "description": "Carpma aninda patlayan alevli bir ates topu firlatir."
+    },
+    "frost_bolt": {
+      "name": "Buz Oku",
+      "description": "Isabet ettigi dusmanari yavalatan bir buz oku atar."
+    },
+    "arcane_bolt": {
+      "name": "Gizemli Ok",
+      "description": "Hizli bir gizemli mermi atar."
+    },
+    "healing_light": {
+      "name": "Iyilestirici Isik",
+      "description": "Buyucu icin can yeniler."
+    },
+    "lightning": {
+      "name": "Yildirim",
+      "description": "Hedefe bir yildirim carpar."
+    },
+    "force_push": {
+      "name": "Guc Itisi",
+      "description": "Yakinlardaki dusmanlari sihirli gucle iter."
+    },
+    "mana_shield": {
+      "name": "Mana Kalkani",
+      "description": "Hasari emen koruyucu bir bariyer olusturur."
+    },
+    "blink": {
+      "name": "Yanip Sonme",
+      "description": "Baktiginiz yonde kisa bir mesafe isinlanir."
+    }
+  },
+  "notification": {
+    "spell_learned": "Buyu Ogrenildi!",
+    "spell_transferred": "Buyu Aktarildi!",
+    "spell_transferred_desc": "{spell} tomara yazildi",
+    "not_enough_mana": "Yeterli Mana Yok!",
+    "not_enough_mana_desc": "{required} gerekli (mevcut {current})",
+    "no_spell": "Buyu Yok!",
+    "no_spell_desc": "Yuva {slot} bos",
+    "no_blank_scroll": "Bos Tomar Yok!",
+    "no_blank_scroll_desc": "Yazmak icin bos bir tomar gerekli",
+    "hotbar_full": "Kisayol Cubugu Dolu!",
+    "hotbar_full_desc": "Bos buyu yuvasi yok",
+    "already_known": "Zaten Biliniyor!",
+    "already_known_desc": "Zaten {spell} buyusune sahipsin",
+    "spell_not_learned": "Buyu Ogrenilmedi!",
+    "spell_not_learned_desc": "{spell} buyusunu ogrenmediniz",
+    "invalid_scroll": "Gecersiz Tomar!",
+    "invalid_scroll_desc": "Bu tomar bilinmeyen bir buyu iceriyor",
+    "enchantment_learned": "Buyuleme Ogrenildi!",
+    "not_enough_xp": "Yeterli XP Yok!",
+    "not_enough_xp_desc": "{required} gerekli (mevcut {current})",
+    "passive_learned": "Pasif Ogrenildi!",
+    "passive_activated": "Pasif Etkinlestirildi!",
+    "passive_deactivated": "Pasif Devre Disi Birakildi",
+    "max_passives": "Maksimum Pasife Ulasildi!",
+    "max_passives_desc": "En fazla {max} aktif pasife sahip olabilirsiniz",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "Toplam: {total} XP"
+  },
+  "enchanting": {
+    "title": "BUYULEME MASASI",
+    "xp": "BUYULEME XP",
+    "basic_name": "TEMEL CEKILIS",
+    "advanced_name": "GELISMIS CEKILIS",
+    "master_name": "USTA CEKILISI",
+    "basic_tiers": "Siradan",
+    "advanced_tiers": "Siradan + Nadir",
+    "master_tiers": "Tum Seviyeler",
+    "cost_format": "{cost} XP",
+    "roll": "CEK",
+    "learned": "OGRENILEN BUYULEMELER",
+    "none_learned": "Henuz ogrenilen buyuleme yok",
+    "no_available": "Buyuleme Yok!",
+    "no_available_desc": "Tum buyulemeler zaten ogrenildi",
+    "applied": "Buyuleme Uygulandi!",
+    "removed": "Buyuleme Kaldirildi!",
+    "lost_forever": "(sonsuza dek kayboldu)",
+    "apply_failed": "Uygulanamaz!",
+    "apply_failed_desc": "Asanin zaten bir buyulemesi var veya bu buyulemeye sahip degilsiniz"
+  },
+  "passive": {
+    "title": "PASIFLER",
+    "xp": "PASIF XP",
+    "basic_name": "TEMEL CEKILIS",
+    "advanced_name": "GELISMIS CEKILIS",
+    "master_name": "USTA CEKILISI",
+    "basic_tiers": "Siradan",
+    "advanced_tiers": "Siradan + Nadir",
+    "master_tiers": "Tum Seviyeler",
+    "cost_format": "{cost} XP",
+    "roll": "CEK",
+    "learned": "OGRENILEN PASIFLER",
+    "active": "AKTIF PASIFLER",
+    "none_learned": "Henuz ogrenilen pasif yok",
+    "none_active": "Aktif pasif yok",
+    "activate": "ETKINLESTIR",
+    "deactivate": "DEVRE DISI BIRAK",
+    "no_available": "Pasif Yok!",
+    "no_available_desc": "Tum pasifler zaten ogrenildi"
+  },
+  "panel_tabs": {
+    "spells": "BUYULER",
+    "enchantments": "BUYULEMELER",
+    "current_enchantment": "MEVCUT:",
+    "apply": "UYGULA",
+    "remove": "KALDIR",
+    "none": "Yok"
+  },
+  "lore": {
+    "types": {
+      "attack": "Saldiri",
+      "support": "Destek",
+      "projectile": "Mermi",
+      "utility": "Fayda",
+      "defense": "Savunma",
+      "buff": "Guclenme",
+      "damage": "Hasar",
+      "heal": "Iyilestirme",
+      "debuff": "Zayiflatma"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Siradan Buyu Asasi",
+      "description": "Buyu yapmak icin temel bir sihirli asa."
+    },
+    "Staff_Uncommon": {
+      "name": "Sira Disi Buyu Asasi",
+      "description": "Gelistirilmis bir sihirli asa.\n\n<color is=\"#55ff55\">+%10 Hasar/Iyilestirme</color>\n<color is=\"#55ff55\">-%5 Mana Maliyeti</color>"
+    },
+    "Staff_Rare": {
+      "name": "Nadir Buyu Asasi",
+      "description": "Ozenle islenmis bir sihirli asa.\n\n<color is=\"#5555ff\">+%20 Hasar/Iyilestirme</color>\n<color is=\"#5555ff\">-%10 Mana Maliyeti</color>\n<color is=\"#5555ff\">-%10 Bekleme Suresi</color>"
+    },
+    "Staff_Epic": {
+      "name": "Destansi Buyu Asasi",
+      "description": "Guclu bir sihirli asa.\n\n<color is=\"#aa00aa\">+%35 Hasar/Iyilestirme</color>\n<color is=\"#aa00aa\">-%15 Mana Maliyeti</color>\n<color is=\"#aa00aa\">-%20 Bekleme Suresi</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Efsanevi Buyu Asasi",
+      "description": "Muazzam guce sahip efsanevi bir sihirli asa.\n\n<color is=\"#ffaa00\">+%50 Hasar/Iyilestirme</color>\n<color is=\"#ffaa00\">-%25 Mana Maliyeti</color>\n<color is=\"#ffaa00\">-%30 Bekleme Suresi</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Gizemli Calisma Tezgahi",
+      "description": "Sihirli ekipman olusturmak ve yukseltmek icin mistik bir isleme istasyonu."
+    },
+    "Arcane_Dust": {
+      "name": "Gizemli Toz",
+      "description": "Bosluk yaratiklarindan elde edilen ince sihirli toz. Temel islemelerde kullanilir."
+    },
+    "Arcane_Shard": {
+      "name": "Gizemli Kirik",
+      "description": "Kristallestirilmis gizemli enerji parcasi. Orta seviye islemelerde kullanilir."
+    },
+    "Arcane_Crystal": {
+      "name": "Gizemli Kristal",
+      "description": "Saf gizemli gucten olusan tam sekillendirilmis kristal. Gelismis islemelerde kullanilir."
+    },
+    "Spirit_Essence": {
+      "name": "Ruh Ozu",
+      "description": "Ruhlardan elde edilen yogunlastirilmis eleman enerjisi. Buyulemeler ve tomarlar icin kullanilir."
+    },
+    "Ember_Heart": {
+      "name": "Kor Kalbi",
+      "description": "Bir alev goleminden elde edilen icten yanan cekirdek. Destansi yukseltmeler icin gereklidir."
+    },
+    "Golem_Core": {
+      "name": "Golem Cekirdegi",
+      "description": "Bir kristal golemin guc kaynagi. Efsanevi yukseltmeler icin gereklidir."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Bos Tomar",
+      "description": "Bos bir sihirli tomar. Uzerine bir buyu yazilanilabilir."
+    }
+  },
+  "bench_categories": {
+    "staves": "Asalar",
+    "scrolls": "Tomarlar"
+  },
+  "command": {
+    "staff": {
+      "given": "{quality} asa verildi"
+    },
+    "scroll": {
+      "given": "Tomar verildi: {spell}",
+      "notfound": "Buyu bulunamadi: {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} verildi",
+      "not_found": "Materyal bulunamadi: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus yeniden yuklendi"
+    },
+    "enchantment": {
+      "notfound": "Buyuleme bulunamadi: {id}",
+      "applied": "Buyuleme uygulandi: {name}",
+      "apply_failed": "Buyuleme uygulanamadi (yuva yok veya zaten uygulanmis)",
+      "no_enchantments": "Kaldirilacak buyuleme yok",
+      "removed": "Buyuleme kaldirildi: {id}",
+      "not_on_player": "Oyuncuda buyuleme bulunamadi",
+      "no_active": "Aktif buyuleme yok",
+      "active_header": "Aktif Buyulemeler ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "Mevcut buyuleme yok",
+      "available_header": "Mevcut Buyulemeler:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Kullanim: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Pasif bulunamadi: {id}",
+      "activated": "Pasif etkinlestirildi: {name}",
+      "activate_failed": "Pasif etkinlestirilemedi (zaten aktif)",
+      "no_passives": "Devre disi birakilacak pasif yok",
+      "deactivated": "Pasif devre disi birakildi: {id}",
+      "not_on_player": "Oyuncuda pasif bulunamadi",
+      "no_active": "Aktif pasif yok",
+      "active_header": "Aktif Pasifler:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "Mevcut pasif yok",
+      "available_header": "Mevcut Pasifler:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Tum pasifler etkinlestirildi",
+      "usage": "Kullanim: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Buyu komutlari",
+      "notfound": "Buyu bulunamadi: {id}",
+      "list": {
+        "desc": "Tum kayitli buyuleri listele",
+        "header": "=== Kayitli Buyuler ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Buyu detaylarini goster",
+        "id": {
+          "desc": "Incelenecek Buyu ID'si"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Kategori: {category}",
+        "cooldown": "Bekleme: {cooldown}s",
+        "manaCost": "Mana Maliyeti: {manaCost}",
+        "instability": "Dengesizlik: {instability}",
+        "nodes": "Dugumler: {nodes}",
+        "graphHeader": "--- Grafik ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Bir buyu icin tum cevirileri listele",
+          "spellId": {
+            "desc": "Hedef buyu ID'si"
+          },
+          "header": "=== {spell} icin Ceviriler ===",
+          "empty": "Ceviri bulunamadi",
+          "locale": "  [{locale}]",
+          "name": "    Ad: {name}",
+          "description": "    Aciklama: {description}"
+        }
+      }
+    }
+  }
+}

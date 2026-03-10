@@ -1,0 +1,48 @@
+# Cat Commands
+pounce.success={name} playfully pounces at {target}!
+pounce.no_target=No target found. Look at the target or provide an entity ID
+pounce.invalid_target=Invalid target
+pounce.no_cats_nearby=You have no cats nearby the target (max 15 blocks)
+pounce.no_available_cats=No available cats found to pounce
+bed.going_to_bed={name} is heading to a cozy bed {distance} blocks away at ({x}, {y}, {z})
+bed.no_beds_found=No cat beds found within {radius} blocks for {name} at position ({x}, {y}, {z})
+bed.all_beds_occupied=All {count} cat bed(s) nearby are occupied! {name} will have to wait for a spot
+follow.re_triggered.hint={name} was already following, forced refresh!
+follow.re_triggered=Re-triggered follow mode for {name}
+follow.success={name} is now following you faithfully
+name.success={name} has been renamed to {newName}
+play.success={name} is now playing and having fun!
+search.success={name} is on the hunt!
+sit.success={name} sits down obediently
+sleep.success={name} curls up for a nap
+wait.success={name} is patiently waiting
+wander.success={name} is freely exploring the area
+
+# Spawn/Despawn Commands
+spawn.success=✓ Spawned {count} cat(s)!
+spawn.failed=Failed to spawn cats
+spawn.no_despawned=You have no despawned cats to spawn
+spawn.no_match=No despawned cats found matching '{filter}'
+despawn.success=✓ {name} has been despawned!
+despawn.info=Use /cat spawn to bring your cat back
+
+# Release Command
+release.success=✓ {name} has been released back to the wild!
+release.info=The cat will now wander freely and can be tamed by any player
+release.already_wild=This cat is already wild!
+
+# Error Messages
+error.no_cat=No cat in view, look at a cat to use this command
+error.no_position=Cannot determine cat position
+error.not_owned=This cat is still wild and doesn't have an owner
+error.not_owner={name} belongs to {owner}
+error.player_only=Only players can use this command
+error.no_uuid=Cannot get entity UUID
+error.data_not_available=Cats data not available
+error.cat_not_found=Cat data not found
+error.player_ref_not_found=Unable to get player reference
+error.player_pos_not_found=Unable to get player position
+
+# Reload Command
+reload.success=✓ Cats configuration reloaded successfully!
+reload.failed=Failed to reload configuration

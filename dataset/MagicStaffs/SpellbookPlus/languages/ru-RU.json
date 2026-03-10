@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "КНИГА ЗАКЛИНАНИЙ ПЛЮС",
+    "available": "ДОСТУПНЫЕ ЗАКЛИНАНИЯ",
+    "type": "ТИП:",
+    "mana": "МАНА:",
+    "cooldown": "ПЕРЕЗАРЯДКА:",
+    "effect": "ЭФФЕКТ:",
+    "range": "ДАЛЬНОСТЬ:",
+    "select": "ВЫБРАТЬ ЗАКЛИНАНИЕ",
+    "write_scroll": "ЗАПИСАТЬ НА СВИТОК",
+    "close": "ЗАКРЫТЬ",
+    "damage_value": "{value} УРОН",
+    "heal_value": "{value} Исцеление",
+    "utility_value": "Утилита",
+    "aoe_value": "{value}м АОЕ",
+    "range_value": "{value}м Дальность",
+    "projectile_value": "Снаряд",
+    "self_value": "На себя",
+    "scroll_prefix": "Свиток: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Огненный шар",
+      "description": "Запускает пылающий огненный шар, взрывающийся при попадании."
+    },
+    "frost_bolt": {
+      "name": "Ледяная стрела",
+      "description": "Выпускает ледяной снаряд, замедляющий врагов при попадании."
+    },
+    "arcane_bolt": {
+      "name": "Чародейский снаряд",
+      "description": "Выпускает быстрый чародейский снаряд."
+    },
+    "healing_light": {
+      "name": "Исцеляющий свет",
+      "description": "Восстанавливает здоровье заклинателю."
+    },
+    "lightning": {
+      "name": "Молния",
+      "description": "Поражает цель ударом молнии."
+    },
+    "force_push": {
+      "name": "Силовой толчок",
+      "description": "Отталкивает ближайших врагов магической силой."
+    },
+    "mana_shield": {
+      "name": "Щит маны",
+      "description": "Создаёт защитный барьер, поглощающий урон."
+    },
+    "blink": {
+      "name": "Скачок",
+      "description": "Телепортирует на короткое расстояние в направлении взгляда."
+    }
+  },
+  "notification": {
+    "spell_learned": "Заклинание изучено!",
+    "spell_transferred": "Заклинание перенесено!",
+    "spell_transferred_desc": "{spell} записано на свиток",
+    "not_enough_mana": "Недостаточно маны!",
+    "not_enough_mana_desc": "Требуется {required} (есть {current})",
+    "no_spell": "Нет заклинания!",
+    "no_spell_desc": "Ячейка {slot} пуста",
+    "no_blank_scroll": "Нет чистого свитка!",
+    "no_blank_scroll_desc": "Нужен чистый свиток для записи",
+    "hotbar_full": "Панель заполнена!",
+    "hotbar_full_desc": "Нет свободных ячеек для заклинаний",
+    "already_known": "Уже изучено!",
+    "already_known_desc": "Вы уже знаете {spell}",
+    "spell_not_learned": "Заклинание не изучено!",
+    "spell_not_learned_desc": "Вы не изучили {spell}",
+    "invalid_scroll": "Недействительный свиток!",
+    "invalid_scroll_desc": "Этот свиток содержит неизвестное заклинание",
+    "enchantment_learned": "Зачарование изучено!",
+    "not_enough_xp": "Недостаточно опыта!",
+    "not_enough_xp_desc": "Требуется {required} (есть {current})",
+    "passive_learned": "Пассивка изучена!",
+    "passive_activated": "Пассивка активирована!",
+    "passive_deactivated": "Пассивка деактивирована",
+    "max_passives": "Максимум пассивок!",
+    "max_passives_desc": "Можно иметь только {max} активных пассивок",
+    "xp_gained": "+{gained} ОП",
+    "xp_total": "Всего: {total} ОП"
+  },
+  "enchanting": {
+    "title": "СТОЛ ЗАЧАРОВАНИЯ",
+    "xp": "ОПЫТ ЗАЧАРОВАНИЯ",
+    "basic_name": "ОБЫЧНЫЙ БРОСОК",
+    "advanced_name": "ПРОДВИНУТЫЙ БРОСОК",
+    "master_name": "МАСТЕРСКИЙ БРОСОК",
+    "basic_tiers": "Обычное",
+    "advanced_tiers": "Обычное + Редкое",
+    "master_tiers": "Все уровни",
+    "cost_format": "{cost} ОП",
+    "roll": "БРОСИТЬ",
+    "learned": "ИЗУЧЕННЫЕ ЗАЧАРОВАНИЯ",
+    "none_learned": "Зачарования ещё не изучены",
+    "no_available": "Нет зачарований!",
+    "no_available_desc": "Все зачарования уже изучены",
+    "applied": "Зачарование наложено!",
+    "removed": "Зачарование снято!",
+    "lost_forever": "(утеряно навсегда)",
+    "apply_failed": "Невозможно наложить!",
+    "apply_failed_desc": "На посохе уже есть зачарование или у вас нет этого зачарования"
+  },
+  "passive": {
+    "title": "ПАССИВКИ",
+    "xp": "ОПЫТ ПАССИВОК",
+    "basic_name": "ОБЫЧНЫЙ БРОСОК",
+    "advanced_name": "ПРОДВИНУТЫЙ БРОСОК",
+    "master_name": "МАСТЕРСКИЙ БРОСОК",
+    "basic_tiers": "Обычное",
+    "advanced_tiers": "Обычное + Редкое",
+    "master_tiers": "Все уровни",
+    "cost_format": "{cost} ОП",
+    "roll": "БРОСИТЬ",
+    "learned": "ИЗУЧЕННЫЕ ПАССИВКИ",
+    "active": "АКТИВНЫЕ ПАССИВКИ",
+    "none_learned": "Пассивки ещё не изучены",
+    "none_active": "Нет активных пассивок",
+    "activate": "АКТИВИРОВАТЬ",
+    "deactivate": "ДЕАКТИВИРОВАТЬ",
+    "no_available": "Нет пассивок!",
+    "no_available_desc": "Все пассивки уже изучены"
+  },
+  "panel_tabs": {
+    "spells": "ЗАКЛИНАНИЯ",
+    "enchantments": "ЗАЧАРОВАНИЯ",
+    "current_enchantment": "ТЕКУЩЕЕ:",
+    "apply": "НАЛОЖИТЬ",
+    "remove": "СНЯТЬ",
+    "none": "Нет"
+  },
+  "lore": {
+    "types": {
+      "attack": "Атака",
+      "support": "Поддержка",
+      "projectile": "Снаряд",
+      "utility": "Утилита",
+      "defense": "Защита",
+      "buff": "Усиление",
+      "damage": "Урон",
+      "heal": "Исцеление",
+      "debuff": "Ослабление"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Обычный магический посох",
+      "description": "Простой магический посох для сотворения заклинаний."
+    },
+    "Staff_Uncommon": {
+      "name": "Необычный магический посох",
+      "description": "Улучшенный магический посох.\n\n<color is=\"#55ff55\">+10% Урон/Исцеление</color>\n<color is=\"#55ff55\">-5% Стоимость маны</color>"
+    },
+    "Staff_Rare": {
+      "name": "Редкий магический посох",
+      "description": "Искусно изготовленный магический посох.\n\n<color is=\"#5555ff\">+20% Урон/Исцеление</color>\n<color is=\"#5555ff\">-10% Стоимость маны</color>\n<color is=\"#5555ff\">-10% Перезарядка</color>"
+    },
+    "Staff_Epic": {
+      "name": "Эпический магический посох",
+      "description": "Могущественный магический посох.\n\n<color is=\"#aa00aa\">+35% Урон/Исцеление</color>\n<color is=\"#aa00aa\">-15% Стоимость маны</color>\n<color is=\"#aa00aa\">-20% Перезарядка</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Легендарный магический посох",
+      "description": "Легендарный магический посох невероятной мощи.\n\n<color is=\"#ffaa00\">+50% Урон/Исцеление</color>\n<color is=\"#ffaa00\">-25% Стоимость маны</color>\n<color is=\"#ffaa00\">-30% Перезарядка</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Чародейский верстак",
+      "description": "Мистическая станция для создания и улучшения магического снаряжения."
+    },
+    "Arcane_Dust": {
+      "name": "Чародейская пыль",
+      "description": "Тонкая магическая пыль с существ пустоты. Используется в базовом крафте."
+    },
+    "Arcane_Shard": {
+      "name": "Чародейский осколок",
+      "description": "Кристаллизованный фрагмент чародейской энергии. Используется в среднем крафте."
+    },
+    "Arcane_Crystal": {
+      "name": "Чародейский кристалл",
+      "description": "Полностью сформированный кристалл чистой чародейской силы. Используется в продвинутом крафте."
+    },
+    "Spirit_Essence": {
+      "name": "Эссенция духа",
+      "description": "Концентрированная стихийная энергия духов. Используется для зачарований и свитков."
+    },
+    "Ember_Heart": {
+      "name": "Тлеющее сердце",
+      "description": "Пылающее ядро огненного голема. Требуется для эпических улучшений."
+    },
+    "Golem_Core": {
+      "name": "Ядро голема",
+      "description": "Источник энергии кристального голема. Требуется для легендарных улучшений."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Чистый свиток",
+      "description": "Пустой магический свиток. Можно вписать заклинание."
+    }
+  },
+  "bench_categories": {
+    "staves": "Посохи",
+    "scrolls": "Свитки"
+  },
+  "command": {
+    "staff": {
+      "given": "Выдан посох: {quality}"
+    },
+    "scroll": {
+      "given": "Выдан свиток: {spell}",
+      "notfound": "Заклинание не найдено: {spell}"
+    },
+    "material": {
+      "given": "Выдано {amount}x {material}",
+      "not_found": "Материал не найден: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus перезагружен"
+    },
+    "enchantment": {
+      "notfound": "Зачарование не найдено: {id}",
+      "applied": "Наложено зачарование: {name}",
+      "apply_failed": "Не удалось наложить зачарование (нет ячеек или уже наложено)",
+      "no_enchantments": "Нет зачарований для снятия",
+      "removed": "Снято зачарование: {id}",
+      "not_on_player": "Зачарование не найдено у игрока",
+      "no_active": "Нет активных зачарований",
+      "active_header": "Активные зачарования ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "Нет доступных зачарований",
+      "available_header": "Доступные зачарования:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Использование: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Пассивка не найдена: {id}",
+      "activated": "Активирована пассивка: {name}",
+      "activate_failed": "Не удалось активировать пассивку (уже активна)",
+      "no_passives": "Нет пассивок для деактивации",
+      "deactivated": "Деактивирована пассивка: {id}",
+      "not_on_player": "Пассивка не найдена у игрока",
+      "no_active": "Нет активных пассивок",
+      "active_header": "Активные пассивки:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "Нет доступных пассивок",
+      "available_header": "Доступные пассивки:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Все пассивки активированы",
+      "usage": "Использование: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Команды заклинаний",
+      "notfound": "Заклинание не найдено: {id}",
+      "list": {
+        "desc": "Список всех зарегистрированных заклинаний",
+        "header": "=== Зарегистрированные заклинания ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Показать информацию о заклинании",
+        "id": {
+          "desc": "ID заклинания для просмотра"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Категория: {category}",
+        "cooldown": "Перезарядка: {cooldown}с",
+        "manaCost": "Стоимость маны: {manaCost}",
+        "instability": "Нестабильность: {instability}",
+        "nodes": "Узлы: {nodes}",
+        "graphHeader": "--- Граф ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Список всех переводов для заклинания",
+          "spellId": {
+            "desc": "ID целевого заклинания"
+          },
+          "header": "=== Переводы для {spell} ===",
+          "empty": "Переводы не найдены",
+          "locale": "  [{locale}]",
+          "name": "    Имя: {name}",
+          "description": "    Описание: {description}"
+        }
+      }
+    }
+  }
+}

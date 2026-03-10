@@ -1,0 +1,202 @@
+{
+  "CombatActionEvaluator": {
+    "RunConditions": [
+      {
+        "Type": "TimeSinceLastUsed",
+        "Curve": {
+          "ResponseCurve": "Linear",
+          "XRange": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "Type": "Randomiser",
+        "MinValue": 0.75,
+        "MaxValue": 1
+      }
+    ],
+    "MinRunUtility": 0.5,
+    "MinActionUtility": 0.01,
+    "AvailableActions": {
+      "Default": {
+        "Type": "State",
+        "Description": "Change to the Default state",
+        "State": "Combat",
+        "SubState": "Default",
+        "PostExecuteDistanceRange": [
+          2.25,
+          3.4
+        ],
+        "Target": "Hostile",
+        "WeightCoefficient": 1.25,
+        "Conditions": [
+          {
+            "Type": "Randomiser",
+            "MinValue": 0.75,
+            "MaxValue": 1
+          },
+          {
+            "Type": "TimeSinceLastUsed",
+            "Curve": {
+              "Type": "Switch",
+              "SwitchPoint": 1
+            }
+          },
+          {
+            "Type": "TargetDistance",
+            "Curve": {
+              "ResponseCurve": "SimpleDescendingLogistic",
+              "XRange": [
+                0,
+                10
+              ]
+            }
+          }
+        ]
+      },
+      "Charge": {
+        "Type": "Ability",
+        "Description": "Charges towards the target",
+        "Target": "Hostile",
+        "SubState": "Default",
+        "Ability": {
+          "Interactions": [
+            "KF_Fire_Queen_Attack3"
+          ]
+        },
+        "AttackDistanceRange": [
+          6,
+          15
+        ],
+        "PostExecuteDistanceRange": [
+          2,
+          2
+        ],
+        "ChargeFor": 1,
+        "WeightCoefficient": 1.25,
+        "Conditions": [
+          {
+            "Type": "TimeSinceLastUsed",
+            "Curve": {
+              "Type": "Switch",
+              "SwitchPoint": 13
+            }
+          },
+          {
+            "Type": "TargetDistance",
+            "Curve": {
+              "ResponseCurve": "Linear",
+              "XRange": [
+                1,
+                10
+              ]
+            }
+          }
+        ]
+      },
+      "ChargeJump": {
+        "Type": "Ability",
+        "Description": "Charges towards the target",
+        "Target": "Hostile",
+        "SubState": "Default",
+        "Ability": {
+          "Interactions": [
+            "KF_Fire_Queen_Attack5"
+          ]
+        },
+        "AttackDistanceRange": [
+          3,
+          6
+        ],
+        "PostExecuteDistanceRange": [
+          2,
+          2
+        ],
+        "ChargeFor": 0.5,
+        "WeightCoefficient": 1.25,
+        "Conditions": [
+          {
+            "Type": "TimeSinceLastUsed",
+            "Curve": {
+              "Type": "Switch",
+              "SwitchPoint": 8
+            }
+          },
+          {
+            "Type": "TargetDistance",
+            "Curve": {
+              "ResponseCurve": "Linear",
+              "XRange": [
+                1,
+                10
+              ]
+            }
+          }
+        ]
+      },
+      "Combo": {
+        "Type": "Ability",
+        "Description": "Charges towards the target",
+        "Target": "Self",
+        "SubState": "Default",
+        "Ability": {
+          "Interactions": [
+            "KF_Fire_Queen_Attack2"
+          ]
+        },
+        "AttackDistanceRange": [
+          0.5,
+          3.5
+        ],
+        "PostExecuteDistanceRange": [
+          2,
+          2
+        ],
+        "WeightCoefficient": 1.25,
+        "Conditions": [
+          {
+            "Type": "TimeSinceLastUsed",
+            "Curve": {
+              "Type": "Switch",
+              "SwitchPoint": 17
+            }
+          },
+          {
+            "Type": "TargetDistance",
+            "Curve": {
+              "ResponseCurve": "Linear",
+              "XRange": [
+                1,
+                10
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ActionSets": {
+      "Default": {
+        "BasicAttacks": {
+          "Attacks": [
+            "Root_NPC_Void_Guardian"
+          ],
+          "Randomise": false,
+          "UseProjectedDistance": true,
+          "MaxRange": 5,
+          "Timeout": 0.001,
+          "CooldownRange": [
+            0.2,
+            0.5
+          ]
+        },
+        "Actions": [
+          "Charge",
+          "ChargeJump",
+          "Combo"
+        ]
+      }
+    }
+  }
+}

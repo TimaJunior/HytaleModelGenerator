@@ -1,0 +1,18 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/Alert/phonosupf_sax.ogg"
+      ],
+      "RandomSettings": {
+        "MinPitch": -2,
+        "MaxPitch": 2,
+        "MinVolume": -2
+      }
+    }
+  ],
+  "Volume": 2.0,
+  "PreventSoundInterruption": true,
+  "AudioCategory": "AudioCat_NPC_Bear_Grizzly",
+  "Parent": "SFX_Attn_Moderate"
+}

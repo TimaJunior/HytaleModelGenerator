@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "SPELLBOOK PLUS",
+    "available": "HECHIZOS DISPONIBLES",
+    "type": "TIPO:",
+    "mana": "MANÁ:",
+    "cooldown": "ENFRIAMIENTO:",
+    "effect": "EFECTO:",
+    "range": "ALCANCE:",
+    "select": "ELEGIR HECHIZO",
+    "write_scroll": "ESCRIBIR EN PERGAMINO",
+    "close": "CERRAR",
+    "damage_value": "{value} DAÑ",
+    "heal_value": "{value} Curación",
+    "utility_value": "Utilidad",
+    "aoe_value": "{value}m ADE",
+    "range_value": "{value}m Alcance",
+    "projectile_value": "Proyectil",
+    "self_value": "Propio",
+    "scroll_prefix": "Pergamino: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Bola de Fuego",
+      "description": "Lanza una bola de fuego ardiente que explota al impactar."
+    },
+    "frost_bolt": {
+      "name": "Descarga de Escarcha",
+      "description": "Dispara un rayo helado que ralentiza a los enemigos al impactar."
+    },
+    "arcane_bolt": {
+      "name": "Descarga Arcana",
+      "description": "Dispara un proyectil arcano rápido."
+    },
+    "healing_light": {
+      "name": "Luz Sanadora",
+      "description": "Restaura salud al lanzador."
+    },
+    "lightning": {
+      "name": "Relámpago",
+      "description": "Golpea al objetivo con un rayo eléctrico."
+    },
+    "force_push": {
+      "name": "Empuje de Fuerza",
+      "description": "Empuja a los enemigos cercanos con fuerza mágica."
+    },
+    "mana_shield": {
+      "name": "Escudo de Maná",
+      "description": "Crea una barrera protectora que absorbe daño."
+    },
+    "blink": {
+      "name": "Destello",
+      "description": "Te teletransporta una corta distancia en la dirección a la que miras."
+    }
+  },
+  "notification": {
+    "spell_learned": "¡Hechizo Aprendido!",
+    "spell_transferred": "¡Hechizo Transferido!",
+    "spell_transferred_desc": "{spell} escrito en el pergamino",
+    "not_enough_mana": "¡Maná Insuficiente!",
+    "not_enough_mana_desc": "Necesitas {required} (tienes {current})",
+    "no_spell": "¡Sin Hechizo!",
+    "no_spell_desc": "La ranura {slot} está vacía",
+    "no_blank_scroll": "¡Sin Pergamino en Blanco!",
+    "no_blank_scroll_desc": "Necesitas un pergamino en blanco para escribir",
+    "hotbar_full": "¡Barra de Hechizos Llena!",
+    "hotbar_full_desc": "No hay ranuras de hechizos disponibles",
+    "already_known": "¡Ya Conocido!",
+    "already_known_desc": "Ya tienes {spell}",
+    "spell_not_learned": "¡Hechizo No Aprendido!",
+    "spell_not_learned_desc": "No has aprendido {spell}",
+    "invalid_scroll": "¡Pergamino Inválido!",
+    "invalid_scroll_desc": "Este pergamino contiene un hechizo desconocido",
+    "enchantment_learned": "¡Encantamiento Aprendido!",
+    "not_enough_xp": "¡XP Insuficiente!",
+    "not_enough_xp_desc": "Necesitas {required} (tienes {current})",
+    "passive_learned": "¡Pasiva Aprendida!",
+    "passive_activated": "¡Pasiva Activada!",
+    "passive_deactivated": "Pasiva Desactivada",
+    "max_passives": "¡Máximo de Pasivas Alcanzado!",
+    "max_passives_desc": "Solo puedes tener {max} pasivas activas",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "Total: {total} XP"
+  },
+  "enchanting": {
+    "title": "MESA DE ENCANTAMIENTOS",
+    "xp": "XP DE ENCANTAMIENTO",
+    "basic_name": "TIRADA BÁSICA",
+    "advanced_name": "TIRADA AVANZADA",
+    "master_name": "TIRADA MAESTRA",
+    "basic_tiers": "Común",
+    "advanced_tiers": "Común + Raro",
+    "master_tiers": "Todos los Niveles",
+    "cost_format": "{cost} XP",
+    "roll": "TIRAR",
+    "learned": "ENCANTAMIENTOS APRENDIDOS",
+    "none_learned": "Aún no se han aprendido encantamientos",
+    "no_available": "¡Sin Encantamientos!",
+    "no_available_desc": "Todos los encantamientos ya aprendidos",
+    "applied": "¡Encantamiento Aplicado!",
+    "removed": "¡Encantamiento Eliminado!",
+    "lost_forever": "(perdido para siempre)",
+    "apply_failed": "¡No Se Puede Aplicar!",
+    "apply_failed_desc": "El bastón ya tiene un encantamiento o no posees este encantamiento"
+  },
+  "passive": {
+    "title": "PASIVAS",
+    "xp": "XP DE PASIVA",
+    "basic_name": "TIRADA BÁSICA",
+    "advanced_name": "TIRADA AVANZADA",
+    "master_name": "TIRADA MAESTRA",
+    "basic_tiers": "Común",
+    "advanced_tiers": "Común + Raro",
+    "master_tiers": "Todos los Niveles",
+    "cost_format": "{cost} XP",
+    "roll": "TIRAR",
+    "learned": "PASIVAS APRENDIDAS",
+    "active": "PASIVAS ACTIVAS",
+    "none_learned": "Aún no se han aprendido pasivas",
+    "none_active": "Sin pasivas activas",
+    "activate": "ACTIVAR",
+    "deactivate": "DESACTIVAR",
+    "no_available": "¡Sin Pasivas!",
+    "no_available_desc": "Todas las pasivas ya aprendidas"
+  },
+  "panel_tabs": {
+    "spells": "HECHIZOS",
+    "enchantments": "ENCANTAMIENTOS",
+    "current_enchantment": "ACTUAL:",
+    "apply": "APLICAR",
+    "remove": "ELIMINAR",
+    "none": "Ninguno"
+  },
+  "lore": {
+    "types": {
+      "attack": "Ataque",
+      "support": "Apoyo",
+      "projectile": "Proyectil",
+      "utility": "Utilidad",
+      "defense": "Defensa",
+      "buff": "Mejora",
+      "damage": "Daño",
+      "heal": "Curación",
+      "debuff": "Debilitación"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Bastón de Hechizos Común",
+      "description": "Un bastón mágico básico para lanzar hechizos."
+    },
+    "Staff_Uncommon": {
+      "name": "Bastón de Hechizos Poco Común",
+      "description": "Un bastón mágico mejorado.\n\n<color is=\"#55ff55\">+10% Daño/Curación</color>\n<color is=\"#55ff55\">-5% Coste de Maná</color>"
+    },
+    "Staff_Rare": {
+      "name": "Bastón de Hechizos Raro",
+      "description": "Un bastón mágico finamente elaborado.\n\n<color is=\"#5555ff\">+20% Daño/Curación</color>\n<color is=\"#5555ff\">-10% Coste de Maná</color>\n<color is=\"#5555ff\">-10% Enfriamiento</color>"
+    },
+    "Staff_Epic": {
+      "name": "Bastón de Hechizos Épico",
+      "description": "Un bastón mágico poderoso.\n\n<color is=\"#aa00aa\">+35% Daño/Curación</color>\n<color is=\"#aa00aa\">-15% Coste de Maná</color>\n<color is=\"#aa00aa\">-20% Enfriamiento</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Bastón de Hechizos Legendario",
+      "description": "Un bastón mágico legendario de inmenso poder.\n\n<color is=\"#ffaa00\">+50% Daño/Curación</color>\n<color is=\"#ffaa00\">-25% Coste de Maná</color>\n<color is=\"#ffaa00\">-30% Enfriamiento</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Mesa de Trabajo Arcana",
+      "description": "Una estación de creación mística para crear y mejorar equipamiento mágico."
+    },
+    "Arcane_Dust": {
+      "name": "Polvo Arcano",
+      "description": "Fino polvo mágico de criaturas del vacío. Usado en creación básica."
+    },
+    "Arcane_Shard": {
+      "name": "Fragmento Arcano",
+      "description": "Un fragmento cristalizado de energía arcana. Usado en creación intermedia."
+    },
+    "Arcane_Crystal": {
+      "name": "Cristal Arcano",
+      "description": "Un cristal completamente formado de poder arcano puro. Usado en creación avanzada."
+    },
+    "Spirit_Essence": {
+      "name": "Esencia Espiritual",
+      "description": "Energía elemental concentrada de espíritus. Usada para encantamientos y pergaminos."
+    },
+    "Ember_Heart": {
+      "name": "Corazón de Brasa",
+      "description": "Un núcleo ardiente de un gólem de fuego. Necesario para mejoras épicas."
+    },
+    "Golem_Core": {
+      "name": "Núcleo de Gólem",
+      "description": "La fuente de energía de un gólem de cristal. Necesario para mejoras legendarias."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Pergamino en Blanco",
+      "description": "Un pergamino mágico vacío. Puede ser inscrito con un hechizo."
+    }
+  },
+  "bench_categories": {
+    "staves": "Bastones",
+    "scrolls": "Pergaminos"
+  },
+  "command": {
+    "staff": {
+      "given": "Bastón {quality} otorgado"
+    },
+    "scroll": {
+      "given": "Pergamino otorgado: {spell}",
+      "notfound": "Hechizo no encontrado: {spell}"
+    },
+    "material": {
+      "given": "{amount}x {material} otorgado",
+      "not_found": "Material no encontrado: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus recargado"
+    },
+    "enchantment": {
+      "notfound": "Encantamiento no encontrado: {id}",
+      "applied": "Encantamiento aplicado: {name}",
+      "apply_failed": "No se pudo aplicar el encantamiento (sin ranuras o ya aplicado)",
+      "no_enchantments": "No hay encantamientos para eliminar",
+      "removed": "Encantamiento eliminado: {id}",
+      "not_on_player": "Encantamiento no encontrado en el jugador",
+      "no_active": "Sin encantamientos activos",
+      "active_header": "Encantamientos Activos ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "No hay encantamientos disponibles",
+      "available_header": "Encantamientos Disponibles:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Uso: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Pasiva no encontrada: {id}",
+      "activated": "Pasiva activada: {name}",
+      "activate_failed": "No se pudo activar la pasiva (ya activa)",
+      "no_passives": "No hay pasivas para desactivar",
+      "deactivated": "Pasiva desactivada: {id}",
+      "not_on_player": "Pasiva no encontrada en el jugador",
+      "no_active": "Sin pasivas activas",
+      "active_header": "Pasivas Activas:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "No hay pasivas disponibles",
+      "available_header": "Pasivas Disponibles:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Todas las pasivas activadas",
+      "usage": "Uso: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Comandos de hechizos",
+      "notfound": "Hechizo no encontrado: {id}",
+      "list": {
+        "desc": "Listar todos los hechizos registrados",
+        "header": "=== Hechizos Registrados ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Mostrar detalles del hechizo",
+        "id": {
+          "desc": "ID del hechizo a inspeccionar"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Categoría: {category}",
+        "cooldown": "Enfriamiento: {cooldown}s",
+        "manaCost": "Coste de Maná: {manaCost}",
+        "instability": "Inestabilidad: {instability}",
+        "nodes": "Nodos: {nodes}",
+        "graphHeader": "--- Grafo ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "Listar todas las traducciones de un hechizo",
+          "spellId": {
+            "desc": "ID del hechizo objetivo"
+          },
+          "header": "=== Traducciones de {spell} ===",
+          "empty": "No se encontraron traducciones",
+          "locale": "  [{locale}]",
+          "name": "    Nombre: {name}",
+          "description": "    Desc: {description}"
+        }
+      }
+    }
+  }
+}

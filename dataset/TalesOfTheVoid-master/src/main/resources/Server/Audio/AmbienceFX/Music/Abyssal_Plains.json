@@ -1,0 +1,23 @@
+{
+  "Conditions": {
+    "EnvironmentIds": [
+      "Abyssal_Dark_Environment"
+    ],
+    "Never": false
+  },
+  "Music": {
+    "Tracks": [
+      "Music/Ambience/Alkakrab - Beyond The Sun.ogg",
+      "Music/Ambience/Alkakrab - Bright Stars.ogg",
+      "Music/Ambience/Alkakrab - Eclipsed-Desolation.ogg",
+      "Music/Ambience/Alkakrab - Lunar_Serenity.ogg",
+      "Music/Ambience/grimyth-Constructor.ogg",
+      "Music/Ambience/grimyth-Deep-Space-Buddha.ogg",
+      "Music/Ambience/grimyth-Dungeon-VIII-2.ogg",
+      "Music/Ambience/grimyth-Temple-of-Foreboding.ogg"
+    ],
+    "Volume": 1.2
+  },
+  "AudioCategory": "AudioCat_Music",
+  "Priority": 100
+}

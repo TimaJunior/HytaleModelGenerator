@@ -1,0 +1,15 @@
+{
+  "Type": "Variant",
+  "Reference": "Cats_Tamed",
+  "Modify": {
+    "Appearance": "Cats_GrayTabby",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cats_GrayTabby_Tamed.name"
+    }
+  }
+}

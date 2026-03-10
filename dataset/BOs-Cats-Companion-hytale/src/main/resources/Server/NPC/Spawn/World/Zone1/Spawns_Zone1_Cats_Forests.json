@@ -1,0 +1,25 @@
+{
+  "$Comment": "Cats spawn in forests and autumn biomes - calico cats and kittens",
+  "Environments": [
+    "Env_Zone1_Forests",
+    "Env_Zone1_Autumn"
+  ],
+  "NPCs": [
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Calico_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Kitten_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

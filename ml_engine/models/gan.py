@@ -3,6 +3,22 @@ import torch.nn as nn
 from torchvision import models
 from ml_engine.core.interfaces import IEncoder, IGenerator, IDiscriminator
 
+class ResidualBlock3d(nn.Module):
+    """3D Residual Block для стабілізації decoder."""
+    def __init__(self, channels):
+        super().__init__()
+        self.block = nn.Sequential(
+            nn.Conv3d(channels, channels, kernel_size=3, padding=1),
+            nn.BatchNorm3d(channels),
+            nn.ReLU(True),
+            nn.Conv3d(channels, channels, kernel_size=3, padding=1),
+            nn.BatchNorm3d(channels),
+        )
+        self.relu = nn.ReLU(True)
+
+    def forward(self, x):
+        return self.relu(x + self.block(x))
+
 class ResNetEncoder(nn.Module, IEncoder):
     """
     Concrete Encoder using ResNet18.
@@ -44,11 +60,13 @@ class VoxelGANGenerator(nn.Module, IGenerator):
             nn.BatchNorm3d(128),
             nn.ReLU(True),
             # (128, 4, 4, 4)
+            ResidualBlock3d(128),
             
             nn.ConvTranspose3d(128, 64, kernel_size=4, stride=2, padding=1),
             nn.BatchNorm3d(64),
             nn.ReLU(True),
             # (64, 8, 8, 8)
+            ResidualBlock3d(64),
             
             nn.ConvTranspose3d(64, 32, kernel_size=4, stride=2, padding=1),
             nn.BatchNorm3d(32),
@@ -66,16 +84,24 @@ class VoxelGANGenerator(nn.Module, IGenerator):
         x = self.decoder(x)
         return x
 
-class VoxelDiscriminator(nn.Module, IDiscriminator):
+class ConditionalDiscriminator(nn.Module, IDiscriminator):
     """
-    Concrete Discriminator using 3D CNN.
-    Classifies (1, 32, 32, 32) -> Real/Fake (Score).
+    Conditional Discriminator using 3D CNN.
+    Evaluates a 3D voxel grid together with an image condition.
+    Input: voxel (B,1,32,32,32) + condition latent (B,256)
+    Output: (B, 1) real/fake score
     """
-    def __init__(self):
+    def __init__(self, latent_dim: int = 256):
         super().__init__()
+        # Проєкція condition latent → spatial volume
+        self.condition_proj = nn.Sequential(
+            nn.Linear(latent_dim, 32 * 32 * 32),
+            nn.LeakyReLU(0.2)
+        )
+        # 3D CNN, input channels = 2 (voxel + projected condition)
         self.encoder = nn.Sequential(
-            # Input: (1, 32, 32, 32)
-            nn.Conv3d(1, 32, kernel_size=4, stride=2, padding=1),
+            # Input: (2, 32, 32, 32)
+            nn.Conv3d(2, 32, kernel_size=4, stride=2, padding=1),
             nn.LeakyReLU(0.2, inplace=True),
             # (32, 16, 16, 16)
             
@@ -94,5 +120,12 @@ class VoxelDiscriminator(nn.Module, IDiscriminator):
             nn.Sigmoid()
         )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, condition: torch.Tensor = None) -> torch.Tensor:
+        if condition is not None:
+            cond_vol = self.condition_proj(condition)
+            cond_vol = cond_vol.view(-1, 1, 32, 32, 32)
+            x = torch.cat([x, cond_vol], dim=1)
+        else:
+            # Fallback for backward compatibility or unconditional testing
+            x = torch.cat([x, torch.zeros_like(x)], dim=1)
         return self.encoder(x).view(-1, 1)

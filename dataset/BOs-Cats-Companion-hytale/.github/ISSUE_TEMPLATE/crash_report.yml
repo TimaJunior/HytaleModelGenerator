@@ -1,0 +1,55 @@
+name: "💥 Crash report"
+description: "Game crashed? Tell us what happened - we'll help you get back in!"
+labels: [ crash ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a crash! 💥
+        No worries - share a few details and a log link, and we'll try to sort it out fast.
+  - type: input
+    id: hytale_version
+    attributes:
+      label: "Hytale version"
+      placeholder: "e.g. Beta 1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: mod_version
+    attributes:
+      label: "Cats mod version"
+      placeholder: "e.g. 2.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "What happened? 📝"
+      placeholder: "When does it crash? Server startup, world load, when using /cat command, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce (if known) ▶️"
+      placeholder: |
+        1. Start server ...
+        2. Execute /cat spawn ...
+        3. Crash happens ...
+    validations:
+      required: false
+  - type: input
+    id: logs
+    attributes:
+      label: "Log or crash-report link (required) 🔗"
+      description: "Upload server.log and any error logs to https://mclo.gs/ or https://gist.github.com/ and paste the link here."
+      placeholder: "https://mclo.gs/xxxx or https://gist.github.com/xxxx"
+    validations:
+      required: true
+  - type: textarea
+    id: extras
+    attributes:
+      label: "Additional info (optional) 📎"
+      description: "How often it happens, any workarounds tried, hardware specifics, other plugins installed, etc."
+    validations:
+      required: false

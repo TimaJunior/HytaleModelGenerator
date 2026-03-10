@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Mod Documentation
+    url: https://github.com/MarkusBordihn/BOs-Cats-Companion/blob/hytale/README.md
+    about: Read the documentation before filing an issue.
+  - name: 🐞 Bug Tracker
+    url: https://github.com/MarkusBordihn/BOs-Cats-Companion/issues?q=label%3Abug
+    about: Check for existing bug reports to avoid duplicates.
+  - name: 💥 Crash Tracker
+    url: https://github.com/MarkusBordihn/BOs-Cats-Companion/issues?q=label%3Acrash
+    about: Check for existing crash reports to avoid duplicates.
+  - name: 📖 Permissions Documentation
+    url: https://github.com/MarkusBordihn/BOs-Cats-Companion/blob/main/BOs-Cats-Companion-Hytale/PERMISSIONS.md
+    about: Learn about permission configuration for the Cats mod.
+  - name: 🎮 Hytale Modding
+    url: https://hytale.com/
+    about: Official Hytale website and modding resources.

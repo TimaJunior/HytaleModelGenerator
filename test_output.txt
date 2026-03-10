@@ -1,0 +1,22 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.8, pytest-8.4.2, pluggy-1.6.0 -- C:\Program Files\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Tima\Documents\Projects\hytalemodelgenerator
+plugins: anyio-4.12.1, langsmith-0.6.6, asyncio-0.26.0, cov-7.0.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 12 items
+
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_manifest_has_required_fields PASSED [  8%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_samples_have_required_fields PASSED [ 16%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_no_orphan_pairs PASSED [ 25%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_no_empty_voxels PASSED [ 33%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_no_leakage_between_splits PASSED [ 41%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_both_splits_have_samples PASSED [ 50%]
+ml_engine/tests/test_dataset.py::TestManifestIntegrity::test_stats_match_actual_counts PASSED [ 58%]
+ml_engine/tests/test_dataset.py::TestVoxelDataset::test_train_split_loads PASSED [ 66%]
+ml_engine/tests/test_dataset.py::TestVoxelDataset::test_val_split_loads PASSED [ 75%]
+ml_engine/tests/test_dataset.py::TestVoxelDataset::test_getitem_returns_correct_shapes PASSED [ 83%]
+ml_engine/tests/test_dataset.py::TestVoxelDataset::test_train_val_no_overlap PASSED [ 91%]
+ml_engine/tests/test_dataset.py::TestVoxelDataset::test_all_split_loads_everything PASSED [100%]
+
+============================= 12 passed in 10.23s =============================

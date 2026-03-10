@@ -1,0 +1,289 @@
+{
+  "panel": {
+    "title": "SPELLBOOK PLUS",
+    "available": "AVAILABLE SPELLS",
+    "type": "TYPE:",
+    "mana": "MANA:",
+    "cooldown": "COOLDOWN:",
+    "effect": "EFFECT:",
+    "range": "RANGE:",
+    "select": "SELECT SPELL",
+    "write_scroll": "WRITE TO SCROLL",
+    "close": "CLOSE",
+    "damage_value": "{value} DMG",
+    "heal_value": "{value} Heal",
+    "utility_value": "Utility",
+    "aoe_value": "{value}m AOE",
+    "range_value": "{value}m Range",
+    "projectile_value": "Projectile",
+    "self_value": "Self",
+    "scroll_prefix": "Scroll: "
+  },
+  "spells": {
+    "fireball": {
+      "name": "Fireball",
+      "description": "Launches a blazing fireball that explodes on impact."
+    },
+    "frost_bolt": {
+      "name": "Frost Bolt",
+      "description": "Fires an icy bolt that slows enemies on hit."
+    },
+    "arcane_bolt": {
+      "name": "Arcane Bolt",
+      "description": "Shoots a quick arcane projectile."
+    },
+    "healing_light": {
+      "name": "Healing Light",
+      "description": "Restores health to the caster."
+    },
+    "lightning": {
+      "name": "Lightning",
+      "description": "Strikes the target with a bolt of lightning."
+    },
+    "force_push": {
+      "name": "Force Push",
+      "description": "Pushes nearby enemies away with magical force."
+    },
+    "mana_shield": {
+      "name": "Mana Shield",
+      "description": "Creates a protective barrier that absorbs damage."
+    },
+    "blink": {
+      "name": "Blink",
+      "description": "Teleport a short distance in the direction you're facing."
+    }
+  },
+  "notification": {
+    "spell_learned": "Spell Learned!",
+    "spell_transferred": "Spell Transferred!",
+    "spell_transferred_desc": "{spell} written to scroll",
+    "not_enough_mana": "Not Enough Mana!",
+    "not_enough_mana_desc": "Need {required} (have {current})",
+    "no_spell": "No Spell!",
+    "no_spell_desc": "Slot {slot} is empty",
+    "no_blank_scroll": "No Blank Scroll!",
+    "no_blank_scroll_desc": "Need a blank scroll to write",
+    "hotbar_full": "Hotbar Full!",
+    "hotbar_full_desc": "No empty spell slots available",
+    "already_known": "Already Known!",
+    "already_known_desc": "You already have {spell}",
+    "spell_not_learned": "Spell Not Learned!",
+    "spell_not_learned_desc": "You haven't learned {spell}",
+    "invalid_scroll": "Invalid Scroll!",
+    "invalid_scroll_desc": "This scroll contains an unknown spell",
+    "enchantment_learned": "Enchantment Learned!",
+    "not_enough_xp": "Not Enough XP!",
+    "not_enough_xp_desc": "Need {required} (have {current})",
+    "passive_learned": "Passive Learned!",
+    "passive_activated": "Passive Activated!",
+    "passive_deactivated": "Passive Deactivated",
+    "max_passives": "Max Passives Reached!",
+    "max_passives_desc": "You can only have {max} active passives",
+    "xp_gained": "+{gained} XP",
+    "xp_total": "Total: {total} XP"
+  },
+  "enchanting": {
+    "title": "ENCHANTING TABLE",
+    "xp": "ENCHANTING XP",
+    "basic_name": "BASIC ROLL",
+    "advanced_name": "ADVANCED ROLL",
+    "master_name": "MASTER ROLL",
+    "basic_tiers": "Common",
+    "advanced_tiers": "Common + Rare",
+    "master_tiers": "All Tiers",
+    "cost_format": "{cost} XP",
+    "roll": "ROLL",
+    "learned": "LEARNED ENCHANTMENTS",
+    "none_learned": "No enchantments learned yet",
+    "no_available": "No Enchantments!",
+    "no_available_desc": "All enchantments already learned",
+    "applied": "Enchantment Applied!",
+    "removed": "Enchantment Removed!",
+    "lost_forever": "(lost forever)",
+    "apply_failed": "Cannot Apply!",
+    "apply_failed_desc": "Staff already has an enchantment or you don't have this enchantment"
+  },
+  "passive": {
+    "title": "PASSIVES",
+    "xp": "PASSIVE XP",
+    "basic_name": "BASIC ROLL",
+    "advanced_name": "ADVANCED ROLL",
+    "master_name": "MASTER ROLL",
+    "basic_tiers": "Common",
+    "advanced_tiers": "Common + Rare",
+    "master_tiers": "All Tiers",
+    "cost_format": "{cost} XP",
+    "roll": "ROLL",
+    "learned": "LEARNED PASSIVES",
+    "active": "ACTIVE PASSIVES",
+    "none_learned": "No passives learned yet",
+    "none_active": "No passives active",
+    "activate": "ACTIVATE",
+    "deactivate": "DEACTIVATE",
+    "no_available": "No Passives!",
+    "no_available_desc": "All passives already learned"
+  },
+  "panel_tabs": {
+    "spells": "SPELLS",
+    "enchantments": "ENCHANTMENTS",
+    "current_enchantment": "CURRENT:",
+    "apply": "APPLY",
+    "remove": "REMOVE",
+    "none": "None"
+  },
+  "lore": {
+    "types": {
+      "attack": "Attack",
+      "support": "Support",
+      "projectile": "Projectile",
+      "utility": "Utility",
+      "defense": "Defense",
+      "buff": "Buff",
+      "damage": "Damage",
+      "heal": "Heal",
+      "debuff": "Debuff"
+    }
+  },
+  "items": {
+    "Staff_Common": {
+      "name": "Common Spell Staff",
+      "description": "A basic magical staff for casting spells."
+    },
+    "Staff_Uncommon": {
+      "name": "Uncommon Spell Staff",
+      "description": "An improved magical staff.\n\n<color is=\"#55ff55\">+10% Damage/Healing</color>\n<color is=\"#55ff55\">-5% Mana Cost</color>"
+    },
+    "Staff_Rare": {
+      "name": "Rare Spell Staff",
+      "description": "A finely crafted magical staff.\n\n<color is=\"#5555ff\">+20% Damage/Healing</color>\n<color is=\"#5555ff\">-10% Mana Cost</color>\n<color is=\"#5555ff\">-10% Cooldown</color>"
+    },
+    "Staff_Epic": {
+      "name": "Epic Spell Staff",
+      "description": "A powerful magical staff.\n\n<color is=\"#aa00aa\">+35% Damage/Healing</color>\n<color is=\"#aa00aa\">-15% Mana Cost</color>\n<color is=\"#aa00aa\">-20% Cooldown</color>"
+    },
+    "Staff_Legendary": {
+      "name": "Legendary Spell Staff",
+      "description": "A legendary magical staff of immense power.\n\n<color is=\"#ffaa00\">+50% Damage/Healing</color>\n<color is=\"#ffaa00\">-25% Mana Cost</color>\n<color is=\"#ffaa00\">-30% Cooldown</color>"
+    },
+    "Arcane_Workbench": {
+      "name": "Arcane Workbench",
+      "description": "A mystical crafting station for creating and upgrading magical equipment."
+    },
+    "Arcane_Dust": {
+      "name": "Arcane Dust",
+      "description": "Fine magical dust from void creatures. Used in basic crafting."
+    },
+    "Arcane_Shard": {
+      "name": "Arcane Shard",
+      "description": "A crystallized fragment of arcane energy. Used in intermediate crafting."
+    },
+    "Arcane_Crystal": {
+      "name": "Arcane Crystal",
+      "description": "A fully formed crystal of pure arcane power. Used in advanced crafting."
+    },
+    "Spirit_Essence": {
+      "name": "Spirit Essence",
+      "description": "Concentrated elemental energy from spirits. Used for enchantments and scrolls."
+    },
+    "Ember_Heart": {
+      "name": "Ember Heart",
+      "description": "A smoldering core from a flame golem. Required for epic upgrades."
+    },
+    "Golem_Core": {
+      "name": "Golem Core",
+      "description": "The power source of a crystal golem. Required for legendary upgrades."
+    },
+    "Spell_Scroll_Blank": {
+      "name": "Blank Scroll",
+      "description": "An empty magical scroll. Can be inscribed with a spell."
+    }
+  },
+  "bench_categories": {
+    "staves": "Staves",
+    "scrolls": "Scrolls"
+  },
+  "command": {
+    "staff": {
+      "given": "Given {quality} staff"
+    },
+    "scroll": {
+      "given": "Given scroll: {spell}",
+      "notfound": "Spell not found: {spell}"
+    },
+    "material": {
+      "given": "Given {amount}x {material}",
+      "not_found": "Material not found: {material}"
+    },
+    "reload": {
+      "success": "Spellbook Plus reloaded"
+    },
+    "enchantment": {
+      "notfound": "Enchantment not found: {id}",
+      "applied": "Applied enchantment: {name}",
+      "apply_failed": "Failed to apply enchantment (no slots or already applied)",
+      "no_enchantments": "No enchantments to remove",
+      "removed": "Removed enchantment: {id}",
+      "not_on_player": "Enchantment not found on player",
+      "no_active": "No active enchantments",
+      "active_header": "Active Enchantments ({count}/{max}):",
+      "active_entry": "  - {name}",
+      "no_available": "No enchantments available",
+      "available_header": "Available Enchantments:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "usage": "Usage: /sb enchantment <add|remove|list|available> [id]"
+    },
+    "passive": {
+      "notfound": "Passive not found: {id}",
+      "activated": "Activated passive: {name}",
+      "activate_failed": "Failed to activate passive (already active)",
+      "no_passives": "No passives to deactivate",
+      "deactivated": "Deactivated passive: {id}",
+      "not_on_player": "Passive not found on player",
+      "no_active": "No active passives",
+      "active_header": "Active Passives:",
+      "active_entry": "  - {name}{cooldown}",
+      "no_available": "No passives available",
+      "available_header": "Available Passives:",
+      "available_entry": "  - {id} ({name}): {desc}",
+      "activated_all": "Activated all passives",
+      "usage": "Usage: /sb passive <add|remove|list|available|all|passives> [id]"
+    },
+    "spell": {
+      "desc": "Spell commands",
+      "notfound": "Spell not found: {id}",
+      "list": {
+        "desc": "List all registered spells",
+        "header": "=== Registered Spells ===",
+        "entry": "- {id} ({name}) [{category}]"
+      },
+      "info": {
+        "desc": "Show spell details",
+        "id": {
+          "desc": "Spell ID to inspect"
+        },
+        "header": "=== {name} ===",
+        "spellId": "ID: {id}",
+        "category": "Category: {category}",
+        "cooldown": "Cooldown: {cooldown}s",
+        "manaCost": "Mana Cost: {manaCost}",
+        "instability": "Instability: {instability}",
+        "nodes": "Nodes: {nodes}",
+        "graphHeader": "--- Graph ---",
+        "graphNode": "  {nodeId} [{nodeType}] → {connections}"
+      },
+      "translation": {
+        "list": {
+          "desc": "List all translations for a spell",
+          "spellId": {
+            "desc": "Target spell ID"
+          },
+          "header": "=== Translations for {spell} ===",
+          "empty": "No translations found",
+          "locale": "  [{locale}]",
+          "name": "    Name: {name}",
+          "description": "    Desc: {description}"
+        }
+      }
+    }
+  }
+}

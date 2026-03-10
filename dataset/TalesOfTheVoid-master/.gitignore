@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# IDE - ignore most but keep run configurations
+.idea/*
+!.idea/runConfigurations/
+*.iml
+
+# Hytale
+libs/HytaleServer.jar
+server/mods/
+server/logs/
+server/world/
+/server/Assets.zip
+/server/zipfstmp5039626046158344184.tmp
+/server/HytaleServer.jar
+/server
+/.hytale
+/libs
+/gradle
+/.idea

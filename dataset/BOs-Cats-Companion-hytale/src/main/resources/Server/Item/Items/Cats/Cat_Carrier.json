@@ -1,0 +1,82 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.cats.cat_carrier.name",
+    "Description": "server.items.cats.cat_carrier.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Cat_Carrier.png",
+  "Quality": "Uncommon",
+  "PlayerAnimationsId": "Item",
+  "Model": "Items/Pets/Cats/Cat_Carrier.blockymodel",
+  "Texture": "Items/Pets/Cats/Cat_Carrier_Texture.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      15.0,
+      30.0,
+      0.0
+    ],
+    "Translation": [
+      0,
+      -5
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Pet_Accessory"
+    ],
+    "Family": [
+      "Cats"
+    ]
+  },
+  "MaxStack": 1,
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Planks",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Cloth_Block_Wool_White",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Cloth_Block_Wool_Red",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Farmingbench",
+        "Categories": [
+          "Farming"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "DropOnDeath": true,
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          },
+          "RunTime": 0.05,
+          "Next": {
+            "Type": "UseCatCarrier",
+            "FullIcon": "Icons/ItemsGenerated/Cat_Carrier_Full.png"
+          }
+        }
+      ]
+    }
+  }
+}

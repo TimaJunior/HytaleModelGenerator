@@ -1,0 +1,16 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "E_Sphere",
+      "LifeSpan": {
+        "Min": 1.0,
+        "Max": 1.5
+      },
+      "PositionOffset": {
+        "X": 0,
+        "Y": 1,
+        "Z": 0
+      }
+    }
+  ]
+}

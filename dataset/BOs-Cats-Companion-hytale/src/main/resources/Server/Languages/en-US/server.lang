@@ -1,0 +1,57 @@
+npcRoles.Cats_Black_Tamed.name=Black Cat
+npcRoles.Cats_Black_Wild.name=Wild Black Cat
+npcRoles.Cats_Calico_Tamed.name=Calico Cat
+npcRoles.Cats_Calico_Wild.name=Wild Calico Cat
+npcRoles.Cats_GrayTabby_Tamed.name=Gray Tabby Cat
+npcRoles.Cats_GrayTabby_Wild.name=Wild Gray Tabby Cat
+npcRoles.Cats_Kitten_Calico_Tamed.name=Calico Kitten
+npcRoles.Cats_Kitten_Calico_Wild.name=Wild Calico Kitten
+npcRoles.Cats_Kitten_Tamed.name=Kitten
+npcRoles.Cats_Kitten_Wild.name=Wild Kitten
+npcRoles.Cats_LonghairedRussianBlue_Tamed.name=Longhaired Russian Blue Cat
+npcRoles.Cats_LonghairedRussianBlue_Wild.name=Wild Longhaired Russian Blue Cat
+npcRoles.Cats_OrangeTabby_Tamed.name=Orange Tabby Cat
+npcRoles.Cats_OrangeTabby_Wild.name=Wild Orange Tabby Cat
+npcRoles.Cats_Siamese_Tamed.name=Siamese Cat
+npcRoles.Cats_Siamese_Wild.name=Wild Siamese Cat
+npcRoles.Cats_Tamed.name=Cat
+npcRoles.Cats_Tuxedo_Tamed.name=Tuxedo Cat
+npcRoles.Cats_Tuxedo_Wild.name=Wild Tuxedo Cat
+npcRoles.Cats_Wild.name=Wild Cat
+
+items.cats.egg_spawner_black.name=Black Cat Spawner Egg
+items.cats.egg_spawner_browntabby.name=Brown Tabby Cat Spawner Egg
+items.cats.egg_spawner_calico.name=Calico Cat Spawner Egg
+items.cats.egg_spawner_kitten_calico.name=Calico Kitten Spawner Egg
+items.cats.egg_spawner_longhairedrussianblue.name=Longhaired Russian Blue Cat Spawner Egg
+items.cats.egg_spawner_gray.name=Gray Cat Spawner Egg
+items.cats.egg_spawner_graytabby.name=Gray Tabby Cat Spawner Egg
+items.cats.egg_spawner_ocelot.name=Ocelot Cat Spawner Egg
+items.cats.egg_spawner_orangetabby.name=Orange Tabby Cat Spawner Egg
+items.cats.egg_spawner_siamese.name=Siamese Cat Spawner Egg
+items.cats.egg_spawner_tortie.name=Tortoiseshell Cat Spawner Egg
+items.cats.egg_spawner_tuxedo.name=Tuxedo Cat Spawner Egg
+items.cats.egg_spawner_white.name=White Cat Spawner Egg
+items.cats.egg_spawner_black.description=Spawns a Black Cat when placed.
+items.cats.egg_spawner_calico.description=Spawns a Calico Cat when placed.
+items.cats.egg_spawner_kitten_calico.description=Spawns a Calico Kitten when placed.
+items.cats.egg_spawner_longhairedrussianblue.description=Spawns a Longhaired Russian Blue Cat when placed.
+items.cats.egg_spawner_graytabby.description=Spawns a Gray Tabby Cat when placed.
+items.cats.egg_spawner_orangetabby.description=Spawns an Orange Tabby Cat when placed.
+items.cats.egg_spawner_siamese.description=Spawns a Siamese Cat when placed.
+items.cats.egg_spawner_tuxedo.description=Spawns a Tuxedo Cat when placed.
+
+items.cats.cat_bed.name=Cat Bed
+items.cats.cat_bed.description=A comfortable bed for your cats. Assign a cat to this bed using the /cat bed command. Your cat will rest here when not following you.
+
+items.cats.cat_yarn_ball.name=Cat Yarn Ball
+items.cats.cat_yarn_ball.description=A playful yarn ball toy for your cats. Use it to attract your tamed cats or play with them. Cats love to play with yarn balls!
+
+items.cats.cat_carrier.name=Cat Carrier
+items.cats.cat_carrier.description=A portable carrier for your tamed cats. Use it on a tamed cat to pick it up, and use it again to release the cat.
+
+items.cats.cat_treats.name=Cat Treats
+items.cats.cat_treats.description=Tasty treats made from fish and fibre. Feed them to your cat to make it happy!
+
+memories.categories.Cats.title = Cats
+memories.categories.Kitten.title = Kittens

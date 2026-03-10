@@ -1,0 +1,22 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/walk/phonosupf_accordion_attack_1.ogg",
+        "Sounds/walk/phonosupf_sax.ogg",
+        "Sounds/walk/phonosupf_sax_effect_3.ogg"
+      ],
+      "RandomSettings": {
+        "MinPitch": -3,
+        "MaxPitch": 3,
+        "MinVolume": -6
+      },
+      "Volume": 1.0,
+      "Looping": true
+    }
+  ],
+  "Volume": 0,
+  "PreventSoundInterruption": true,
+  "AudioCategory": "AudioCat_NPC_Bear_Grizzly",
+  "Parent": "SFX_Attn_Quiet"
+}

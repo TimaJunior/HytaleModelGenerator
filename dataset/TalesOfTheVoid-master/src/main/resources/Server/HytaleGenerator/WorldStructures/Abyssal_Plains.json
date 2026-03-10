@@ -1,0 +1,44 @@
+{
+  "Type": "NoiseRange",
+  "Biomes": [
+    {
+      "Biome": "Abyssal_Plains",
+      "Min": -0.6,
+      "Max": -0.3
+    }, 
+    {
+      "Biome": "Desolated_Cordilleras",
+      "Min": -0.3,
+      "Max": 0.5
+    }, 
+    {
+      "Biome": "Viscous_Rivers",
+      "Min": 0.5,
+      "Max": 1
+    }
+  ],
+  "DefaultBiome": "Viscous_Rivers",
+  "DefaultTransitionDistance": 32,
+  "MaxBiomeEdgeDistance": 32,
+  "Density": {
+    "Type": "Imported",
+    "Name": "Biome-Map"
+  },
+  "ContentFields": [
+    {
+      "Type": "BaseHeight",
+      "Name": "Base",
+      "Y": 100
+    },
+    {
+      "Type": "BaseHeight",
+      "Name": "Water",
+      "Y": 100
+    },
+    {
+      "Type": "BaseHeight",
+      "Name": "Bedrock",
+      "Y": 0
+    }
+  ]
+}

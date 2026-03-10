@@ -1,0 +1,56 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.cats.cat_treats.name",
+    "Description": "server.items.cats.cat_treats.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Cat_Treats.png",
+  "Quality": "Common",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "CustomModel": "Items/CatTreats/Cat_Treats.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/CatTreats/CatTreats_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#c8a060"
+  },
+  "PlayerAnimationsId": "Item",
+  "MaxStack": 16,
+  "Recipe": {
+    "TimeSeconds": 1,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fish_Raw",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Farmingbench",
+        "Categories": [
+          "Farming"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false
+  },
+  "Tags": {
+    "Type": [
+      "Treat",
+      "Pet_Accessory"
+    ],
+    "Family": [
+      "Cats"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "DropOnDeath": true
+}

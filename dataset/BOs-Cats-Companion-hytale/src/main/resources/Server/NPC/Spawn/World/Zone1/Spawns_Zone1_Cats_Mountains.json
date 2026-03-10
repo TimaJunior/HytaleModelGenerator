@@ -1,0 +1,31 @@
+{
+  "$Comment": "Cats spawn in Azure and mountain regions - adaptable cats for varied terrain",
+  "Environments": [
+    "Env_Zone1_Azure",
+    "Env_Zone1_Mountains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_GrayTabby_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Tuxedo_Wild",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 2,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cats_Kitten_Wild",
+      "Flock": "One_Or_Two"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

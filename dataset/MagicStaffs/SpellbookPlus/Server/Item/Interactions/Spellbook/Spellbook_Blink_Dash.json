@@ -1,0 +1,54 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "ApplyForce",
+      "WaitForGround": false,
+      "ChangeVelocityType": "Set",
+      "VelocityConfig": {
+        "AirResistance": 0.98,
+        "AirResistanceMax": 0.97,
+        "GroundResistance": 0.95,
+        "GroundResistanceMax": 0.85,
+        "Threshold": 5.0,
+        "Style": "Exp"
+      },
+      "Forces": [
+        {
+          "Direction": {
+            "Z": -1.0
+          },
+          "Force": 18.0,
+          "AdjustVertical": true
+        },
+        {
+          "Direction": {
+            "Y": 1.0
+          },
+          "Force": 3.0
+        }
+      ],
+      "VerticalClamp": [
+        -30.0,
+        60.0
+      ]
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.3,
+      "Effects": {
+        "Particles": [
+          {
+            "SystemId": "Teleport",
+            "TargetEntityPart": "Entity",
+            "TargetNodeName": "Hip",
+            "PositionOffset": {
+              "Y": 1.0
+            }
+          }
+        ],
+        "LocalSoundEventId": "SFX_Portal_Neutral_Teleport_Local"
+      }
+    }
+  ]
+}

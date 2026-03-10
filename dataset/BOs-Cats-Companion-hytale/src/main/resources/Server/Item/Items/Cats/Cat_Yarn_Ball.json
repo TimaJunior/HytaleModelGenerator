@@ -1,0 +1,66 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.cats.cat_yarn_ball.name",
+    "Description": "server.items.cats.cat_yarn_ball.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Cat_Yarn_Ball.png",
+  "Quality": "Common",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "CustomModel": "Blocks/Cats/Cat_Yarn_Ball.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Cats/Cat_Yarn_Ball_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "VariantRotation": "NESW",
+    "ParticleColor": "#8d7661"
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      15.0,
+      30.0,
+      0.0
+    ],
+    "Translation": [
+      0,
+      -5
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Toy",
+      "Pet_Accessory"
+    ],
+    "Family": [
+      "Cats"
+    ]
+  },
+  "Scale": 0.75,
+  "MaxStack": 16,
+  "Recipe": {
+    "TimeSeconds": 1,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Farmingbench",
+        "Categories": [
+          "Farming"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "DropOnDeath": true
+}
