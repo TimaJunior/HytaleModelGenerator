@@ -1,131 +1,237 @@
+"""
+Next-Gen Voxel GAN Architecture.
+
+Архітектура:
+- ResNetEncoder: зображення (3,256,256) → latent (512)
+- VoxelGANGenerator: latent (512) → RGBA voxels (4, 64, 64, 64)
+  з Self-Attention 3D, ResBlocks, Progressive upsampling
+- ConditionalDiscriminator: PatchGAN 3D + Spectral Norm + LSGAN
+"""
+
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torchvision import models
 from ml_engine.core.interfaces import IEncoder, IGenerator, IDiscriminator
 
-class ResidualBlock3d(nn.Module):
-    """3D Residual Block для стабілізації decoder."""
-    def __init__(self, channels):
+
+# ============================================================
+# Допоміжні модулі
+# ============================================================
+
+class ResBlock3d(nn.Module):
+    """3D Residual Block з BatchNorm."""
+    def __init__(self, channels: int):
         super().__init__()
         self.block = nn.Sequential(
-            nn.Conv3d(channels, channels, kernel_size=3, padding=1),
+            nn.Conv3d(channels, channels, 3, padding=1, bias=False),
             nn.BatchNorm3d(channels),
             nn.ReLU(True),
-            nn.Conv3d(channels, channels, kernel_size=3, padding=1),
+            nn.Conv3d(channels, channels, 3, padding=1, bias=False),
             nn.BatchNorm3d(channels),
         )
         self.relu = nn.ReLU(True)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.relu(x + self.block(x))
+
+
+class SelfAttention3d(nn.Module):
+    """
+    3D Self-Attention Module.
+    Дозволяє кожному вокселю «бачити» всі інші вокселі на цьому рівні.
+    Використовується для глобальної когерентності форм.
+    """
+    def __init__(self, channels: int):
+        super().__init__()
+        mid = max(channels // 8, 1)
+        self.query = nn.Conv3d(channels, mid, 1, bias=False)
+        self.key = nn.Conv3d(channels, mid, 1, bias=False)
+        self.value = nn.Conv3d(channels, channels, 1, bias=False)
+        self.gamma = nn.Parameter(torch.zeros(1))
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        B, C, D, H, W = x.shape
+        N = D * H * W
+
+        q = self.query(x).view(B, -1, N)                # (B, C//8, N)
+        k = self.key(x).view(B, -1, N)                  # (B, C//8, N)
+        v = self.value(x).view(B, -1, N)                # (B, C, N)
+
+        # Attention: (B, N, N) = (B, N, C//8) @ (B, C//8, N)
+        scale = q.shape[1] ** 0.5
+        attn = torch.softmax(
+            torch.bmm(q.permute(0, 2, 1), k) / scale, dim=-1
+        )                                                # (B, N, N)
+
+        # Output: (B, C, N) = (B, C, N) @ (B, N, N)
+        out = torch.bmm(v, attn.permute(0, 2, 1))       # (B, C, N)
+        out = out.view(B, C, D, H, W)
+        return x + self.gamma * out
+
+
+def spectral_conv3d(in_ch, out_ch, **kwargs) -> nn.Module:
+    """Conv3d з Spectral Normalization для стабільності дискримінатора."""
+    return nn.utils.spectral_norm(nn.Conv3d(in_ch, out_ch, **kwargs))
+
+
+# ============================================================
+# Encoder
+# ============================================================
 
 class ResNetEncoder(nn.Module, IEncoder):
     """
-    Concrete Encoder using ResNet18.
-    Encodes (3, 256, 256) -> (Latent_Dim).
+    Image Encoder: (3, 256, 256) → latent vector (512).
+    Використовує ResNet18 з кастомною projection head.
     """
-    def __init__(self, latent_dim: int = 256):
+    def __init__(self, latent_dim: int = 512):
         super().__init__()
-        # Use pretrained resnet for better feature extraction from the start
         resnet = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
-        
-        # Remove the last classification layer (fc)
         self.features = nn.Sequential(*list(resnet.children())[:-1])
-        
-        # Add a custom projection head to match our latent dimension
-        self.projection = nn.Linear(resnet.fc.in_features, latent_dim)
+        self.projection = nn.Sequential(
+            nn.Linear(resnet.fc.in_features, 768),
+            nn.ReLU(True),
+            nn.Dropout(0.2),
+            nn.Linear(768, latent_dim),
+        )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # x: (B, 3, 256, 256)
         x = self.features(x)
         x = torch.flatten(x, 1)
-        x = self.projection(x)
-        return x
+        return self.projection(x)
+
+
+# ============================================================
+# Generator: 64³ RGBA
+# ============================================================
 
 class VoxelGANGenerator(nn.Module, IGenerator):
     """
-    Concrete Generator using 3D Transposed Convolutions.
-    Decodes (Latent_Dim) -> (1, 32, 32, 32).
+    RGBA Voxel Generator.
+    Latent (512) → RGBA voxels (4, 64, 64, 64).
+
+    Архітектура upsampling:
+      512 → FC reshape (512, 2, 2, 2)
+      ConvTranspose3d x6 → (4, 64, 64, 64)
     """
-    def __init__(self, latent_dim: int = 256):
+    def __init__(self, latent_dim: int = 512):
         super().__init__()
         self.latent_dim = latent_dim
-        
-        # Initial dense layer to reshape latent vector into a small 3D cube
-        self.fc = nn.Linear(latent_dim, 256 * 2 * 2 * 2)
-        
+
+        # Початковий FC шар
+        self.fc = nn.Linear(latent_dim, 512 * 2 * 2 * 2)
+
         self.decoder = nn.Sequential(
-            # Input: (256, 2, 2, 2)
-            nn.ConvTranspose3d(256, 128, kernel_size=4, stride=2, padding=1),
+            # (512, 2, 2, 2) → (256, 4, 4, 4)
+            nn.ConvTranspose3d(512, 256, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(256),
+            nn.ReLU(True),
+            ResBlock3d(256),
+            SelfAttention3d(256),  # Attention на малих масштабах для форми
+
+            # (256, 4, 4, 4) → (128, 8, 8, 8)
+            nn.ConvTranspose3d(256, 128, 4, 2, 1, bias=False),
             nn.BatchNorm3d(128),
             nn.ReLU(True),
-            # (128, 4, 4, 4)
-            ResidualBlock3d(128),
-            
-            nn.ConvTranspose3d(128, 64, kernel_size=4, stride=2, padding=1),
+            ResBlock3d(128),
+
+            # (128, 8, 8, 8) → (64, 16, 16, 16)
+            nn.ConvTranspose3d(128, 64, 4, 2, 1, bias=False),
             nn.BatchNorm3d(64),
             nn.ReLU(True),
-            # (64, 8, 8, 8)
-            ResidualBlock3d(64),
-            
-            nn.ConvTranspose3d(64, 32, kernel_size=4, stride=2, padding=1),
+            ResBlock3d(64),
+            SelfAttention3d(64),  # Attention для середніх деталей
+
+            # (64, 16, 16, 16) → (32, 32, 32, 32)
+            nn.ConvTranspose3d(64, 32, 4, 2, 1, bias=False),
             nn.BatchNorm3d(32),
             nn.ReLU(True),
-            # (32, 16, 16, 16)
-            
-            nn.ConvTranspose3d(32, 1, kernel_size=4, stride=2, padding=1),
-            # Output: (1, 32, 32, 32)
-            nn.Sigmoid() # Output probability of voxel existence (0-1)
+            ResBlock3d(32),
+
+            # (32, 32, 32, 32) → (16, 64, 64, 64)
+            nn.ConvTranspose3d(32, 16, 4, 2, 1, bias=False),
+            nn.BatchNorm3d(16),
+            nn.ReLU(True),
+            ResBlock3d(16),
         )
+
+        # Фінальний шар: (16, 64, 64, 64) → (4, 64, 64, 64)
+        self.head = nn.Conv3d(16, 4, 3, padding=1, bias=True)
 
     def forward(self, z: torch.Tensor) -> torch.Tensor:
         x = self.fc(z)
-        x = x.view(-1, 256, 2, 2, 2)
+        x = x.view(-1, 512, 2, 2, 2)
         x = self.decoder(x)
-        return x
+        x = self.head(x)
+
+        # Розбиваємо на RGB та Alpha з різними активаціями
+        rgb = torch.sigmoid(x[:, :3])     # [0, 1] — колір
+        alpha = torch.sigmoid(x[:, 3:4])  # [0, 1] — існування
+
+        return torch.cat([rgb, alpha], dim=1)  # (B, 4, 64, 64, 64)
+
+
+# ============================================================
+# Discriminator: PatchGAN 3D + SpectralNorm
+# ============================================================
 
 class ConditionalDiscriminator(nn.Module, IDiscriminator):
     """
-    Conditional Discriminator using 3D CNN.
-    Evaluates a 3D voxel grid together with an image condition.
-    Input: voxel (B,1,32,32,32) + condition latent (B,256)
-    Output: (B, 1) real/fake score
+    PatchGAN 3D Discriminator з Spectral Normalization.
+
+    Замість глобального скаляра повертає PatchMap (1, D', H', W'),
+    де кожен елемент — real/fake score для патчу.
+    Це змушує генератор поліпшувати деталі в usіх частинах моделі.
+
+    Input: voxel (B, 4, 64, 64, 64) + condition volume (B, 512)
+    Output: patch scores (B, 1, 4, 4, 4)
     """
-    def __init__(self, latent_dim: int = 256):
+    def __init__(self, latent_dim: int = 512):
         super().__init__()
-        # Проєкція condition latent → spatial volume
+
+        # Проєкція latent у просторовий об'єм (64³)
         self.condition_proj = nn.Sequential(
-            nn.Linear(latent_dim, 32 * 32 * 32),
-            nn.LeakyReLU(0.2)
+            nn.Linear(latent_dim, 64 * 64 * 64),
+            nn.LeakyReLU(0.2),
         )
-        # 3D CNN, input channels = 2 (voxel + projected condition)
+
+        # PatchGAN encoder (5 каналів: 4 RGBA + 1 condition)
         self.encoder = nn.Sequential(
-            # Input: (2, 32, 32, 32)
-            nn.Conv3d(2, 32, kernel_size=4, stride=2, padding=1),
+            # (5, 64, 64, 64) → (64, 32, 32, 32)
+            spectral_conv3d(5, 64, kernel_size=4, stride=2, padding=1),
             nn.LeakyReLU(0.2, inplace=True),
-            # (32, 16, 16, 16)
-            
-            nn.Conv3d(32, 64, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm3d(64),
+
+            # (64, 32, 32, 32) → (128, 16, 16, 16)
+            spectral_conv3d(64, 128, kernel_size=4, stride=2, padding=1),
+            nn.GroupNorm(8, 128),
             nn.LeakyReLU(0.2, inplace=True),
-            # (64, 8, 8, 8)
-            
-            nn.Conv3d(64, 128, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm3d(128),
+
+            # (128, 16, 16, 16) → (256, 8, 8, 8)
+            spectral_conv3d(128, 256, kernel_size=4, stride=2, padding=1),
+            nn.GroupNorm(16, 256),
             nn.LeakyReLU(0.2, inplace=True),
-            # (128, 4, 4, 4)
-            
-            nn.Conv3d(128, 1, kernel_size=4, stride=1, padding=0),
-            # Output: (1, 1, 1, 1) -> Scalar
-            nn.Sigmoid()
+
+            # (256, 8, 8, 8) → (512, 4, 4, 4)
+            spectral_conv3d(256, 512, kernel_size=4, stride=2, padding=1),
+            nn.GroupNorm(32, 512),
+            nn.LeakyReLU(0.2, inplace=True),
+
+            # (512, 4, 4, 4) → (1, 4, 4, 4) PatchMap
+            spectral_conv3d(512, 1, kernel_size=3, stride=1, padding=1),
+            # Без Sigmoid! LSGAN використовує MSE, не BCE
         )
 
     def forward(self, x: torch.Tensor, condition: torch.Tensor = None) -> torch.Tensor:
+        """
+        x: (B, 4, 64, 64, 64)
+        condition: (B, 512) або None
+        returns: (B, 1, 4, 4, 4) — PatchMap
+        """
         if condition is not None:
             cond_vol = self.condition_proj(condition)
-            cond_vol = cond_vol.view(-1, 1, 32, 32, 32)
-            x = torch.cat([x, cond_vol], dim=1)
+            cond_vol = cond_vol.view(-1, 1, 64, 64, 64)
         else:
-            # Fallback for backward compatibility or unconditional testing
-            x = torch.cat([x, torch.zeros_like(x)], dim=1)
-        return self.encoder(x).view(-1, 1)
+            cond_vol = torch.zeros(x.shape[0], 1, 64, 64, 64, device=x.device)
+
+        x_in = torch.cat([x, cond_vol], dim=1)  # (B, 5, 64, 64, 64)
+        return self.encoder(x_in)  # (B, 1, 4, 4, 4)

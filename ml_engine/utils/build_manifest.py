@@ -39,14 +39,22 @@ def compute_voxel_hash(voxel_path: str) -> str | None:
 def is_voxel_valid(voxel_path: str) -> bool:
     """
     Перевіряє що voxel grid не порожній і має правильну форму.
+    Підтримує як RGBA 64³ (64,64,64,4), так і legacy 32³ (32,32,32).
     """
     try:
         data = np.load(voxel_path)
-        if data.shape != (32, 32, 32):
+        if data.shape == (64, 64, 64, 4):
+            # RGBA format: перевіряємо Alpha канал
+            if data[:, :, :, 3].sum() == 0:
+                return False
+            return True
+        elif data.shape == (32, 32, 32):
+            # Legacy binary format
+            if data.sum() == 0:
+                return False
+            return True
+        else:
             return False
-        if data.sum() == 0:
-            return False
-        return True
     except Exception:
         return False
 
@@ -251,13 +259,21 @@ def build_manifest(data_dir: str, val_ratio: float = 0.15,
     else:
         print(f"   ✅ No leakage between train/val splits")
 
-    # Додаємо source
-    for pair in pairs:
-        pair["source"] = "local"
+    # Визначаємо формат даних
+    rgba_count = sum(1 for p in pairs
+                     if np.load(os.path.join(data_dir, p['voxel_path'])).shape == (64, 64, 64, 4))
+    is_rgba = rgba_count > len(pairs) // 2
+    resolution = 64 if is_rgba else 32
+    channels = 4 if is_rgba else 1
 
     manifest = {
-        "version": 1,
+        "version": 2,
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "format": {
+            "resolution": resolution,
+            "channels": channels,
+            "dtype": "uint8",
+        },
         "stats": {
             "total_samples": len(pairs),
             "train_samples": train_count,
